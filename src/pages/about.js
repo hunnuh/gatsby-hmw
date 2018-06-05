@@ -17,7 +17,7 @@ import Intro from "../components/Intro";
 
 class AboutPage extends Component {
   render() {
-    const projectEdges = this.props.data.allMarkdownRemark.edges;
+
     return (
       <div >
         <Nav/>
