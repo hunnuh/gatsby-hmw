@@ -1,0 +1,75 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+
+#back {
+    background-image:url("../assets/pbg.png");
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+#ocean {
+    background-image:url("../assets/oceanbg.jpg");
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+#web {
+    background-image:url("../assets/webbg.png");
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+#data {
+    background-image:url("../assets/databg.png");
+    background-size:cover;
+}
+
+.title-shadow {
+  text-shadow: 4px 4px 4px rgba(0, 17, 0, 1);
+}
+
+.inset-shadow {
+  text-shadow: 1.5px 1.5px 2px rgba(101, 113, 124, 1);
+}
+.lg {
+  color: #0d9969;
+}
+
+.hunterslide{
+  background-image:url("../assets/hunterslide.jpg")
+}
+
+
+.hunterslide1{
+  background-image:url("../assets/hunterslide2.png")
+}
+
+.oceanpattern{
+  background-image:url("../assets/oceanpattern.png")
+}
+
+.paperpattern{
+  background-image:url("../assets/paperpattern.png")
+}
+
+.palmpattern{
+  background-image:url("../assets/palm-leaf.png")
+}
+
+.defaultcursor{
+  cursor:default;
+}
+
+.redbackground{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c0404+0,9d1c1f+100 */
+  background: #2c0404; /* Old browsers */
+  background: -moz-linear-gradient(top, #000 0%, #9d1c1f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #000 0%,#9d1c1f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #000 0%,#9d1c1f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#9d1c1f',GradientType=0 ); /* IE6-9 */
+}
