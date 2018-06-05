@@ -8,7 +8,7 @@ import Masonry from "../components/Masonry";
 import ReactModal from "react-modal";
 import ScrollToTop from "react-scroll-up";
 
-
+import Briefcase from "../assets/briefcase.svg";
 
 
 const modalStyles = {
