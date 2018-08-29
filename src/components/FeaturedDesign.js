@@ -5,56 +5,62 @@ class FeaturedDesign extends Component {
   constructor () {
     super();
     this.state = {
-      path: ""
+      number: 5
     };
-
     this.handleChangePic = this.handleChangePic.bind(this);
+    this.picForward = this.picForward.bind(this);
+    this.picBackward = this.picBackward.bind(this);
   }
 
-  handleChangePic (path) {
-
-    this.setState({ path: path });
+  handleChangePic (num) {
+    this.setState({ number: num });
   }
 
-  componentDidMount() {
-      this.setState({ path: this.props.content[1].relativePath});
+  picForward(){
+    let num = this.state.number;
+    this.setState({number: num++})
+  }
+
+  picBackward(){
+    let num = this.state.number;
+    this.setState({number: num--})
   }
 
   render(props) {
-    let thumbs = this.props.content
+    let content = this.props.content;
+    let num = this.state.number;
+    let thumbs = content.map((image, index) =>
+      <Thumb back={content[index].relativePath} key={index} num={index} picChange={this.handleChangePic}/>
+    )
+
     return (
       <div className="white mt4 bb b--white-60 mb4">
         <h1 className="bb b--white-60 pb3"> Featured Graphic/Web Design:</h1>
         <div className="flex flex-row w-100 mb4">
           <div
             style={{maxHeight:"32rem"}}
-            className=" w-60 bg-top bg-black-10 pa3 flex flex-column justify-center"
+            className=" w-60 bg-top bg-black-10 pa3 relative flex flex-column justify-center"
             >
+
               <div className="db relative center">
+                <div className="w-100 h-100 center absolute flex flex-row justify-between z-4">
+                  <div className="flex flex-column justify-center h-100 w3 bg-black-40"></div>
+                  <div className="flex flex-column justify-center h-100 w3 bg-black-40"></div>
+                </div>
                 <img
                   className="mv0 shadow-3 "
                   style={{maxHeight:"30rem"}}
-                  src={`portfolio/${this.state.path}`}
+                  src={`portfolio/${content[num].relativePath}`}
                 />
               </div>
           </div>
+
+
           <div className="flex flex-column  w-40 ">
             <div className="ml4">
-              <p className="white-30 f7 tracked mt0 mb2 pv0">Click an image below:</p>
-              <div className="flex flex-row">
-                <Thumb back={thumbs[0].relativePath} picChange={this.handleChangePic} pos="bottom"/>
-                <Thumb back={thumbs[1].relativePath} picChange={this.handleChangePic} pos="center"/>
-                <Thumb back={thumbs[2].relativePath} picChange={this.handleChangePic} pos="bottom"/>
-              </div>
-              <div className="flex flex-row">
-                <Thumb back={thumbs[3].relativePath} picChange={this.handleChangePic} pos="right"/>
-                <Thumb back={thumbs[4].relativePath} picChange={this.handleChangePic} pos="top"/>
-                <Thumb back={thumbs[5].relativePath} picChange={this.handleChangePic} pos="right"/>
-              </div>
-              <div className="flex flex-row mb2">
-                <Thumb back={thumbs[6].relativePath} picChange={this.handleChangePic} pos="center"/>
-                <Thumb back={thumbs[7].relativePath} picChange={this.handleChangePic} pos="left"/>
-                <Thumb back={thumbs[8].relativePath} picChange={this.handleChangePic} pos="left"/>
+              <p className="white-30 f7 tracked mt0 mb3 pv0">Click an image below:</p>
+              <div className="flex flex-column mb0">
+                {thumbs}
               </div>
               <div className="w-100 flex flex-column ">
                 <a className="white-70 f4 tracked mv1"> See more of my design work. ⇾</a>
@@ -71,18 +77,17 @@ class FeaturedDesign extends Component {
 
 
 class Thumb extends Component {
-
-  click = (path) => {
-    this.props.picChange(path)
+  click = (num) => {
+    console.log(num)
+    this.props.picChange(num)
   }
-
   render(props) {
-    let {pos, back} = this.props
+    let {pos, back, num} = this.props
     return (
       <div
-        className={`w4 h4 shadow-3 bg-${pos} mr2 mb2 br1 grow`}
-        style={{backgroundImage: `url(portfolio/${back})`}}
-        onClick={() => this.click(back)}>
+        className={`w-100 h2 shadow-3 b--white-90 mr2 mb3 br1 grow ba bw1 overflow-hidden`}
+        onClick={() => this.click(num)}>
+        <img className="o-40" src={`portfolio/${back}`}/>
       </div>
     );
   }
