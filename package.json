@@ -5,11 +5,11 @@
   "author": "Aman Mittal <amandeepmittal@live.com>",
   "dependencies": {
     "animejs": "^2.2.0",
-    "gatsby": "^1.9.145",
+    "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-typography": "1.7.10",
-    "gatsby-source-filesystem": "1.5.9",
+    "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "1.7.23",
     "react-fontawesome": "^1.6.1",
     "react-highlight": "^0.12.0",

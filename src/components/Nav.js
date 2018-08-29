@@ -5,7 +5,7 @@ import FontAwesome from "react-fontawesome";
 
 const NavLink = ({link, children}) => (
 
-  <Link to={link} className="flex flex-column justify-center white-90 fw8 no-underline ph3 hover-bg-red">{children}</Link>
+  <Link to={link} style={{color:"#DFF4E9"}} className="flex flex-column justify-center fw8 no-underline ph3 hover-bg-red">{children}</Link>
 );
 
 const Nav = ({}) => (

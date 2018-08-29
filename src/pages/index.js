@@ -18,12 +18,15 @@ import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 import Nav from "../components/Nav";
 
-import Leftleaf from "../assets/leftleaf.svg";
+import FishBG from "../assets/fish_bkg.svg";
+import SpiderBG from "../assets/spider_bkg.svg";
+import MonkeyBG from "../assets/monkey_bg.svg";
+import ElephantBG from "../assets/elephant_bg.svg";
 import Rightleaf from "../assets/rightleaf.svg";
 import Quotemark from "../assets/quotemark.svg";
 import Programming from "../assets/programming.svg";
 import Analysis from "../assets/analysis.svg";
-
+import Leaf from "../assets/leaf.svg";
 
 class IndexPage extends Component {
   componentDidMount(){
@@ -42,15 +45,82 @@ console.log(featuredProgramming)
     return (
       <div className="ebug">
         <Nav/>
-        <div id="back" className="relative w-100">
+        <div className="relative w-100" style={{backgroundColor:"#19382B"}}>
           <div className="mv0 flex flex-column  ">
             <Intro />
           </div>
-          <div style={{ background: "#EBFFFC" }} className="relative flex flex-column  overflow-y-hidden">
-            <img src={Rightleaf} style={{height:"150em", top:"0em"}} className="absolute z-0  right-0 " />
+          <div style={{ background: "#19382B" }} className="relative flex flex-column  overflow-y-hidden">
+            <img src={FishBG} style={{height:"50em", top:"11em"}} className="absolute z-0  right-0 " />
+            <img src={SpiderBG} style={{height:"52em", top:"44em"}} className="absolute z-0  left-0 " />
+            <img src={MonkeyBG} style={{height:"50em", top:"84em"}} className="absolute z-0  right-0 " />
+            <img src={ElephantBG} style={{height:"36em", top:"130em"}} className="absolute z-0  left-0 " />
 
             <div className="mw8 w-100 self-center z-4 mb4">
               <About />
+
+            </div>
+            <div className=" flex flex-column justify-center w-100 self-center z-4 bg-white ">
+              <div className="mw8 w-100 self-center z-4 ">
+
+                <h3 className="fw8 f2 black-60 lh-copy mv0 tc mv5"> Need strong skills? <strong style={{color: "#9d1c1f"}}>...I got 'em.</strong></h3>
+
+                <div className="flex flex-row justify-center">
+                  <div className="w-25 tc">
+                    <h3 className="bb mw4 pb2 center mb3">✔ Hard Skills</h3>
+                    <ul className="b f6 list pl0 ml0 black-70">
+                      <li>JavaScript programming</li>
+                      <li>Advanced digital design</li>
+                      <li>Data analysis and DB's</li>
+                      <li>Spatial statistics</li>
+                      <li>Video & media production</li>
+                    </ul>
+                  </div>
+                  <div className="w-25 tc">
+                    <h3 className="bb mw4 pb2 center mb3">✔ Soft Skills</h3>
+                    <ul className="b f6 list pl0 ml0 black-70">
+                      <li>Fierce problem solver</li>
+                      <li>Accomplished speaker</li>
+                      <li>Effective self educator</li>
+                      <li>Proven team loyalty</li>
+                      <li>Well-adjusted and sane</li>
+                    </ul>
+                  </div>
+                  <div className="w-25 tc">
+                    <h3 className="bb mw4 pb2 center mb3">✔ Other Skills</h3>
+                    <ul className="b f6 list pl0 ml0 black-70">
+                      <li>Multi-instrumentalist</li>
+                      <li>Pencil drawing & sketching</li>
+                      <li>Electronics tinkering</li>
+                      <li>Intermediate chess</li>
+                      <li>Three ball juggling</li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  className="mt5 mb6 pv4 ph5 center w-80 flex flex-row justify-between items-center bt bb b--black"
+                >
+                  <div className="flex flex-row items-center ">
+                    <img src={Leaf} style={{height: "4rem"}} className="ma0 mr3 "/>
+                    <h4 className="fw8 f3 black-80 lh-copy mv0 ">My résumé is ready for you.</h4>
+
+
+                  </div>
+                  <div className="flex flex-column justify-center ">
+                    <a
+                      style={{backgroundColor: "#9d1c1f"}}
+                      className="white tracked br1 pointer fw8 f6 pv2 ph3 mw5 dib mt3"
+                    >
+                      RÉSUMÉ (PDF)
+                    </a>
+                    <p
+                      style={{color: "#9d1c1f"}}
+                      className="center f7 tracked fw1 mt1 mb0 o-70"
+                    >
+                      (05/25/18)
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className=" flex flex-column justify-center w-100 self-center z-4 bg-dark-gray bb bw2 b--black">
               <div className="mw8 pv5 w-100 self-center z-4 ">
