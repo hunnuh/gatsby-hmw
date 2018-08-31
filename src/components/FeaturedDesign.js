@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withPrefix } from 'gatsby-link'
 
+import Arrow from "../assets/arrow.svg";
+
 class FeaturedDesign extends Component {
   constructor () {
     super();
@@ -39,14 +41,14 @@ class FeaturedDesign extends Component {
         <div className="flex flex-row w-100 mb4">
           <div
             style={{maxHeight:"32rem"}}
-            className=" w-60 bg-top bg-black-10 pa3 relative flex flex-column justify-center"
+            className=" w-60 bg-top bg-black-30 br4 pa0 relative flex flex-column justify-center"
             >
+              <div className="w-100 h-100 center absolute flex flex-row justify-between items-center z-4">
+                <div className="flex flex-column justify-center h4 w3 bg-black-40"></div>
+                <div className="flex flex-column justify-center h4 w3 bg-black-40"></div>
+              </div>
+              <div className="db relative center pa3">
 
-              <div className="db relative center">
-                <div className="w-100 h-100 center absolute flex flex-row justify-between z-4">
-                  <div className="flex flex-column justify-center h-100 w3 bg-black-40"></div>
-                  <div className="flex flex-column justify-center h-100 w3 bg-black-40"></div>
-                </div>
                 <img
                   className="mv0 shadow-3 "
                   style={{maxHeight:"30rem"}}
@@ -87,7 +89,7 @@ class Thumb extends Component {
       <div
         className={`w-100 h2 shadow-3 b--white-90 mr2 mb3 br1 grow ba bw1 overflow-hidden`}
         onClick={() => this.click(num)}>
-        <img className="o-40" src={`portfolio/${back}`}/>
+        <img className="o-40 marquee_button absolute top--1" src={`portfolio/${back}`}/>
       </div>
     );
   }

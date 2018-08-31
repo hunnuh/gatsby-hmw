@@ -122,7 +122,7 @@ console.log(featuredProgramming)
                 </div>
               </div>
             </div>
-            <div className=" flex flex-column justify-center w-100 self-center z-4 bg-dark-gray bb bw2 b--black">
+            <div className=" flex flex-column justify-center w-100 self-center z-4 bb bw2 b--black" style={{backgroundColor: "#0d202f"}}>
               <div className="mw8 pv5 w-100 self-center z-4 ">
                 <FeaturedDesign content={featuredDesign}/>
               </div>

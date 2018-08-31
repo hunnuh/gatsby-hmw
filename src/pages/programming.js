@@ -15,7 +15,8 @@ class ProgrammingPage extends React.Component {
   constructor () {
     super();
     this.state = {
-      showModal: false
+      showModal: true,
+      projectNumber:0
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -30,6 +31,10 @@ class ProgrammingPage extends React.Component {
     this.setState({ showModal: false });
   }
 
+  handleChangeProject(number){
+    this.setState({projectNumber:number})
+  }
+
   trimData(portfolioSection){
     let trimmedData = this.props.data.allFile.edges.reduce((acc, curr) => acc.concat(curr.node), []).filter(e => e.relativeDirectory === portfolioSection );
 
@@ -38,29 +43,18 @@ class ProgrammingPage extends React.Component {
 
   render () {
 
-
+    let {projectNumber} = this.state
 
     let Rows = Projects.map((proj, index)=>
-      <ProjectRow key={index} project={proj} id={`proj` + index}/>
-        )
-    return (
-      <div>
-        <Nav/>
-        <Header bg="web">
-          <img src={Programming} className="h3 mb0 mt6 " />
-          <h1 style={{color: "#EBFFFC"}} className="f3 tracked-mega mb6">PROGRAMMING</h1>
+      <ProjectRow key={index} project={proj} id={`proj` + index} current={this.state.projectNumber} clickButton={(number) => this.handleChangeProject(number)}/>)
 
-        </Header>
-        <div  className="relative w-100 ">
-          <div className="redbackground relative flex flex-column items-center">
-            <p className="white b mw7 tc f2 mt5 mb0 pt3">These are my biggest & best projects. </p>
-            <h1 className="white mt0 mb3 pv0 lh-solid tracked-mega">...</h1>
-            <p className="white-80  f6 b mw6 tracked tc lh-copy mb5">In my practice, I utilize the JavaScript language along with the React framework to construct applications that computer geeks know as "Finite-State Machines." Scroll down to explore them.
-            </p>
-            {Rows}
-          </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Footer />
+    return (
+      <div style={{minHeight:"100vh"}} className="relative">
+        <Nav/>
+
+        <div  className="relative w-100 h-100" style={{height:"calc(100vh - 72px)"}}>
+          <div className="relative flex flex-column items-center h-100">
+            {Rows[projectNumber]}
           </div>
 
           <ReactModal
@@ -78,33 +72,53 @@ class ProgrammingPage extends React.Component {
 
 class ProjectRow extends React.Component {
   render () {
-    let {project} = this.props;
-
+    let {project, current} = this.props;
 
     let paras = project.desc.p.map((p, index)=>
-      <p key={index} className=" f7 f6-ns mt0 mb2 measure lh-copy">{p}</p>
+      <p key={index} className=" f7 mt0 mb1  measure lh-copy">{p}</p>
     )
 
     let links = project.desc.tech.map((tech, index)=>
       <li
         key={index}
-        className=" f7 dib mv0 ml0 pointer mh1">
+        className=" f7 dib mv0 mh0 ml0 pointer mh1">
         <a
           target="_blank"
           href={tech.link}
-          className={`black-70 hover-blue link b no-underline `}
+          className={`black-70 hover-white link b no-underline `}
         >
         ::  {tech.name}
         </a>
       </li>
     )
 
+    let projectButtons = Projects.map((proj, index)=>
+      <li
+        className={`h3 w-80 list flex flex-column justify-center bb ph4 fr  br3 br--left mh0 mv2 f5 b shadow-3 black-60 ${current == index ? "bl bt bb b--white ": " pointer bl bt bb projectButton"}`}
+        key={index}
+        onClick={() => this.props.clickButton(index)}
+        style={
+          {
+          backgroundColor: `${current == index ? "#ebf8ff" : "#7989a3"}`,
+          borderColor: `${current == index ? "#7989a3" : "#ebf8ff"  }`
+          }
+        }
+      >
+        {proj.title.toUpperCase()}
+      </li>)
+
     return  (
-      <div className=" flex flex-row mv4 w-80 shadow-3 br3">
-        <div className="w-60 bg-dark-gray flex flex-row justify-center pv4 br2 br--left bt bl bb bw1 b--near-black  ">
+      <div className=" flex flex-row w-100 h-100 pv4 " id="concrete" >
+        <div className="w-20 ml">
+          <ul className="mh0 fr pt3">
+            {projectButtons}
+          </ul>
+        </div>
+
+        <div className="w-50 flex flex-row justify-center pv4 ba br3 br--left shadow-3 " style={{ background: "#7989a3", color: "#ebf8ff", borderColor: "#0d202f"  }}>
           <div className="w-100 ph4 h-100">
-            <h1 className="f2 mt0 mb2 pb2 white-90 w-100 bb b--white-50">{project.title}</h1>
-            <p className="f6 mt0 white-50 i"> : : Click the tabs below to see more snippets.</p>
+            <h1 className="white f2 mt0 mb2 pb2 w-100 bb programming-shadow" >{project.title}</h1>
+            <p className="f7 mt0 tracked" > : : Click the tabs below to see more snippets.</p>
               <ProgramHighlighter
                 className="javascript"
                 snippets={project.snippets}
@@ -114,16 +128,19 @@ class ProjectRow extends React.Component {
         </div>
 
         <div
-          style={{ background: "#EBFFFC" }}
-          className="w-40 flex flex-column items-start pv5 ph4 bt br bb bw1 b--near-black br2 br--right"
+
+          className="w-30 flex flex-column items-start  bw1 "
         >
-          <div className="">
-            <img className="db shadow-1 w-80 ba b--black-80" src={project.src}/>
-          </div>
-          <h1 className="f4 mv0 ">{project.title} ({project.date})</h1>
-          <ul className="ml0 mt2 mb3 list pa0">{links}</ul>
-          <div className="bl b--black-50 pl3">
-            {paras}
+          <div className="w-60 h-100 pv4 ph4 flex flex-column items-start br3 br--right bb bt br shadow-3" style={{ background: "#7989a3", borderColor: "#0d202f" }}>
+            <div className="">
+              <img className="db shadow-1 center w-100 ba b--black-80 mv0" src={project.src}/>
+              <p className="f7 b tracked black-60 mt2">Click to enlarge.</p>
+            </div>
+            <h1 className="f5 mv0 white ">{project.title} ({project.date})</h1>
+            <ul className="ml0 mt1 mb2 list pa0">{links}</ul>
+            <div className="pa3 br2 overflow-y-scroll ba shadow-3" style={{ background: "#ebf8ff", borderColor: "#0d202f"}}>
+              {paras}
+            </div>
           </div>
         </div>
       </div>

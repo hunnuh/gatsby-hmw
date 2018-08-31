@@ -13,15 +13,13 @@ body {
 }
 
 #ocean {
-    background-image:url("../assets/oceanbg.jpg");
+    background-image:url("../assets/ocean_bg_trans.png");
     background-size:cover;
-    background-attachment:fixed;
+
 }
 
-#web {
-    background-image:url("../assets/webbg.png");
-    background-size:cover;
-    background-attachment:fixed;
+#concrete {
+    background-image:url("../assets/concrete.png");
 }
 
 #data {
@@ -36,6 +34,11 @@ body {
 .inset-shadow {
   text-shadow: 1.5px 1.5px 2px rgba(101, 113, 124, 1);
 }
+
+.programming-shadow{
+  text-shadow: 2px 2px 0px #0d202f;
+}
+
 .lg {
   color: #0d9969;
 }
@@ -49,21 +52,33 @@ body {
   background-image:url("../assets/hunterslide2.png")
 }
 
-.oceanpattern{
-  background-image:url("../assets/oceanpattern.png")
-}
-
-.paperpattern{
-  background-image:url("../assets/paperpattern.png")
-}
 
 .palmpattern{
   background-image:url("../assets/palm-leaf.png")
 }
 
+.marquee_button:hover{
+  opacity:1;
+}
+
+.projectButton:hover{
+  background-color: #ebf8ff !important;
+
+}
+
 .defaultcursor{
   cursor:default;
 }
+
+.portfolioGradient{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0d202f+0,525c6d+7,7989a3+28,7989a3+28,7989a3+69,525c6d+94,0d202f+100 */
+  background: #0d202f; /* Old browsers */
+  background: -moz-linear-gradient(left, #0d202f 0%, #525c6d 7%, #7989a3 28%, #7989a3 28%, #7989a3 69%, #525c6d 94%, #0d202f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #0d202f 0%,#525c6d 7%,#7989a3 28%,#7989a3 28%,#7989a3 69%,#525c6d 94%,#0d202f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #0d202f 0%,#525c6d 7%,#7989a3 28%,#7989a3 28%,#7989a3 69%,#525c6d 94%,#0d202f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d202f', endColorstr='#0d202f',GradientType=1 ); /* IE6-9 */
+}
+
 
 .redbackground{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c0404+0,9d1c1f+100 */

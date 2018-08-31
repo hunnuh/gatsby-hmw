@@ -5,12 +5,12 @@ import FontAwesome from "react-fontawesome";
 
 const NavLink = ({link, children}) => (
 
-  <Link to={link} style={{color:"#DFF4E9"}} className="flex flex-column justify-center fw8 no-underline ph3 hover-bg-red">{children}</Link>
+  <Link to={link}  className="flex flex-column justify-center fw8 no-underline ph3 hover-bg-red white">{children}</Link>
 );
 
 const Nav = ({}) => (
-  <div style={{background: "#9d1c1f"}} className=" flex flex-row justify-center ">
-    <div className="flex flex-row justify-between items-center w-100  mw8">
+  <div style={{background: "#9d1c1f"}} className=" flex flex-row justify-center bb bw1 b--black-50">
+    <div className="flex flex-row justify-between items-center w-100 mw8 ">
       <div className="flex flex-row items-center ">
         <Link to={"/"}>
           <div className="h3 mr3">

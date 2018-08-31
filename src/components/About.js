@@ -41,9 +41,9 @@ const Cards = () => (
 
           icon={Fish}
           sub={"CREATIVITY & ARTISTRY"}
-          head={"Proven Digital Design Talent"}
+          head={"Proven Design Talent"}
           blurb={
-            "My design work has won several contests and awards. Want to see why? Check out my portfolio."
+            "My digital design work has won several contests and awards. Check out my portfolio, let me know what you think."
           }
           link="Explore my design portfolio &nbsp;&nbsp; ⇾"
         />
@@ -60,19 +60,19 @@ const Cards = () => (
         <Card
           icon={Monkey}
           sub={"INFO SYSTEMS & DATA SCIENCE"}
-          head={"Expertise with Data & Computers"}
+          head={"Expertise with Data"}
           blurb={
-            "I have a degree in geo-information systems. Databases and statistical processes get me excited."
+            "From algorithms to databases; I have a passion for data and computers. For me, working with computers is a constant source of gratitude and amazement."
           }
-          link="See more about my experience &nbsp;&nbsp; ⇾"
+          link="Read my thoughts and qualifications &nbsp;&nbsp; ⇾"
         />
         <Card
           icon={Elephant}
           sub={"QUALITY & COMMRADERE"}
-          head={"Indomidable Attitude, Ambition"}
+          head={"Indomidable Ambition"}
           rev={true}
           blurb={
-            "My motto is to strive for excellence every single day. I want to make a valuable addition to your squad, so let's get to know each other!"
+            "During my lifetime, I am striving to become a world-class professional. I want to be part of a hard-working team with smart people who share my passion."
           }
           link="See more about Hunter &nbsp;&nbsp; ⇾"
         />

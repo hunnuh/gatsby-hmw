@@ -68,56 +68,53 @@ class PortfolioPage extends React.Component {
     return (
       <div>
         <Nav/>
-        <div id="back" className="relative w-100 ">
-          <div  className="oceanpattern relative flex flex-column ">
-            <Header bg="ocean">
-              <img src={Briefcase} className="h3 mb0 mt6 " />
-              <h1 style={{color: "#EBFFFC"}} className="f3 tracked-mega mb6">PORTFOLIO</h1>
+        <div className="relative w-100 portfolioGradient">
+          <div className=" relative flex flex-column ">
 
-            </Header>
             <div
-              style={{backgroundColor: "#0d202f"}}
-              className="w-100 white flex justify-center"
+              style={{backgroundColor: "#0d202f", borderColor: "#0d202f"}}
+              className="w-100 white flex justify-center bb bw1"
+              id="ocean"
               >
               <div
-                style={{margin:"5rem 0rem 5rem 0rem"}}
-                className="center ba b--white mv5 relative br2 shadow-3"
+                style={{margin:"5rem 0rem 5rem 0rem", backgroundColor: "#0d202f"}}
+                className="center ba b--white mv5 relative br2 shadow-3 pa1"
               >
                 <h5
-                  style={{top:"-.5rem", left:".6rem", backgroundColor: "#0d202f"}}
-                  className="f7 tracked absolute top-0 ph2"
+                  style={{top:"-.8rem", left:".8rem", backgroundColor: "#0d202f"}}
+                  className="f7 tracked absolute top-0 ph2 pv1 br2 ba b--white"
                 >
                   HUNTER SAYS:
                 </h5>
-                <p className="ma3 tracked tc lh-copy b"> "Scroll down forever to see <br/> my best design work."</p>
+                <p className="ma3 tracked tc lh-copy b" > "Scroll down forever to see <br/> my best design work. <br/> Click to enlarge."</p>
               </div>
             </div>
-            <div className="w-70 self-center tc pt3">
-              <HH >POSTERS</HH>
+            <div className="w-70 self-center tc pt0">
+              <HH>POSTERS</HH>
               <Masonry
                 openModal={this.handleOpenModal}
                 content={this.trimData("flyers")}
                 cols={4}
               />
-              <HH>WEBDEV</HH>
+              <HH>WEB DESIGN</HH>
               <Masonry
                 openModal={this.handleOpenModal}
                 content={this.trimData("websites").reverse()}
                 cols={3}
               />
-              <HH>PRINTS</HH>
+              <HH>PRINT MEDIA</HH>
               <Masonry
                 openModal={this.handleOpenModal}
                 content={this.trimData("collateral").reverse()}
                 cols={4}
               />
-              <HH>BRANDS</HH>
+              <HH>LOGOS & BRANDS</HH>
               <Masonry
                 openModal={this.handleOpenModal}
                 content={this.trimData("identity")}
                 cols={4}
               />
-              <HH>PHOTOS</HH>
+              <HH>PHOTOS & RASTER</HH>
               <Masonry
                 openModal={this.handleOpenModal}
                 content={this.trimData("photos")}
@@ -156,10 +153,10 @@ class PortfolioPage extends React.Component {
           {/*large*/}
           <ScrollToTop showUnder={960}>
             <div
-              style={{backgroundColor: "#9d1c1f"} }
-              className=" flex flex-row justify-center items-center white w4 pv3 br3 shadow-3 b hover-bg-red"
+              style={{backgroundColor: "#0d202f"} }
+              className = "flex flex-row justify-center items-center white w4 pv3 br3 shadow-3 b hover-bg-red ba"
             >
-                Back to top
+                ▲ TO TOP
             </div>
           </ScrollToTop>
           <ReactModal
@@ -182,10 +179,12 @@ class PortfolioPage extends React.Component {
 }
 
 const HH = ({children}) => (
-  <div className="paperpattern shadow-2  center pa2 mt5 mb0">
+  <div className="tl mt5 mb0 bb bw1 b--white-90" style={{boxShadow: "0px 2px 0px 0px #0d202f"}}>
     <h1
-      className=" f-6 inset-shadow ml5 mt0 mb1"
-      style={{color: "#0d202f",  letterSpacing:"4.5rem"}}
+      className=" f1 mt0 mb1 white-90"
+      style={{letterSpacing:"1rem",
+
+      textShadow: "2px 2.5px 0px #0d202f"}}
     >
       {children}
     </h1>
