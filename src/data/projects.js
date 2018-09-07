@@ -11,7 +11,6 @@ const Projects =[ //coding
           {name:"NodeJS", link:"https://nodejs.org/en/", color:"terminal-green"},
           {name:"ReactJS", link:"https://reactjs.org/", color:"blue"},
           {name:"Electron", link:"https://electronjs.org/", color:"lightest-blue"},
-          {name:"Tachyons", link:"http://tachyons.io/", color:"white"},
         ]
       },
       date: "2017",

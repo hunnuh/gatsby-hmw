@@ -67,13 +67,13 @@ class PortfolioPage extends React.Component {
     let flyers = edges.filter(e => e.node.relativeDirectory == "flyers");
     return (
       <div>
-        <Nav/>
+        <Nav page="portfolio"/>
         <div className="relative w-100 portfolioGradient">
           <div className=" relative flex flex-column ">
 
             <div
               style={{backgroundColor: "#0d202f", borderColor: "#0d202f"}}
-              className="w-100 white flex justify-center bb bw1"
+              className="w-100 white flex justify-center bb bw1 shadow-3"
               id="ocean"
               >
               <div
@@ -141,7 +141,7 @@ class PortfolioPage extends React.Component {
                   >
                     HUNTER SAYS:
                   </h5>
-                  <p className="ma3 tracked tc b lh-copy"> "Okay, maybe not <em>forever.</em> ;) <br/>  Thanks for looking. Click here to see <br/> my programming projects."</p>
+                  <p className="ma3 tracked tc b lh-copy"> "Okay, maybe not <em>forever.</em> ;) <br/>  Thanks for looking. <Link to={"/programming/"} className="white"> Click here</Link> to see <br/> my programming projects."</p>
                 </div>
               </div>
             </div>

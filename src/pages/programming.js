@@ -11,11 +11,31 @@ import ProgramHighlighter from "../components/ProgramHighlighter";
 import Projects from "../data/projects";
 import { withPrefix } from 'gatsby-link'
 
+
+const modalStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    padding : '0px 0px 0px 0px',
+    border : "0px",
+    background : "none",
+    overflowY : "hidden",
+      },
+  overlay : {
+    background : "rgba(22, 28, 33, 0.9)"
+  }
+};
+
 class ProgrammingPage extends React.Component {
   constructor () {
     super();
     this.state = {
-      showModal: true,
+      modalPath: "",
+      showModal: false,
       projectNumber:0
     };
 
@@ -23,8 +43,8 @@ class ProgrammingPage extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal () {
-    this.setState({ showModal: true });
+  handleOpenModal (path) {
+    this.setState({ modalPath: path, showModal: true });
   }
 
   handleCloseModal () {
@@ -46,11 +66,11 @@ class ProgrammingPage extends React.Component {
     let {projectNumber} = this.state
 
     let Rows = Projects.map((proj, index)=>
-      <ProjectRow key={index} project={proj} id={`proj` + index} current={this.state.projectNumber} clickButton={(number) => this.handleChangeProject(number)}/>)
+      <ProjectRow key={index} project={proj} id={`proj` + index} current={this.state.projectNumber} open={(path) => this.handleOpenModal(path)} clickButton={(number) => this.handleChangeProject(number)}/>)
 
     return (
       <div style={{minHeight:"100vh"}} className="relative">
-        <Nav/>
+        <Nav page={"programming"}/>
 
         <div  className="relative w-100 h-100" style={{height:"calc(100vh - 72px)"}}>
           <div className="relative flex flex-column items-center h-100">
@@ -60,8 +80,15 @@ class ProgrammingPage extends React.Component {
           <ReactModal
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"
+            appElement={document && document.getElementById('app')}
+            onRequestClose={this.handleCloseModal}
+            shouldCloseOnOverlayClick={true}
+            style={modalStyles}
           >
-            <button onClick={this.handleCloseModal}>Close Modal</button>
+            <img
+              className="h-75 mv0 shadow-3 br3" src={this.state.modalPath}
+              onClick={this.handleCloseModal}
+            />
           </ReactModal>
         </div>
       </div>
@@ -131,13 +158,15 @@ class ProjectRow extends React.Component {
 
           className="w-30 flex flex-column items-start  bw1 "
         >
-          <div className="w-60 h-100 pv4 ph4 flex flex-column items-start br3 br--right bb bt br shadow-3" style={{ background: "#7989a3", borderColor: "#0d202f" }}>
-            <div className="">
-              <img className="db shadow-1 center w-100 ba b--black-80 mv0" src={project.src}/>
-              <p className="f7 b tracked black-60 mt2">Click to enlarge.</p>
+          <div className="w-60 h-100 pv4 ph4 flex flex-column items-start br3 br--right bb bt br shadow-3" style={{ background: "#8a9cb7", borderColor: "#0d202f" }}>
+            <div className="mb0">
+              <h1 className="f5 mt0 mb0 white bb pb2 programming-shadow">{project.title} ({project.date})</h1>
+              <ul className="mt1 mb2 mh0 list pa0">{links}</ul>
+              <img className="db shadow-1 center w-100 ba b--black-80 mv0 pointer" onClick={() => this.props.open(project.src)} src={project.src}/>
+              <p className="f7 b tracked-mega black-30 mv2 ">Click to enlarge.</p>
             </div>
-            <h1 className="f5 mv0 white ">{project.title} ({project.date})</h1>
-            <ul className="ml0 mt1 mb2 list pa0">{links}</ul>
+
+
             <div className="pa3 br2 overflow-y-scroll ba shadow-3" style={{ background: "#ebf8ff", borderColor: "#0d202f"}}>
               {paras}
             </div>

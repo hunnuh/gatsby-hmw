@@ -23,8 +23,29 @@ body {
 }
 
 #data {
-    background-image:url("../assets/databg.png");
+    background-color:red;
     background-size:cover;
+}
+
+.mainbutton{
+  background-color: #9d1c1f;
+}
+
+.mainbutton:hover{
+  background-color:  #ff4136 !important;
+}
+
+.subbutton:hover{
+  background-color: #D89756;
+  color:black !important;
+}
+
+.designHover{
+  opacity: 0;
+}
+
+.designHover:hover{
+  opacity: 100;
 }
 
 .title-shadow {
@@ -55,6 +76,10 @@ body {
 
 .palmpattern{
   background-image:url("../assets/palm-leaf.png")
+}
+
+.binding_dark{
+  background-image:url("../assets/binding_dark.png")
 }
 
 .marquee_button:hover{

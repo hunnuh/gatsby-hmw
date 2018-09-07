@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withPrefix } from 'gatsby-link'
+import Link, { withPrefix } from 'gatsby-link'
 
 import Arrow from "../assets/arrow.svg";
 
@@ -7,7 +7,7 @@ class FeaturedDesign extends Component {
   constructor () {
     super();
     this.state = {
-      number: 5
+      num: 5
     };
     this.handleChangePic = this.handleChangePic.bind(this);
     this.picForward = this.picForward.bind(this);
@@ -15,22 +15,34 @@ class FeaturedDesign extends Component {
   }
 
   handleChangePic (num) {
-    this.setState({ number: num });
+    this.setState({ num: num });
   }
 
   picForward(){
-    let num = this.state.number;
-    this.setState({number: num++})
+    let n = this.state.num
+    let len = this.props.content.length
+    if(n === len - 1){
+      this.setState({num: 0})
+    }
+    else{
+      this.setState({num: n+1})
+    }
   }
 
   picBackward(){
-    let num = this.state.number;
-    this.setState({number: num--})
+    let n = this.state.num
+    let len = this.props.content.length
+    if(n === 0){
+      this.setState({num: len - 1})
+    }
+    else{
+      this.setState({num: n-1})
+    }
   }
 
   render(props) {
     let content = this.props.content;
-    let num = this.state.number;
+    let {num} = this.state;
     let thumbs = content.map((image, index) =>
       <Thumb back={content[index].relativePath} key={index} num={index} picChange={this.handleChangePic}/>
     )
@@ -43,9 +55,13 @@ class FeaturedDesign extends Component {
             style={{maxHeight:"32rem"}}
             className=" w-60 bg-top bg-black-30 br4 pa0 relative flex flex-column justify-center"
             >
-              <div className="w-100 h-100 center absolute flex flex-row justify-between items-center z-4">
-                <div className="flex flex-column justify-center h4 w3 bg-black-40"></div>
-                <div className="flex flex-column justify-center h4 w3 bg-black-40"></div>
+              <div className="dn-ns flex w-100 h-100 center absolute flex-row justify-between items-center z-4">
+                <div onClick={this.picBackward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--right pointer">◀</div>
+                <div onClick={this.picForward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--left pointer">▶</div>
+              </div>
+              <div className="designHover dn flex-ns w-100 h-100 center absolute flex-row justify-between items-center z-4">
+                <div onClick={this.picBackward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--right pointer">◀</div>
+                <div onClick={this.picForward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--left pointer">▶</div>
               </div>
               <div className="db relative center pa3">
 
@@ -65,9 +81,9 @@ class FeaturedDesign extends Component {
                 {thumbs}
               </div>
               <div className="w-100 flex flex-column ">
-                <a className="white-70 f4 tracked mv1"> See more of my design work. ⇾</a>
-                <a className="white-40 f6 tracked mv1"> Explore my programming projects. ⇾</a>
-                <a className="white-40 f6 tracked mv1"> Learn more about Hunter. ⇾</a>
+                <Link to={"/portfolio/"} className="white-70 f4 tracked mv1 underline-hover no-underline"> See more of my design work. ⇾</Link>
+                <Link to={"/programming/"} className="white-40 f6 tracked mv1 underline-hover no-underline"> Explore my programming projects. ⇾</Link>
+                <Link to={"/about/"} className="white-40 f6 tracked mv1 underline-hover no-underline"> Learn more about Hunter. ⇾</Link>
               </div>
             </div>
           </div>
@@ -87,7 +103,7 @@ class Thumb extends Component {
     let {pos, back, num} = this.props
     return (
       <div
-        className={`w-100 h2 shadow-3 b--white-90 mr2 mb3 br1 grow ba bw1 overflow-hidden`}
+        className={`w-100 h2 shadow-3 b--white-90 mr2 mb3 br1 grow ba bw1 overflow-hidden pointer`}
         onClick={() => this.click(num)}>
         <img className="o-40 marquee_button absolute top--1" src={`portfolio/${back}`}/>
       </div>

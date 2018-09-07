@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withPrefix } from 'gatsby-link'
+import Link, { withPrefix } from 'gatsby-link'
 
 import Leafbreak from "../assets/leafbreak_white.svg";
 import Arrow from "../assets/arrow.svg";
@@ -68,8 +68,8 @@ class FeaturedProgramming extends Component {
         <img src={Leafbreak} className="h2 mv0 center"/>
         <h1 className=" fw3 f4 tracked mt3"> Use my interactive code browser to see the code...</h1>
         <div  className=" mt2 center dib mb4">
-          <a style={{color: "#9d1c1f"}}
-            className="bg-white tracked br2 fw8 f6 pv2 ph3 shadow-3 grow">EXPLORE CODE</a>
+          <Link to={"/programming/"} style={{color: "#9d1c1f"}}
+            className="bg-white tracked br2 fw8 f6 pv2 ph3 no-underline underline-hover shadow-3 grow">EXPLORE CODE</Link>
         </div>
       </div>
     );

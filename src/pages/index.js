@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Link from "gatsby-link";
+
 import TypeOut from "react-typeout";
 import Animes from "../utils/animes.js";
+import Link from "gatsby-link";
 
 import { siteMetadata } from "../../gatsby-config";
-
 
 import About from "../components/About";
 import FeaturedDesign from "../components/FeaturedDesign";
@@ -27,6 +27,8 @@ import Quotemark from "../assets/quotemark.svg";
 import Programming from "../assets/programming.svg";
 import Analysis from "../assets/analysis.svg";
 import Leaf from "../assets/leaf.svg";
+import Headshot from "../assets/headshot.jpg";
+import HeadshotSq from "../assets/headshot_square.jpg";
 
 class IndexPage extends Component {
   componentDidMount(){
@@ -43,14 +45,14 @@ class IndexPage extends Component {
       .filter(e => e.relativeDirectory === "featuredprogs" );
 console.log(featuredProgramming)
     return (
-      <div className="ebug">
+      <div className="" >
         <Nav/>
         <div className="relative w-100" style={{backgroundColor:"#19382B"}}>
           <div className="mv0 flex flex-column  ">
             <Intro />
           </div>
           <div style={{ background: "#19382B" }} className="relative flex flex-column  overflow-y-hidden">
-            <img src={FishBG} style={{height:"50em", top:"11em"}} className="absolute z-0  right-0 " />
+            <img src={FishBG} style={{height:"50em", top:"11em"}} className="absolute z-0  right-0 " id="content"/>
             <img src={SpiderBG} style={{height:"52em", top:"44em"}} className="absolute z-0  left-0 " />
             <img src={MonkeyBG} style={{height:"50em", top:"84em"}} className="absolute z-0  right-0 " />
             <img src={ElephantBG} style={{height:"36em", top:"130em"}} className="absolute z-0  left-0 " />
@@ -108,7 +110,7 @@ console.log(featuredProgramming)
                   <div className="flex flex-column justify-center ">
                     <a
                       style={{backgroundColor: "#9d1c1f"}}
-                      className="white tracked br1 pointer fw8 f6 pv2 ph3 mw5 dib mt3"
+                      className="white tracked br1 pointer fw8 f6 pv2 ph3 mw5 dib mt3 underline-hover"
                     >
                       RÉSUMÉ (PDF)
                     </a>
@@ -132,46 +134,34 @@ console.log(featuredProgramming)
                 <FeaturedProgramming content={featuredProgramming}/>
                 <div className="mt7 mb6 pv6 w-100 tc">
                   <img src={Quotemark} className="h3 w3 self-center"/>
-                  <p className="f2 mw7 white center">Hunter has huge potential and is a great teammate. I was lucky to hire him.</p>
-                  <span className="f7 white-50 center tracked">Gustavo Almadovar, Channel 4</span>
+                  <p className="f2 mw7 white center lh-copy">Hunter is creative, sharp, and a hard worker. <br/> He's a valuable teammate.</p>
+                  <span className="f7 white-50 center tracked">Dean Kolkey <br/> Founder @ NewsMaker </span>
                 </div>
-                <div className="pv7 w-100">
-                  <div className="ph5 pv4 bg-black shadow-2 white br4 bw2 ba b--white-40">
-                    <div
-                      style={{borderStyle:"dotted none none none"}}
-                      className="w-90 center bb bw2 b--white-40 "
-                    />
-                    <div className="flex flex-row mv4">
-                      <div className="w-50 tc pv5 mb0">
-                        <img src={Analysis} className="h5 mt2 mr4 mb0"/>
-                      </div>
-                      <div className="w-50 pr6 pl4 pv4 flex flex-column justify-center bg-white-10 ba b--white-40">
-                        <h4 className="f2 mb0 bb pv2 mb2" style={{borderColor: "#9d1c1f"}}>Me +  Data = {"<"}3</h4>
-                        <p className="f5 lh-copy white-80 mb1 measure tracked">In addition to my skills in design, programming, and web dev, I have a degree in Geo-Information Systems (GIS).</p>
-                        <p className="f5 lh-copy white-80 mv2 measure tracked"> Data Science is a passion of mine. I wrote an article about my experience and achievements in this area so you can learn a bit more about my skills. </p>
-                        <a style={{color: "#9d1c1f"}} className="f5 pointer mt3 underline-hover tracked">Read the article ⇾ </a>
+                <div className="pv7 w-100 flex flex-row justify-center">
+                  <div className="ph5 pv4 mw7 ba b--black shadow-2 white br3 binding_dark tc">
+                    <div className="flex flex-row justify-center mv4">
+                      <div className="pa4 mw6 flex flex-column justify-center bg-white-10 ba b--white-40">
+                        <h4 className="f2 mb0 bb pv2 mb2 shadow-4 br2 ba b--black-90" style={{ backgroundColor: "#9d1c1f"}}>Hunter + Data</h4>
+                        <p className="f5 b lh-copy white-90 mv3  tracked " >Working with computers is a passion of mine.</p>
+                        <p className="f6 lh-copy white-90 mt0 measure tracked ">To share some information about my background, I wrote a short article discussing my experience and achievements in the world of data. </p>
+                        <Link to={"/data/"} style={{backgroundColor: "#9d1c1f"}} className="f6 mw4 pv2 ph3 self-center shadow-4 ba b--black-90 br2 white b pointer mt2 underline-hover no-underline tracked">READ IT</Link>
                       </div>
                     </div>
-                    <div
-                      style={{borderStyle:"dotted none none none"}}
-                      className="w-90 center bb bw2 b--white-40 "
-                    />
                   </div>
                 </div>
               </div>
             </div>
             <div className=" flex flex-column justify-center w-100 self-center z-4 pv7 tc palmpattern">
               <div className=" mw6 ph5 pv3 center">
-                <div className="bg-white br3 ba b--black-40 pa4 flex flex-column justify-center shadow-3">
-                <div style={{borderColor: "#9d1c1f"}} className=" ba bw4 h5 w5 self-center z-4 br-pill shadow-3 bg-gray">
-
+                <div style={{backgroundColor: "#9d1c1f"}} className="bw1 br3 ba b--black-60 pa4 flex flex-column justify-center shadow-3">
+                <div className="w5 h5 mb0 pa4">
+                  <img src={HeadshotSq} className="pa1 ba bw1 self-center z-4 br-pill shadow-3 bg-white b--near-black"/>
                 </div>
-                <h1>Hunter M. Wells</h1>
-                <p className="tracked f7 black-50">DESIGNER + DEVELOPER</p>
-                <p className="tracked f7 mb2 black-50" >hunter.m.wells@gmail.com</p>
-                <p className="tracked f7 black-50">@hunnuh</p>
-                <div  className=" mt2 center dib">
-                  <a style={{backgroundColor: "#9d1c1f"}} className="white tracked br2 fw8 f6 pv2 ph3 shadow-3">SEE MORE</a>
+                <h1 className="white mv0">Hunter M. Wells</h1>
+                <p className="tracked f6 b white-90 mt2 mb3">DESIGNER | DEVELOPER</p>
+                <p className="tracked f7 mb2 white-80 mb3" >hunter.m.wells@gmail.com</p>
+                <div  className=" mt3 center dib">
+                  <Link to={"/about/"} style={{color: "#9d1c1f"}} className="bg-white tracked br2 fw8 f6 pv2 ph3 shadow-3 no-underline underline-hover">SEE MORE</Link>
                 </div>
               </div>
             </div>
