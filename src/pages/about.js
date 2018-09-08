@@ -41,7 +41,6 @@ class AboutPage extends Component {
 
           <div
             style={{
-
               display: "flex",
               justifyContent: "center",
               flexFlow: "row-reverse wrap",

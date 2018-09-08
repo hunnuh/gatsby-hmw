@@ -19,11 +19,13 @@ class Hunterslide extends Component {
 
         <img id="meditating-hunter" className="absolute z-2 top-0" src={HMWfloat}/>
 
-        <img className="absolute z-0 top-0 " src={Carpet}/>
+        <img className=" z-0  " src={Carpet}/>
 
-        <img className="absolute top-0 reacticon h3 w3  dn" src={ReactLogo}/>
-        <img className="absolute top-0 jsicon h3 w3  dn" src={JSLogo}/>
-        <img className="absolute top-0 adobeicon h3 w3 dn " src={AdobeLogo}/>
+        <img className="absolute top-0 reacticon h3 w3   db" src={ReactLogo}/>
+        <img className="absolute top-0 jsicon h3 w3   db" src={JSLogo}/>
+        <img className="absolute top-0 adobeicon h3 w3   db" src={AdobeLogo}/>
+
+
 
       </div>
     );

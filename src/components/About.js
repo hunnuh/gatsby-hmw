@@ -6,22 +6,29 @@ import Spider from "../assets/spider_color.svg";
 import Elephant from "../assets/elephant.svg";
 import Leafbreak from "../assets/leafbreak.svg";
 
+import FishBG from "../assets/fish_bkg.svg";
+import SpiderBG from "../assets/spider_bkg.svg";
+import MonkeyBG from "../assets/monkey_bg.svg";
+import ElephantBG from "../assets/elephant_bg.svg";
+
+
+
 import Link from "gatsby-link";
 
 const About = () => (
   <div className="">
-    <div className="mt3 flex flex-column justify-center ">
+    <div className="mt3 ph4 ph2-l flex flex-column justify-center ">
       <h4
         style={{color: "#DFF4E9"}}
-        className="fw8 f2 tc lh-copy mt4 mb0"
+        className="fw8 f3 f2-ns tc lh-copy mt6 mt4-l mb0 "
 
         >
-          I make <strong style={{color: "#BC772A"}}>slick, beautiful interfaces</strong> for <strong style={{color: "#BC772A"}}>modern web applications.</strong>
+          I make <strong style={{color: "#BC772A"}}>slick, beautiful interfaces</strong> for <br className="dn-l"/><strong style={{color: "#BC772A"}}>modern web applications.</strong>
       </h4>
-      <div style={{color: "#DFF4E9"}} className="mt3 mb6 self-center flex flex-row justify-between ">
-        <Link to={"/portfolio/"} style={{borderColor: "#BC772A"}} className="pv2 ph3 mh2 ba br1 b--white-70 white-70 no-underline subbutton">Inspired Graphic Artist</Link>
-        <Link to={"/programming/"} style={{borderColor: "#BC772A"}} className="pv2 ph3 mh3 ba br1 b--white-70 white-70 no-underline subbutton">Savvy UI Programmer</Link>
-        <Link to={"/data/"} style={{borderColor: "#BC772A"}} className="pv2 ph3 mh2 ba br1 b--white-70 white-70 no-underline subbutton">Qualified and Educated</Link>
+      <div style={{color: "#DFF4E9"}} className=" flex mt2 mb6 ph4-ns self-center flex-row-ns flex-column justify-between tc tl-l w-auto-ns f5-ns f4 z-2 w-100">
+        <Link to={"/portfolio/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Inspired Graphic Artist</Link>
+        <Link to={"/programming/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Savvy UI Programmer</Link>
+        <Link to={"/data/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Qualified and Educated</Link>
       </div>
       <Cards />
     </div>
@@ -38,11 +45,11 @@ const Cards = () => (
     >
       <div
 
-        className="flex flex-column flex-wrap w-100 self-center  pv4"
+        className="flex flex-column flex-wrap w-100 self-center  pv4 ph4"
       >
         <Card
-
           icon={Fish}
+          name={"fish"}
           sub={"CREATIVITY & ARTISTRY"}
           head={"Proven Design Talent"}
           blurb={
@@ -50,6 +57,11 @@ const Cards = () => (
           }
           linkText="Explore my design portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}
+          bg={<div>
+                <img src={FishBG} style={{height:"50em", top:"-13em", right:"-10em"}} className="dn db-l dn-m absolute z-0 " id="content"/>
+                <img src={FishBG} style={{height:"45em", top:"-9em", right:"-6em"}} className="dn db-m dn-l absolute z-0 mw8" id="content"/>
+                <img src={FishBG} style={{height:"30em", top:"-9em", right:"-5em"}} className="dn-ns absolute z-0 mw8" id="content"/>
+              </div>}
         />
         <Card
           icon={Spider}
@@ -61,16 +73,26 @@ const Cards = () => (
           }
           linkText="Inspect my programming projects &nbsp;&nbsp; ⇾"
           linkLoc={"/programming/"}
+          bg={<div>
+                <img src={SpiderBG} style={{height:"52em", left:"-35em", top:"-20em", maxWidth:"100000px"}} className="dn db-l dn-m absolute z-0" />
+                <img src={SpiderBG} style={{height:"45em", left:"-29em", top:"-14em", maxWidth:"100000px"}} className="dn db-m dn-l absolute  z-0" />
+                <img src={SpiderBG} style={{height:"31em", left:"-5em", top:"-5em"}} className="dn-ns absolute mw8 z-0" />
+              </div>}
         />
         <Card
           icon={Monkey}
           sub={"INFO SYSTEMS & DATA SCIENCE"}
-          head={"Expertise with Data"}
+          head={"Computer Data Expertise"}
           blurb={
             "From algorithms to databases; I have a passion for computers. For me, working with modern technology is a constant source of gratitude and amazement."
           }
           linkText="Read my thoughts and qualifications &nbsp;&nbsp; ⇾"
           linkLoc={"/data/"}
+          bg={<div>
+                <img src={MonkeyBG} style={{height:"50em", top:"-14em", right:"-18em"}} className="dn db-l dn-m absolute z-0   " />
+                <img src={MonkeyBG} style={{height:"50em", top:"-10em", right:"-18em"}} className="dn db-m dn-l absolute z-0  mw8 " />
+                <img src={MonkeyBG} style={{height:"45em", top:"-8em", right:"-18em"}} className="dn-ns absolute z-0  mw8 " />
+              </div>}
         />
         <Card
           icon={Elephant}
@@ -82,27 +104,30 @@ const Cards = () => (
           }
           linkText="See more about Hunter &nbsp;&nbsp; ⇾"
           linkLoc={"/about/"}
+          bg={<div>
+
+              </div>}
         />
 
       </div>
   </div>
 );
 
-const Card = ({icon, children, blurb, linkLoc, linkText, head, sub, rev}) => (
-  <div style={{height:"18em"}} className=" flex flex-row justify-center items-center w-100  mt5 mb7 ph0">
+const Card = ({icon, children, blurb, linkLoc, linkText, head, sub, rev, bg}) => (
+  <div className={` relative flex flex-row-l ${rev ? "flex-column" : "flex-column-reverse"} justify-center items-center w-100 mt5-l mb7-l mb6 ph0`}>
 
-    {rev ? <img src={icon} className="w-50 mv0 mr4" /> : null}
-    <div className={`flex flex-column justify-start w-50 tl pb3 pt2 ${rev ? " pl5" : ""}`}  >
+    {rev ? <img src={icon} className="w-50-l w-80 mv0 mr4-l z-2" /> : null}
+    <div className={`z-2 flex flex-column justify-center w-50-l  tl pb3 pt2 ${rev ? " pl5-l" : ""}`}  >
 
       <h5 style={{fontSize:".65em"}} className=" mt0 mb3 white-40 tracked-mega">{sub}</h5>
-      <div className="bl b--white-40 pl3 mt1">
+      <div className="bl b--white-40 pl3 mt1 z-2">
         <h4 style={{color: "#DFF4E9"}} className="f3 fw1 mb0 tracked">{head}</h4>
         <p style={{lineHeight:"1.75em", letterSpacing:".05em"}} className="f5 white-80 mt3 mb3 measure-narrow ">{blurb}</p>
         <Link to={linkLoc} style={{color: "#BC772A"}} className="f6 fw8 mt2 mb0 pointer no-underline underline-hover">{linkText}</Link>
       </div>
-
     </div>
-    {rev ? null : <img src={icon} className="w-50 mv0 ml4" />}
+    {rev ? null : <img src={icon} className="w-50-l w-80 mv0 ml4-l z-2" />}
+    {bg}
   </div>
 );
 
