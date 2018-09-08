@@ -25,7 +25,7 @@ const About = () => (
         >
           I make <strong style={{color: "#BC772A"}}>slick, beautiful interfaces</strong> for <br className="dn-l"/><strong style={{color: "#BC772A"}}>modern web applications.</strong>
       </h4>
-      <div style={{color: "#DFF4E9"}} className=" flex mt2 mb6 ph4-ns self-center flex-row-ns flex-column justify-between tc tl-l w-auto-ns f5-ns f4 z-2 w-100">
+      <div  style={{color: "#DFF4E9"}} className=" flex mt2 mb6 ph4-ns self-center flex-row-ns flex-column justify-between tc tl-l w-auto-ns f5-ns f4 z-2 w-100">
         <Link to={"/portfolio/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Inspired Graphic Artist</Link>
         <Link to={"/programming/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Savvy UI Programmer</Link>
         <Link to={"/data/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Qualified and Educated</Link>
@@ -39,6 +39,7 @@ const Line = () => (<div className="bb b--white-20 w-100 mv2"/>)
 
 const Cards = () => (
   <div
+    id={"content"}
     style={{borderColor: "#9d1c1f #999", borderWidth: ".25rem 1px", }}
     className="flex flex-column flex-wrap w-100 self-center br3"
 
@@ -58,9 +59,9 @@ const Cards = () => (
           linkText="Explore my design portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}
           bg={<div>
-                <img src={FishBG} style={{height:"50em", top:"-13em", right:"-10em"}} className="dn db-l dn-m absolute z-0 " id="content"/>
-                <img src={FishBG} style={{height:"45em", top:"-9em", right:"-6em"}} className="dn db-m dn-l absolute z-0 mw8" id="content"/>
-                <img src={FishBG} style={{height:"30em", top:"-9em", right:"-5em"}} className="dn-ns absolute z-0 mw8" id="content"/>
+                <img src={FishBG} style={{height:"50em", top:"-13em", right:"-10em"}} className="dn db-l dn-m absolute z-0 " />
+                <img src={FishBG} style={{height:"45em", top:"-9em", right:"-6em"}} className="dn db-m dn-l absolute z-0 mw8" />
+                <img src={FishBG} style={{height:"30em", top:"-9em", right:"-5em"}} className="dn-ns absolute z-0 mw8" />
               </div>}
         />
         <Card

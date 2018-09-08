@@ -561,7 +561,7 @@ export class Hand extends React.Component {
     },
     {
       src: "../programming/portfolio.gif",
-      title: "HMW Portfolio",
+      title: "Portfolio 2017",
       desc: {
         p:[
           " I made the image browser you are currently using to display my challengingly varied and volumetric portfolio. In addition to the actual contents of this portfolio, I wanted to show off my flourishing React abilities by creating an interactive browser.",
