@@ -63,7 +63,7 @@ class Nav extends Component{
   render(props){
     let {page} = this.props
     return(
-      <div style={{background: "#9d1c1f"}} className=" flex flex-row justify-center bb bw1 b--black-50 ph4-ns ph2 debg">
+      <div style={{background: "#9d1c1f"}} className=" flex flex-row justify-center bb bw1 b--black-50 ph4-ns ph2">
         <div className="flex flex-row justify-between items-center w-100 mw8 ">
           <div className="flex flex-row items-center ">
             <Link to={"/"}>
@@ -102,7 +102,9 @@ class Nav extends Component{
         >
           <div style={{background: "#9d1c1f"}} className="w-100 br4 pb3 ba bw1 b--black">
             <div className="w-100 flex flex-row justify-between pa3 bb b--white bg-black-20">
-              <img src={Logo} style={{maxHeight:"2rem"}} className=" pv0 mv0"/>
+              <Link className=" h-100 w4" to={"/"}>
+                <img src={Logo} style={{maxHeight:"2rem"}} className=" pv0 mv0"/>
+              </Link>
               <div className="flex">
                 <div className=" info-icon relative mr3 db-m dn">
                     <FontAwesome name="question" className="white mh2 fa-2x "/>

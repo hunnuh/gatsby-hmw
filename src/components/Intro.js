@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Hunterslide from "../components/Hunterslide"
 
+
 import Down from "../assets/downarrow.svg";
 import Link from "gatsby-link";
 
@@ -38,7 +39,12 @@ class Intro extends Component{
           </div>
 
         </div>
-        <div className="relative self-center" style={{width:"30rem"}} >
+        <div className="relative self-center db-ns dn" style={{width:"30rem"}} >
+
+          <Hunterslide/>
+        </div>
+
+        <div className="relative self-center db dn-ns" style={{width:"100%"}} >
 
           <Hunterslide/>
         </div>

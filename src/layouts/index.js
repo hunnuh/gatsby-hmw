@@ -15,7 +15,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet>
       <title>{site.title}</title>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
 
       <meta name="author" content={author.name} />
       <meta name="description" content={author.description} />

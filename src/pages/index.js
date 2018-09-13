@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import TypeOut from "react-typeout";
-import Animes from "../utils/animes.js";
+
 import Link from "gatsby-link";
 
 import { siteMetadata } from "../../gatsby-config";
@@ -34,9 +34,7 @@ import Resume from "../assets/Hunter_M_Wells_resume.pdf";
 
 class IndexPage extends Component {
 
-  componentDidMount(){
-    Animes();
-  }
+
 
 
 
@@ -56,7 +54,7 @@ class IndexPage extends Component {
 
 
     return (
-      <div className="bg-red absolute relative-l" >
+      <div className="bg-red absolute relative-l overflow-x-hidden" style={{maxWidth: "100vw"}} >
         <Nav/>
         <div className="relative w-100" style={{backgroundColor:"#19382B"}}>
           <div className="mv0 flex flex-column">
