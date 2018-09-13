@@ -55,6 +55,12 @@ class ProgrammingPage extends React.Component {
     this.setState({projectNumber:number})
   }
 
+  componentDidMount(){
+    if (typeof(window) !== 'undefined') {
+      ReactModal.setAppElement('body')
+    }
+  }
+
   trimData(portfolioSection){
     let trimmedData = this.props.data.allFile.edges.reduce((acc, curr) => acc.concat(curr.node), []).filter(e => e.relativeDirectory === portfolioSection );
 

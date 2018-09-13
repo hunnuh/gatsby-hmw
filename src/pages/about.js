@@ -15,6 +15,7 @@ import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 
 import Headshot from "../assets/headshot.jpg";
+import Resume from "../assets/Hunter_M_Wells_resume.pdf";
 
 class AboutPage extends Component {
   constructor () {
@@ -36,8 +37,8 @@ class AboutPage extends Component {
     return (
       <div >
         <Nav page="about"/>
-        <div id="back" style={{backgroundColor:"#19382B", height: "100vh",}} className="relative w-100">
-        <div  className="relative pt5" >
+        <div id="back" style={{backgroundColor:"#19382B", minHeight: "100vh",}} className="relative w-100">
+        <div  className="relative pt5-ns pt2" >
 
           <div
             style={{
@@ -49,32 +50,37 @@ class AboutPage extends Component {
             className="mw7 "
           >
 
-            <div className="flex flex-column justify-center w-100 " >
-              <div className="flex flex-row justify-center w-100 br3 pa4 shadow-3" style={{background: "#EBFFFC"}}>
-                <div className="w-30">
+            <div className="flex flex-column justify-center w-100 ph4-ns ph2 " >
+              <div className="flex flex-row-l flex-column justify-center w-100-l br3 pa4-ns pa3 shadow-3" style={{background: "#EBFFFC"}}>
+                <div className="w-30-ns w-80 self-center mb4 mb0-l">
                   <img src={Headshot} className="w5 pa3 bg-white shadow-3 mb0 ba b--black-20"/>
                 </div>
-                <div className="w-70 pv0 ph4 flex flex-column justify-center " >
+                <div className="w-70-l  pv0 ph4-l ph0 flex flex-column justify-center self-center " >
                   <span className="b f3 " style={{color: "#9d1c1f"}}>About Hunter:</span>
                   <p className="lh-copy f6 mb2 mt3 ">&emsp; Hunter has the vision to consider the big picture and the dexterity to articulate the fine details. His ability for composition is apparent in his <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>design portfolio</Link> as well as his <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>programming skills.</Link> </p>
                   <p className="lh-copy f6 mb2 ">&emsp; Hunter is all about problem solving, working together, and delivering excellence on a day to day basis. He's earned two bachelor's degrees, and he's accumulated years of experience with multimedia production and programming for the web. </p>
-                  <p className="lh-copy f6 mb2 ">&emsp; His tendency to lead by example is fueled by his consistency, positivity, and work ethic. Most of all, he's excited to find success on your team.</p>
+                  <p className="lh-copy f6 mb2 ">&emsp; His tendency to lead by example is fueled by his consistency, positivity, and work ethic. He's driven to succeed. Most of all, he's excited to find success on your team.</p>
 
                 </div>
               </div>
-              <div  className=" w-100 flex flex-row justify-around pb2 f7 b self-center mt3">
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="pv2 ph3 br4 shadow-3">
+              <div  className=" w-100-ns w-80 flex flex-row-ns flex-column justify-around pb2 f7 b self-center mt3">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="envelope" className="black-70 mh1"/>
                   <a style={{color: "#9d1c1f"}} className="no-underline underline-hover pointer " target={"_blank"} href={"mailto:hunter.m.wells@gmail.com"}>| hunter.m.wells@gmail.com</a>
                 </div>
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="pv2 ph3 br4 shadow-3">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
+                  <FontAwesome style={{color: "#9d1c1f"}} name="file" className="black-70 mh1"/>
+                  <a className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} target={"_blank"} href={Resume}>| Résumé</a>
+                </div>
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="phone" className="black-70 mh1"/>
                   <a style={{color: "#9d1c1f"}} className="no-underline underline-hover pointer " onClick={() => this.giveNumber()}>| {this.state.numberText}</a>
                 </div>
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="pv2 ph3 br4 shadow-3">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="linkedin" className="black-70 mh1"/>
                   <a className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} target={"_blank"} href={"https://www.linkedin.com/in/hmw"}>| linkedin.com/in/hmw</a>
                 </div>
+
               </div>
             </div>
           </div>

@@ -30,6 +30,8 @@ import Leaf from "../assets/leaf.svg";
 import Headshot from "../assets/headshot.jpg";
 import HeadshotSq from "../assets/headshot_square.jpg";
 
+import Resume from "../assets/Hunter_M_Wells_resume.pdf";
+
 class IndexPage extends Component {
 
   componentDidMount(){
@@ -49,7 +51,7 @@ class IndexPage extends Component {
       .reduce((acc, curr) => acc.concat(curr.node), [])
       .filter(e => e.relativeDirectory === "featuredprogs" );
 
-
+  let resume = this.props.data.allFile.edges
 
 
 
@@ -100,7 +102,7 @@ class IndexPage extends Component {
                   </div>
                 </div>
                 <div
-                  className="mt5 mb6 pv4  center w-80 flex flex-row-ns flex-column justify-between items-center bt bb b--black"
+                  className="mt5 mb6 pv4  ph4-l center w-80 flex flex-row-ns flex-column justify-between items-center bt bb b--black"
                 >
                   <div className="flex flex-row-ns flex-column items-center">
                     <img src={Leaf} style={{height: "4rem"}} className="ma0 mr3 dn db-ns "/>
@@ -109,19 +111,15 @@ class IndexPage extends Component {
 
 
                   </div>
-                  <div className="flex flex-column justify-center w-100 w-30-ns tc ">
+                  <div className="flex flex-column justify-center w-100 w-30-ns tc  ">
                     <a
+                      href={Resume}
+                      target={"_blank"}
                       style={{backgroundColor: "#9d1c1f"}}
-                      className="white tracked br1 pointer fw8 f6-ns f3 pv2 ph3 mw5-ns w-100 dib mt3 underline-hover"
+                      className="white tracked br2 pointer fw8 f6-ns f3 pv2 ph3 w-auto mw5-ns w-100 dib  no-underline underline-hover"
                     >
                       RÉSUMÉ (PDF)
                     </a>
-                    <p
-                      style={{color: "#9d1c1f"}}
-                      className="center f7-ns f4 tracked fw1 mt1-ns mt2 mb0 o-70"
-                    >
-                      (05/25/18)
-                    </p>
                   </div>
                 </div>
               </div>
@@ -136,7 +134,7 @@ class IndexPage extends Component {
                 <FeaturedProgramming content={featuredProgramming}/>
                 <div className="mt7 mb6 pv6 w-100 tc">
                   <img src={Quotemark} className="h3 w3 self-center"/>
-                  <p className="f2 mw7 white center lh-copy">Hunter is creative, sharp, and a hard worker. <br/> He's a valuable teammate.</p>
+                  <p className="f2 mw7 white center lh-copy">Hunter is creative, sharp, and a hard worker. <br className="db dn-m"/> He's a valuable teammate.</p>
                   <span className="f7 white-50 center tracked">Dean Kolkey <br/> Founder @ NewsMaker </span>
                 </div>
                 <div className="pv7 w-100 flex flex-row justify-center">

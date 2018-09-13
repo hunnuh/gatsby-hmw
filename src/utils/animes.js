@@ -72,7 +72,6 @@ document && document.addEventListener("visibilitychange", function() {
 });
 
 function startAnims(){
-  console.log("ASDFASDFASDF")
   reacticon.pause();
   jsicon.pause();
   adobeicon.pause();
@@ -88,8 +87,6 @@ function startAnims(){
 
 
 //-----------------------------------SMALL
-
-
 var loopAnimSmall = {
   translateX: [
     { value: 30, duration: 0, elasticity: 0,delay: 0, },
@@ -145,7 +142,6 @@ document && document.addEventListener("visibilitychange", function() {
 });
 
 function startAnimsSmall(){
-  console.log("ASDFASDFASDF")
   reacticonsmall.pause();
   jsiconsmall.pause();
   adobeiconsmall.pause();

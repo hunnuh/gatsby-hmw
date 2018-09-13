@@ -4,7 +4,7 @@ html {
 }
 body {
   margin: 0;
-  
+
 }
 
 #back {
@@ -26,6 +26,35 @@ body {
 #data {
     background-color:red;
     background-size:cover;
+}
+
+
+.info-icon:hover div {
+    display:block !important;
+}
+
+.info-icon:hover {
+    display:block !important;
+}
+
+.info-p a{
+  color:#9d1c1f
+}
+
+
+.info-box::before {
+  content: "a ";
+  right:10px;
+  margin-top:-1.2rem;
+  position:absolute;
+  width: 0;
+	height: 0;
+	border-left: 15px solid transparent;  /* left arrow slant */
+	border-right: 15px solid transparent; /* right arrow slant */
+	border-bottom: 15px solid #fff; /* bottom, add background color here */
+	font-size: 0;
+	line-height: 0;
+
 }
 
 .mainbutton{
@@ -77,6 +106,10 @@ body {
 
 .palmpattern{
   background-image:url("../assets/palm-leaf.png")
+}
+
+.greypattern{
+  background-image:url("../assets/grey.png")
 }
 
 .binding_dark{

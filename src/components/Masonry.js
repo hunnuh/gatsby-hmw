@@ -29,15 +29,21 @@ class Masonry extends Component {
 
   }
 
-  let organizedMasonry = columns.map((col, i) => <div key={i} className={`ph2 w-` + Math.floor(100/columns.length) + (i % 2 ? ` mt4` : ``)}>{col}</div>)
+  let organizedMasonryLarge = columns.map((col, i) => <div key={i} className={`ph2 w-` + Math.floor(100/columns.length) + (i % 2 ? ` mt4` : ``)}>{col}</div>)
+  let organizedMasonryMed = columns.map((col, i) => <div key={i} className={`ph2 w-100`}>{col}</div>)
 
 
     return (
       <div
-        className="relative self-center flex flex-row justify-between w-100 mv3"
+        className="relative w-100 mv3"
         style={{color:"#EBFFFC"}}
       >
-        {organizedMasonry}
+        <div className="dn flex-l relative self-center flex-row justify-between w-100">{organizedMasonryLarge}</div>
+        <div className="flex flex-column  dn-l db">
+          <div className="flex flex-column justify-center dn-l db">
+            {organizedMasonryMed}
+          </div>
+        </div>
 
       </div>
     );

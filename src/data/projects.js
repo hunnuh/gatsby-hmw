@@ -4,7 +4,7 @@ const Projects =[ //coding
       title: "NewsCaster CLEANUP",
       desc: {
         p:[" NewsCaster CLEANUP was an in-house CRUD application designed to dynamically parse the NewsCaster Database, detect the folder architecture of the NewsCaster, and look for issues with the clip library such as orphaned clips. It generates a report, and gives the user the ability to delete the problem files from the system.",
-        " I developed NewsCaster CLEANUP independently, using the powerful JavaScript technology called Electron. After this project, my JS skills were rather robust; I could set up and use Node (and its fs module), advanced ES6 techniques like async/await, and build React apps from scratch.",
+        " I developed NewsCaster CLEANUP as a desktop application using the JavaScript technology called Electron. After this project, my JS skills were rather robust; I could set up and use Node (and its fs module), advanced ES6 techniques like async/await, and build React apps from scratch.",
         " Because of NC CleanUp, the NewsMaker development team was able to increase the volume of their workflow as well as identify previously unnoticed bugs in the NewsCaster Media Manager."
         ],
         tech:[
@@ -150,7 +150,7 @@ function deselectclip(item){
       title: "Hunter's Poker",
       desc: {
         p:[
-          " Hunter's Poker is a React-based draw poker game. I made Hunter's Poker as a means to convince YOU (yes, you) that I have the webdev chops to produce a polished and engaging interactive interface.",
+          " Hunter's Poker is a React-based draw poker game with a polished and engaging interactive interface.",
           " Hunter's Poker implements the Fisher-Yates shuffle algorithm to generate a new virtual deck for each hand. Each player is dealt five cards and then they are given a chance to hold up to all five. Players are dealt remaining cards and then the hands are scored, compared, and a winner is delcared. Your opponent's AI is basic, but employs a winning long-term strategy. He always go for the flush!",
           " If you can play 20 hands of this game and have a win percentage over 50%, maybe you should try that luck in Las Vegas!",
         ],
@@ -564,9 +564,9 @@ export class Hand extends React.Component {
       title: "Portfolio 2017",
       desc: {
         p:[
-          " I made the image browser you are currently using to display my challengingly varied and volumetric portfolio. In addition to the actual contents of this portfolio, I wanted to show off my flourishing React abilities by creating an interactive browser.",
+          " In 2017, I made an image browser to display my challengingly varied and volumetric portfolio. In addition to the actual contents of this portfolio, I wanted to show off my React abilities by creating an interactive browser.",
           " A portion of the work on this browser was spent processing the numerous digital assets I've made during my career, selecting the best ones, and re-saving them in a compact web-friendly format.",
-          " Thank you for viewing my portfolio! I hope you are enjoying your visit as much as I have enjoyed my career thus far.",
+          " Creating this interface was a very educational exercise in programming views with React.",
         ],
         tech:[
           {name:"ReactJS", link:"https://reactjs.org/", color:"blue"},

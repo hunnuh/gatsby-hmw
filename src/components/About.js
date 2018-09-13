@@ -101,7 +101,7 @@ const Cards = () => (
           head={"Indomidable Ambition"}
           rev={true}
           blurb={
-            "During my lifetime, I am striving to become a world-class professional. I want to be part of a hard-working team with smart people who share my passion."
+            "During my lifetime, Im striving to become a world-class professional. I want to be part of a hard-working team with smart people who share my passion."
           }
           linkText="See more about Hunter &nbsp;&nbsp; ⇾"
           linkLoc={"/about/"}

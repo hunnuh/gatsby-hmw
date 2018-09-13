@@ -51,6 +51,12 @@ class PortfolioPage extends React.Component {
     this.setState({ showModal: false });
   }
 
+  componentDidMount(){
+    if (typeof(window) !== 'undefined') {
+      ReactModal.setAppElement('body')
+    }
+  }
+
   trimData(portfolioSection){
     let trimmedData = this.props.data.allFile.edges
       .reduce((acc, curr) => acc.concat(curr.node), [])
@@ -89,7 +95,7 @@ class PortfolioPage extends React.Component {
                 <p className="ma3 tracked tc lh-copy b" > "Scroll down forever to see <br/> my best design work. <br/> Click to enlarge."</p>
               </div>
             </div>
-            <div className="w-70 self-center tc pt0">
+            <div className="w-70-l w-90 self-center tc pt0">
               <HH>POSTERS</HH>
               <Masonry
                 openModal={this.handleOpenModal}
@@ -162,7 +168,6 @@ class PortfolioPage extends React.Component {
           <ReactModal
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"
-            appElement={document && document.getElementById('app')}
             onRequestClose={this.handleCloseModal}
             shouldCloseOnOverlayClick={true}
             style={modalStyles}
@@ -179,9 +184,9 @@ class PortfolioPage extends React.Component {
 }
 
 const HH = ({children}) => (
-  <div className="tl mt5 mb0 bb bw1 b--white-90" style={{boxShadow: "0px 2px 0px 0px #0d202f"}}>
+  <div className="tl-ns tc mt5-l mt3 mb0 bb bw1-ns b--white-90" >
     <h1
-      className=" f1 mt0 mb1 white-90"
+      className=" f1-ns f3 mt0 mb1 white-90"
       style={{letterSpacing:"1rem",
 
       textShadow: "2px 2.5px 0px #0d202f"}}
