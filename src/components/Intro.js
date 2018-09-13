@@ -20,7 +20,7 @@ class Intro extends Component{
       <div
         className="relative self-center flex flex-row-l flex-column-reverse
         justify-between-ns w-80 w-100-l mw8 ph4-ns pt5 mt4-ns pb2 overflow-x-visible"
-        style={{color:"#DFF4E9"}}>
+        style={{color:"#fff"}}>
         <div  className=" mt3 mt4-l tc tl-l ">
           <h7 className="f6 f5-l fw8  tracked " >LOOKING FOR A FRONTEND DEVELOPER? </h7>
           <h1 className="f1 f-5-l mv2 " >YOUR HUNT <br/> IS OVER.</h1>
@@ -32,7 +32,7 @@ class Intro extends Component{
           </Link>
           <div
             onClick={this.scrollToContent}
-            style={{borderColor: "#DFF4E9"}}
+            style={{borderColor: "#fff"}}
             className="ba br2 mt2 pv2 ph3 fw8 tracked dib ml3 pointer hover-bg-white-80">
             Convince me...
           </div>

@@ -155,7 +155,7 @@ class ProjectRow extends React.Component {
       </li>)
 
     return  (
-      <div className=" flex flex-row justify-center w-100 h-100 " id="concrete" >
+      <div style={{backgroundColor:"#e5d7bd"}} className=" flex flex-row justify-center w-100 h-100 " id="concrete" >
         <div className="w-100 pv3-l pt2 flex flex-row-l flex-column mw9 ">
           <div className="w-20-l w-100 ">
             <div className="mh0 fr-l mb0 pt3-l pt0 pl2-l pl0 flex flex-row flex-column-l overflow-x-auto overflow-y-hidden">
