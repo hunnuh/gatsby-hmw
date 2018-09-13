@@ -96,7 +96,6 @@ class Nav extends Component{
         <ReactModal
           isOpen={this.state.showModal}
           contentLabel="Navigation Menu"
-          appElement={document && document.getElementById('app')}
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={true}
           style={modalStyles}

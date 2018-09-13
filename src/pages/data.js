@@ -120,7 +120,6 @@ class DataPage extends React.Component {
           <ReactModal
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"
-            appElement={document && document.getElementById('app')}
             onRequestClose={this.handleCloseModal}
             shouldCloseOnOverlayClick={true}
             style={modalStyles}
