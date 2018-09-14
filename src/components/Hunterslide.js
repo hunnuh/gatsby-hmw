@@ -18,10 +18,12 @@ class Hunterslide extends Component {
 
 
   componentDidMount(){
-    anime.start();
+    let anime = Animes()
+    anime.start("slide");
   }
 
   componentWillUnmount(){
+
     anime.kill();
   }
   render() {
@@ -32,13 +34,13 @@ class Hunterslide extends Component {
 
         <img className=" z-0  " src={Carpet}/>
 
-        <img className="absolute top-0 floater reacticon h3 w3   db-ns dn" src={ReactLogo}/>
-        <img className="absolute top-0 floater jsicon h3 w3   db-ns dn" src={JSLogo}/>
-        <img className="absolute top-0 floater adobeicon h3 w3   db-ns dn" src={AdobeLogo}/>
+        <img className="absolute top-0 reacticon h3 w3   db-ns dn" src={ReactLogo}/>
+        <img className="absolute top-0 jsicon h3 w3   db-ns dn" src={JSLogo}/>
+        <img className="absolute top-0 adobeicon h3 w3   db-ns dn" src={AdobeLogo}/>
 
-        <img className="absolute top-0 floater reacticonsmall h3 w3 pa1  dn-ns db" src={ReactLogo}/>
-        <img className="absolute top-0 floater jsiconsmall h3 w3 pa1  dn-ns db" src={JSLogo}/>
-        <img className="absolute top-0 floater adobeiconsmall h3 w3 pa1  dn-ns db" src={AdobeLogo}/>
+        <img className="absolute top-0 reacticonsmall h3 w3 pa1  dn-ns db" src={ReactLogo}/>
+        <img className="absolute top-0 jsiconsmall h3 w3 pa1  dn-ns db" src={JSLogo}/>
+        <img className="absolute top-0 adobeiconsmall h3 w3 pa1  dn-ns db" src={AdobeLogo}/>
 
 
 

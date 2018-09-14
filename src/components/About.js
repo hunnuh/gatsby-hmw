@@ -20,12 +20,12 @@ const About = () => (
     <div className="mt3 ph4 ph2-l flex flex-column justify-center ">
       <h4
         style={{color: "#DFF4E9"}}
-        className="fw8 f3 f2-ns tc lh-copy mt6 mt4-l mb0 "
+        className="fw8 f3 f2-ns tc lh-copy mt5 mt6-ns mt4-l mb0 "
 
         >
-          I make <strong style={{color: "#BC772A"}}>slick, beautiful interfaces</strong> for <br className="dn-l"/><strong style={{color: "#BC772A"}}>modern web applications.</strong>
+          I make <strong style={{color: "#BC772A"}}>slick, beautiful interfaces</strong> for <br className="dn db-l"/><strong style={{color: "#BC772A"}}>modern web applications.</strong>
       </h4>
-      <div  style={{color: "#DFF4E9"}} className=" flex mt2 mb6 ph4-ns self-center flex-row-ns flex-column justify-between tc tl-l w-auto-ns f5-ns f4 z-2 w-100">
+      <div  style={{color: "#DFF4E9"}} className=" flex mt2 mb6 ph4-ns self-center flex-row-ns flex-column justify-between tc tl-l w-auto-ns f5-ns f6 z-2 w-100">
         <Link to={"/portfolio/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Inspired Graphic Artist</Link>
         <Link to={"/programming/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Savvy UI Programmer</Link>
         <Link to={"/data/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Qualified and Educated</Link>
@@ -46,7 +46,7 @@ const Cards = () => (
     >
       <div
 
-        className="flex flex-column flex-wrap w-100 self-center  pv4 ph4"
+        className="flex flex-column flex-wrap w-100 self-center  pv4 ph4-ns"
       >
         <Card
           icon={Fish}
@@ -115,19 +115,19 @@ const Cards = () => (
 );
 
 const Card = ({icon, children, blurb, linkLoc, linkText, head, sub, rev, bg}) => (
-  <div className={` relative flex flex-row-l ${rev ? "flex-column" : "flex-column-reverse"} justify-center items-center w-100 mt5-l mb7-l mb6 ph0`}>
+  <div className={`relative flex flex-row-l ${rev ? "flex-column" : "flex-column-reverse"} justify-center items-center w-100 mt5-l mb7-l mb6 ph0`}>
 
-    {rev ? <img src={icon} className="w-50-l w-80 mv0 mr4-l z-2" /> : null}
+    {rev ? <img src={icon} className="w-50-l w-80-m w-100 mv0 mr4-l z-2" /> : null}
     <div className={`z-2 flex flex-column justify-center w-50-l  tl pb3 pt2 ${rev ? " pl5-l" : ""}`}  >
 
       <h5 style={{fontSize:".65em"}} className=" mt0 mb3 white-40 tracked-mega">{sub}</h5>
-      <div className="bl b--white-40 pl3 mt1 z-2">
+      <div className="bl-ns b--white-40 pl3-ns mt1 z-2">
         <h4 style={{color: "#DFF4E9"}} className="f3 fw1 mb0 tracked">{head}</h4>
-        <p style={{lineHeight:"1.75em", letterSpacing:".05em"}} className="f5 white-80 mt3 mb3 measure-narrow ">{blurb}</p>
-        <Link to={linkLoc} style={{color: "#BC772A"}} className="f6 fw8 mt2 mb0 pointer no-underline underline-hover">{linkText}</Link>
+        <p style={{lineHeight:"1.75em", letterSpacing:".05em"}} className="f5-ns f6 white-80 mt3 mb3 measure-narrow ">{blurb}</p>
+        <Link to={linkLoc} style={{color: "#BC772A"}} className="f6-ns f7 fw8 mt2 mb0 pointer no-underline underline-hover">{linkText}</Link>
       </div>
     </div>
-    {rev ? null : <img src={icon} className="w-50-l w-80 mv0 ml4-l z-2" />}
+    {rev ? null : <img src={icon} className="w-50-l w-80-m w-100 mv0 ml4-l z-2" />}
     {bg}
   </div>
 );

@@ -34,7 +34,6 @@ var Animes = function animeAPI(){
         easing: "easeInOutSine"
         });
       }
-
       widthInterval = setInterval(() => (getWidth()), 300);
 
 
@@ -77,12 +76,10 @@ var Animes = function animeAPI(){
 
     var jsicon = anime({
       targets: '#hunterslide .jsicon', ...loopAnim
-
     });
 
     var adobeicon = anime({
       targets: '#hunterslide .adobeicon', ...loopAnim
-
     });
 
     reacticon.play();
@@ -177,9 +174,9 @@ var Animes = function animeAPI(){
   }
 
   function kill(){
+
     clearInterval(widthInterval)
-    anime.remove('.floater')
-    anime.remove('#meditating-hunter')
+
   }
 
 

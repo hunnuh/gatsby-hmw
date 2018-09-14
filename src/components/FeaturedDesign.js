@@ -48,20 +48,20 @@ class FeaturedDesign extends Component {
     )
 
     return (
-      <div className="white mt4 bb b--white-60 mb4 ph4 mw8">
-        <h1 className="bb b--white-60 pb3"> Featured Graphic/Web Design:</h1>
+      <div className="white mt4 bb b--white-60 mb4 ph4-ns mw8">
+        <h1 className="bb b--white-60 pb3 ph3"> Featured Design:</h1>
         <div className="flex flex-column flex-row-l w-100 mb4">
           <div
             style={{maxHeight:"32rem"}}
             className=" w-60-l w-100 bg-top bg-black-30 br4 pa0 relative flex flex-column justify-center"
             >
               <div className="dn-l flex w-100 h-100 center absolute flex-row justify-between items-center z-4">
-                <div onClick={this.picBackward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--right pointer">◀</div>
-                <div onClick={this.picForward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--left pointer">▶</div>
+                <div onClick={this.picBackward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--right pointer">◀</div>
+                <div onClick={this.picForward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--left pointer">▶</div>
               </div>
               <div className="designHover dn flex-ns w-100 h-100 center absolute flex-row justify-between items-center z-4">
-                <div onClick={this.picBackward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--right pointer">◀</div>
-                <div onClick={this.picForward} className="flex flex-column justify-center h4 w3 bg-black-40 tc br4 br--left pointer">▶</div>
+                <div onClick={this.picBackward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--right pointer">◀</div>
+                <div onClick={this.picForward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--left pointer">▶</div>
               </div>
               <div className="db relative center pa3">
 
@@ -74,18 +74,18 @@ class FeaturedDesign extends Component {
           </div>
 
 
-          <div className="flex flex-column  w-40-l w-100 ml4">
+          <div className="flex flex-column w-40-l w-100  ">
             <div className="dn db-l">
-              <p className="white-30 f7 tracked mt0 mb3 pv0">Click an image below:</p>
+              <p className="white-30 f7 tracked mt0 mb3 pv0 ">Click an image below:</p>
               <div className="flex flex-column mb0">
                 {thumbs}
               </div>
 
             </div>
-            <div className="w-100 flex flex-column ph4 ph0-l mt2">
-              <Link to={"/portfolio/"} className="white-70 f5 tracked mv1 underline-hover no-underline self-end"> See more of my design work. ⇾</Link>
-              <Link to={"/programming/"} className="white-40 f6 tracked mv1 underline-hover no-underline self-end"> Explore my programming projects. ⇾</Link>
-              <Link to={"/about/"} className="white-40 f6 tracked mv1 underline-hover no-underline self-end"> Learn more about Hunter. ⇾</Link>
+            <div className="w-100 flex flex-column  ph0-l mt2">
+              <Link to={"/portfolio/"} className="white-70 f5-ns f6 tracked mv1 underline-hover no-underline self-end-ns self-center"> See more of my design work. ⇾</Link>
+              <Link to={"/programming/"} className="white-40 f6-ns f7 tracked mv1 underline-hover no-underline self-end-ns self-center "> Explore my programming projects. ⇾</Link>
+              <Link to={"/about/"} className="white-40 f6-ns f7 tracked mv1 underline-hover no-underline self-end-ns self-center "> Learn more about Hunter. ⇾</Link>
             </div>
           </div>
         </div>
