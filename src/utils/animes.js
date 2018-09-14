@@ -4,7 +4,7 @@ import anime from 'animejs'
 
 var Animes = function animeAPI(){
 
-  let browser = typeof(window) !== undefined ? window : null;
+  let browser = typeof window !== undefined ? window : null;
 
   let reduct = 0.55
   let width = browser ? browser.innerWidth : 0;
