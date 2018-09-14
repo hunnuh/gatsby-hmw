@@ -4,15 +4,17 @@ import anime from 'animejs'
 
 var Animes = function animeAPI(){
 
+  let browser = window ? window : null;
+
   let reduct = 0.55
-  let width = window.innerWidth;
+  let width = browser ? browser.innerWidth;
   let xTrans = width*reduct;
   let widthInterval;
 
 
   function getWidth(){
-    if (width !== window.innerWidth || width === 0){
-      width =  window.innerWidth
+    if (width !== browser.innerWidth || width === 0){
+      width =  browser.innerWidth
       xTrans = width*reduct
       start();
     }
