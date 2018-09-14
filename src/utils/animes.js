@@ -7,7 +7,7 @@ var Animes = function animeAPI(){
   let browser = window ? window : null;
 
   let reduct = 0.55
-  let width = browser ? browser.innerWidth;
+  let width = browser ? browser.innerWidth : 0;
   let xTrans = width*reduct;
   let widthInterval;
 
