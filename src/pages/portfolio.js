@@ -40,6 +40,7 @@ class PortfolioPage extends React.Component {
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.scrollToContent = this.scrollToContent.bind(this);
   }
 
   handleOpenModal (path) {
@@ -54,6 +55,14 @@ class PortfolioPage extends React.Component {
   componentDidMount(){
     if (typeof(window) !== 'undefined') {
       ReactModal.setAppElement('body')
+    }
+  }
+
+  scrollToContent(tag){
+    console.log("tag")
+    let top = document.querySelector(tag).getBoundingClientRect().top;
+    if(typeof window !== undefined){
+      window.scrollTo({top, behavior:'smooth'})
     }
   }
 
@@ -95,7 +104,19 @@ class PortfolioPage extends React.Component {
                 <p className="ma3 tracked tc lh-copy b" > "Scroll down forever to see <br/> my best design work. <br/> Click to enlarge."</p>
               </div>
             </div>
-            <div className="w-70-l w-90 self-center tc pt0">
+
+            <div className="w-70-l w-90 self-center tc pt0 ">
+              <div className=" w-100  flex flex-row-ns flex-column justify-start mv4 mw7-l center">
+                <span className="white b f7 w3 mb2 mb0-ns flex flex-column justify-center">Skip to:</span>
+                <div className=" flex flex-row-ns flex-wrap justify-around items-center w-100">
+                  <SubNavLink pass={"#po"}>POSTERS</SubNavLink>
+                  <SubNavLink pass={"#we"}>WEB DESIGN</SubNavLink>
+                  <SubNavLink pass={"#pr"}>PRINT MEDIA</SubNavLink>
+                  <SubNavLink pass={"#lo"}>LOGOS & BRANDS</SubNavLink>
+                  <SubNavLink pass={"#ph"}>PHOTOS & RASTER</SubNavLink>
+                  <SubNavLink pass={"#ot"}>OTHER</SubNavLink>
+                </div>
+              </div>
               <HH>POSTERS</HH>
               <Masonry
                 openModal={this.handleOpenModal}
@@ -187,8 +208,8 @@ const HH = ({children}) => (
   <div className="tl-ns tc mt5-l mt3 mb0 bb bw1-ns b--white-90" >
     <h1
       className=" f1-ns f3 mt0 mb1 white-90"
+      id={children.substring(0, 2).toLowerCase()}
       style={{letterSpacing:"1rem",
-
       textShadow: "2px 2.5px 0px #0d202f"}}
     >
       {children}
@@ -196,8 +217,21 @@ const HH = ({children}) => (
   </div>
 );
 
+const SubNavLink = (props) => (
+  <span
+    style={{backgroundColor: "#0d202f"}}
+    onClick={() => scrollToContent(props.pass)}
+    className="pa1 pa2-l white f7 br3 no-underline underline-hover mv1 nowrap pointer">
+    {props.children}
+  </span>
+);
 
-
+function scrollToContent(tag){
+  let top = document.querySelector(tag).getBoundingClientRect().top;
+  if(typeof window !== undefined){
+    window.scrollTo({top, behavior:'smooth'})
+  }
+}
 
 export const portQuery = graphql`
   query PortfolioQuery {

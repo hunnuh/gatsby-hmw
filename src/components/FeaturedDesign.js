@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Link, { withPrefix } from 'gatsby-link'
+import FontAwesome from "react-fontawesome";
 
 import Arrow from "../assets/arrow.svg";
 
@@ -56,12 +57,14 @@ class FeaturedDesign extends Component {
             className=" w-60-l w-100 bg-top bg-black-30 br4 pa0 relative flex flex-column justify-center"
             >
               <div className="dn-l flex w-100 h-100 center absolute flex-row justify-between items-center z-4">
-                <div onClick={this.picBackward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--right pointer">◀</div>
-                <div onClick={this.picForward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--left pointer">▶</div>
+                <div onClick={this.picBackward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--right pointer"><FontAwesome name="arrow-left"className=" ma0 "/></div>
+                <div onClick={this.picForward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--left pointer"><FontAwesome name="arrow-right"className=" ma0 "/></div>
               </div>
               <div className="designHover dn flex-ns w-100 h-100 center absolute flex-row justify-between items-center z-4">
-                <div onClick={this.picBackward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--right pointer">◀</div>
-                <div onClick={this.picForward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--left pointer">▶</div>
+                <div onClick={this.picBackward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--right pointer"><FontAwesome name="arrow-left"className=" ma0 "/></div>
+                <div onClick={this.picForward} className="flex flex-column justify-center h4-ns w3-ns h3 w2 bg-black-40 tc br4 br--left pointer">
+                  <FontAwesome name="arrow-right"className=" ma0 "/>
+                </div>
               </div>
               <div className="db relative center pa3">
 
@@ -75,9 +78,9 @@ class FeaturedDesign extends Component {
 
 
           <div className="flex flex-column w-40-l w-100  ">
-            <div className="dn db-l">
+            <div className="dn db-l pl4">
               <p className="white-30 f7 tracked mt0 mb3 pv0 ">Click an image below:</p>
-              <div className="flex flex-column mb0">
+              <div className="flex flex-column mb0 ">
                 {thumbs}
               </div>
 

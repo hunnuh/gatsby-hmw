@@ -76,7 +76,7 @@ class IndexPage extends Component {
                       <li>Advanced digital design</li>
                       <li>Data analysis and DB's</li>
                       <li>Spatial statistics</li>
-                      <li>Pro video production</li>
+                      <li>Professional video</li>
                     </ul>
                   </div>
                   <div className="w-25-ns w-100 tc">
@@ -86,8 +86,8 @@ class IndexPage extends Component {
                     <ul className="b f6-ns f5 list pl0 ml0 black-70 mb5 mb3-ns">
                       <li>Fierce problem solver</li>
                       <li>Accomplished speaker</li>
-                      <li>Effective self educator</li>
-                      <li>Proven team loyalty</li>
+                      <li>Effective self-educator</li>
+                      <li>Proven MVP quality</li>
                       <li>Well-adjusted and sane</li>
                     </ul>
                   </div>
@@ -98,8 +98,8 @@ class IndexPage extends Component {
                     <ul className="b f6-ns f5 list pl0 ml0 black-70 mb5 mb3-ns">
                       <li>Multi-instrumentalist</li>
                       <li>Drawing & Sketching</li>
-                      <li>Electronics tinkering</li>
-                      <li>Intermediate chess</li>
+                      <li>Computer Science</li>
+                      <li>Chess & thinking games</li>
                       <li>Three-ball juggling</li>
                     </ul>
                   </div>

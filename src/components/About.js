@@ -54,7 +54,7 @@ const Cards = () => (
           sub={"CREATIVITY & ARTISTRY"}
           head={"Proven Design Talent"}
           blurb={
-            "My digital design work has won several contests and awards. Check out my portfolio, let me know what you think."
+            "My digital design work has won several contests and awards. See what you think; visit my portfolio and take a look. "
           }
           linkText="Explore my design portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}
@@ -85,7 +85,7 @@ const Cards = () => (
           sub={"INFO SYSTEMS & DATA SCIENCE"}
           head={"Computer Data Expertise"}
           blurb={
-            "From algorithms to databases; I have a passion for computers. For me, working with modern technology is a constant source of gratitude and amazement."
+            "From algorithms to databases; I have a passion for computers. For me, working with technology is a constant source of gratitude and amazement."
           }
           linkText="Read my thoughts and qualifications &nbsp;&nbsp; ⇾"
           linkLoc={"/data/"}
@@ -101,7 +101,7 @@ const Cards = () => (
           head={"Indomidable Ambition"}
           rev={true}
           blurb={
-            "During my lifetime, Im striving to become a world-class professional. I want to be part of a hard-working team with smart people who share my passion."
+            "During my lifetime, I strive to become a world-class professional. I want to be part of a hard-working team with smart people who share my passion."
           }
           linkText="See more about Hunter &nbsp;&nbsp; ⇾"
           linkLoc={"/about/"}

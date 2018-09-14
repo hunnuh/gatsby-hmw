@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import ReactModal from "react-modal";
+import FontAwesome from "react-fontawesome";
 
 import Nav from "../components/Nav";
 import Header from "../components/Header";
@@ -156,7 +157,26 @@ class ProjectRow extends React.Component {
 
     return  (
       <div style={{backgroundColor:"#e5d7bd"}} className=" flex flex-row justify-center w-100 h-100 " id="concrete" >
-        <div className="w-100 pv3-l pt2 flex flex-row-l flex-column mw9 ">
+
+        <div className="w-100 dn-ns flex flex-row justify-center items-center pa3">
+          <div className="bg-navy flex flex-column justify-center items-center pa3 ba br3"
+            style={
+            {backgroundColor: "#7989a3", borderColor: "#ebf8ff"}}>
+            <FontAwesome name="desktop" style={{backgroundColor: "#ebf8ff"}}
+              className="fa-5x mb2 mt4 ba br-pill pa4 ma0 "/>
+            <p className="f4 tc lh-copy ph3 mv2" style={{color: "#ebf8ff"}}>
+              Please visit on a larger device to inspect code.
+            </p>
+            <Link to={"/"} className="f7 tc lh-copy ph3 no-underline underline-hover" style={{color: "#ebf8ff"}}>
+              ⇽ Back home
+            </Link>
+          </div>
+        </div>
+
+
+
+
+        <div className="w-100 pv3-l pt2 dn flex-ns flex-row-l flex-column mw9 ">
           <div className="w-20-l w-100 ">
             <div className="mh0 fr-l mb0 pt3-l pt0 pl2-l pl0 flex flex-row flex-column-l overflow-x-auto overflow-y-hidden">
               {projectButtons}
