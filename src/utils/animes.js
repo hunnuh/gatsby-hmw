@@ -23,15 +23,19 @@ var Animes = function animeAPI(){
       if(widthInterval){
         clearInterval(widthInterval)
       }
+      else{
+        var float = anime({
+        targets: '#meditating-hunter',
+        translateY: 15,
+        loop:  true,
+        direction: "alternate",
+        easing: "easeInOutSine"
+        });
+      }
+
       widthInterval = setInterval(() => (getWidth()), 300);
 
-      var float = anime({
-      targets: '#meditating-hunter',
-      translateY: 15,
-      loop:  true,
-      direction: "alternate",
-      easing: "easeInOutSine"
-      });
+
 
 
     // -----------------------------------LARGE
@@ -173,6 +177,7 @@ var Animes = function animeAPI(){
   function kill(){
     clearInterval(widthInterval)
     anime.remove('.floater')
+    anime.remove('#meditating-hunter')
   }
 
 
