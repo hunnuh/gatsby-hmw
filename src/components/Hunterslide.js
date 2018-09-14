@@ -10,27 +10,35 @@ import AdobeLogo from "../assets/adobelogo.svg";
 
 import React, { Component } from 'react';
 
+let anime = Animes()
+
+
 class Hunterslide extends Component {
 
+
+
   componentDidMount(){
-    Animes();
+    anime.start();
   }
 
+  componentWillUnmount(){
+    anime.kill();
+  }
   render() {
     return (
-      <div id="hunterslide" className=" relative ">
+      <div id="hunterslide" className=" relative overflow-x-visible">
 
         <img id="meditating-hunter" className="absolute z-2 top-0" src={HMWfloat}/>
 
         <img className=" z-0  " src={Carpet}/>
 
-        <img className="absolute top-0 reacticon h3 w3   db-ns dn" src={ReactLogo}/>
-        <img className="absolute top-0 jsicon h3 w3   db-ns dn" src={JSLogo}/>
-        <img className="absolute top-0 adobeicon h3 w3   db-ns dn" src={AdobeLogo}/>
+        <img className="absolute top-0 floater reacticon h3 w3   db-ns dn" src={ReactLogo}/>
+        <img className="absolute top-0 floater jsicon h3 w3   db-ns dn" src={JSLogo}/>
+        <img className="absolute top-0 floater adobeicon h3 w3   db-ns dn" src={AdobeLogo}/>
 
-        <img className="absolute top-0 reacticonsmall h3 w3 pa1  dn-ns db" src={ReactLogo}/>
-        <img className="absolute top-0 jsiconsmall h3 w3 pa1  dn-ns db" src={JSLogo}/>
-        <img className="absolute top-0 adobeiconsmall h3 w3 pa1  dn-ns db" src={AdobeLogo}/>
+        <img className="absolute top-0 floater reacticonsmall h3 w3 pa1  dn-ns db" src={ReactLogo}/>
+        <img className="absolute top-0 floater jsiconsmall h3 w3 pa1  dn-ns db" src={JSLogo}/>
+        <img className="absolute top-0 floater adobeiconsmall h3 w3 pa1  dn-ns db" src={AdobeLogo}/>
 
 
 

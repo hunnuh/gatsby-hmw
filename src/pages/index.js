@@ -17,6 +17,7 @@ import Favorite from "../components/Favorite";
 import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 import Nav from "../components/Nav";
+import Animes from "../utils/animes.js";
 
 import FishBG from "../assets/fish_bkg.svg";
 import SpiderBG from "../assets/spider_bkg.svg";
@@ -33,7 +34,6 @@ import HeadshotSq from "../assets/headshot_square.jpg";
 import Resume from "../assets/Hunter_M_Wells_resume.pdf";
 
 class IndexPage extends Component {
-
 
 
 

@@ -68,7 +68,7 @@ class Nav extends Component{
           <div className="flex flex-row items-center ">
             <Link to={"/"}>
               <div className="h3 mr3">
-                <img src={Logo} className="h-75 mt2 pv1"/>
+                <img src={Logo} className="h-75 mt2 pv2 pv1-ns pl2 pl0-ns"/>
               </div>
             </Link>
             <div  className="h3 flex-l flex-row dn">
