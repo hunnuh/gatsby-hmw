@@ -245,7 +245,7 @@ export const portQuery = graphql`
         extension
         childImageSharp {
           sizes(maxWidth: 1240) {
-            ...GatsbyImageSharpSizes
+            ...GatsbyImageSharpSizes_tracedSVG
           }
         }
       }

@@ -23,13 +23,14 @@ class Masonry extends Component {
 
     let optimized = this.props.content
     .filter((e, i) => e.extension !== "gif")
-    .map((e, i) => <Img
+    .map((e, i) => <div onClick={() => this.click(e.relativePath)}>
+      <Img
           key={i+"o"}
-          onClick={() => this.click(e.relativePath)}
           className="mv3 db shadow-1 w-100 pointer dim "
           src={e.relativePath}
           sizes={e.childImageSharp.sizes}
         />
+      </div>
       )
 
 
