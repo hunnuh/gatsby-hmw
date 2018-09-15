@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
+import FontAwesome from "react-fontawesome";
 
 import Nav from "../components/Nav";
 import Header from "../components/Header";
@@ -88,12 +89,12 @@ class PortfolioPage extends React.Component {
 
             <div
               style={{backgroundColor: "#0d202f", borderColor: "#0d202f"}}
-              className="w-100 white flex justify-center bb bw1 shadow-3"
+              className="w-100 white flex justify-center bb bw1 shadow-3 ph2"
               id="ocean"
               >
               <div
                 style={{margin:"5rem 0rem 5rem 0rem", backgroundColor: "#0d202f"}}
-                className="center ba b--white mv5 relative br2 shadow-3 pa1"
+                className="center ba b--white mv5 relative br2 shadow-3 pa1 "
               >
                 <h5
                   style={{top:"-.8rem", left:".8rem", backgroundColor: "#0d202f"}}
@@ -101,13 +102,13 @@ class PortfolioPage extends React.Component {
                 >
                   HUNTER SAYS:
                 </h5>
-                <p className="ma3 tracked tc lh-copy b" > "Scroll down forever to see <br/> my best design work. <br/> Click to enlarge."</p>
+                <p className="ma3 tracked tc lh-copy b" > "Scroll down forever to see <br className="dn db-ns"/> my best design work. <br/> Click to enlarge."</p>
               </div>
             </div>
 
             <div className="w-70-l w-90 self-center tc pt0 ">
               <div className=" w-100  flex flex-row-ns flex-column justify-start mv4 mw7-l center">
-                <span className="white b f7 w3 mb2 mb0-ns flex flex-column justify-center">Skip to:</span>
+                <span style={{color: "#0d202f"}} className=" b f7 w3 mb2 mb0-ns flex flex-column justify-center">Skip to:</span>
                 <div className=" flex flex-row-ns flex-wrap justify-around items-center w-100">
                   <SubNavLink pass={"#po"}>POSTERS</SubNavLink>
                   <SubNavLink pass={"#we"}>WEB DESIGN</SubNavLink>
@@ -183,7 +184,7 @@ class PortfolioPage extends React.Component {
               style={{backgroundColor: "#0d202f"} }
               className = "flex flex-row justify-center items-center white w4 pv3 br3 shadow-3 b hover-bg-red ba"
             >
-                ▲ TO TOP
+                <FontAwesome  name="arrow-up" className="mr2"/> TO TOP
             </div>
           </ScrollToTop>
           <ReactModal
@@ -221,7 +222,7 @@ const SubNavLink = (props) => (
   <span
     style={{backgroundColor: "#0d202f"}}
     onClick={() => scrollToContent(props.pass)}
-    className="pa1 pa2-l white f7 br3 no-underline underline-hover mv1 nowrap pointer">
+    className="pa1 pa2-l white f7 br3 no-underline underline-hover mv1 nowrap pointer ba b--white shadow-1">
     {props.children}
   </span>
 );
@@ -235,20 +236,22 @@ function scrollToContent(tag){
 
 export const portQuery = graphql`
   query PortfolioQuery {
-    allFile (
-      filter:{sourceInstanceName: {eq:"portfolio"}}
-
-    )
-    {
-      edges {
-        node {
-          relativeDirectory
-          relativePath
-          absolutePath
+  allFile(filter: {sourceInstanceName: {eq: "portfolio"}}) {
+    edges {
+      node {
+        relativeDirectory
+        relativePath
+        absolutePath
+        extension
+        childImageSharp {
+          sizes(maxWidth: 1240) {
+            ...GatsbyImageSharpSizes
+          }
         }
       }
     }
   }
+}
 `;
 
 

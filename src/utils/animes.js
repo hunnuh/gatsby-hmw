@@ -159,7 +159,6 @@ var Animes = function animeAPI(){
     adobeiconsmall.play();
 
     function startAnimsSmall(){
-      console.log("commencing with: " + loopAnimSmall.translateX[1].value)
       reacticonsmall.pause();
       jsiconsmall.pause();
       adobeiconsmall.pause();

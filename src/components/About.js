@@ -1,4 +1,7 @@
 import React from "react";
+
+
+
 import Monkey from "../assets/monkey.svg";
 import Bird from "../assets/bird.svg";
 import Fish from "../assets/fish_color.svg";
@@ -54,7 +57,7 @@ const Cards = () => (
           sub={"CREATIVITY & ARTISTRY"}
           head={"Proven Design Talent"}
           blurb={
-            "My digital design work has won several contests and awards. See what you think; visit my portfolio and take a look. "
+            "My digital design work has won several contests and awards. See what you think! Visit my portfolio and take a look. "
           }
           linkText="Explore my design portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}

@@ -1,39 +1,18 @@
 
 import React, { Component } from "react";
-import { withPrefix } from 'gatsby-link';
-import Img from 'gatsby-image';
+import { withPrefix } from 'gatsby-link'
+import Img from 'gatsby-image'
 
-class Masonry extends Component {
+class MasonryImg extends Component {
 
   click = (path) => {
     this.props.openModal(path)
   }
 
   render(props){
-  console.log(this.props.content[0])
-
-  let gifs = this.props.content
-    .filter((e, i) => e.extension === "gif")
-    .map((e, i) => <img
-      key={i+"g"}
-      onClick={() => this.click(e.relativePath)}
-      className="mv3 db shadow-1 w-100 pointer dim "
-      src={e.relativePath}
-    />)
-
-    let optimized = this.props.content
-    .filter((e, i) => e.extension !== "gif")
-    .map((e, i) => <Img
-          key={i+"o"}
-          onClick={() => this.click(e.relativePath)}
-          className="mv3 db shadow-1 w-100 pointer dim "
-          src={e.relativePath}
-          sizes={e.childImageSharp.sizes}
-        />
-      )
-
-
-  let allContent = [...gifs, ...optimized]
+  let allContent = this.props.content.map(
+      (e, i) => <img key={i} onClick={() => this.click(e.relativePath)} className="mv3 db shadow-1 w-100 pointer dim " src={e.relativePath} />
+    )
 
   let columns = new Array(this.props.cols);
 
@@ -69,5 +48,16 @@ class Masonry extends Component {
     );
   }
 }
+
+
+export const sharpQuery = graphql`
+  query MasonImgQuery {
+    masonImage: imageSharp(id: { eq: "/header/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
+    }
+  }
+`
 
 export default Masonry;
