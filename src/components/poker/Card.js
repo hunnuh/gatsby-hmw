@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Cardback} from '../../assets/poker/cardback.png'
+
 
 export class Card extends React.Component {
   shouldComponentUpdate(){
@@ -29,8 +31,8 @@ export class Card extends React.Component {
               `
             }
           >
-            <img src={`../img/cards/${card}.png`} className="cardfront card-shadow"/>
-            <img src="../img/cardback.png" className="cardback card-shadow"/>
+            <img src={`../../cards/${card}.png`} className="cardfront card-shadow"/>
+            <img src={Cardback} className="cardback card-shadow"/>
           </div>
         </div>
       </div>

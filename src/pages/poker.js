@@ -7,6 +7,9 @@ import {Howl} from 'howler';
 import { Promise } from 'bluebird'
 
 
+import {HunterNeon} from '../assets/poker/hunter_neon.svg'
+import {Mute} from '../assets/poker/mute.svg'
+import {Unmute} from '../assets/poker/unmute.svg'
 
 
 Promise.config({
@@ -755,11 +758,11 @@ class Poker extends React.Component {
 
 
     return(
-      <div id="poker" className=" h-100 min-h-100 w-100  flex flex-column justify-start poker poker-ns ving">
+      <div id="poker" className=" h-100 min-h-100 w-100  flex flex-column justify-start poker poker-ns ving debug" style={{height:"100vh"}}>
         <nav className={`w-100 h2 pv2 flex flex-row ${loadingViewOn ? "justify-end-ns" : "justify-between-ns"} justify-center z-4 relative`}>
           {!loadingViewOn &&
             <div className={`w1 h1 w2-ns h2-ns self-center mh3-ns mh1 o-70`} onClick={this.handleMute}>
-              <img src={this.state.mute ? "./img/mute.svg" : "./img/unmute.svg"}/>
+              <img src={this.state.mute ? Mute : Unmute}/>
             </div>
           }
           <div className=" mh2 self-center nowrap">
@@ -793,7 +796,7 @@ class Poker extends React.Component {
             <div
               className="self-center pa3 tc white helvetica tracked w8 mh2 flex flex-column justify-center ba bw1 br3 b--orange bg-black-40 shadow-3"
             >
-              <img src="../img/hunter_neon.svg" className="w-100 self-center neon" />
+              <img src={HunterNeon} className="w-100 self-center neon" />
               <h1 className="white-40 f5 ttu tracked-mega w-100 tc self-center mb3 mt1 arrowpointer">Feeling Lucky?</h1>
               <h3 className="orange f6 fw1-ns fw8 w-60-ns w-100 tracked-mega tc self-center mb1 arrowpointer">♠ HOW TO PLAY ♠</h3>
               <div className="bg-white-10 mb3 ph3 pv2 br3 ba b--orange b--dotted bw1 dn-l">{mobilesteps}</div>
@@ -840,8 +843,8 @@ class Poker extends React.Component {
         }
 
         {!loadingViewOn &&
-          <div className="w-100 h-95 flex flex-column justify-center">
-            <div className=" h-100 h-60-xl w-40-xl w-50-l w-60-m w-100 flex flex-column justify-between self-center">
+          <div className="w-100 flex flex-column justify-center" style={{height:"95vh"}}>
+            <div className=" h-100 h-60-xl w-40-xl w-50-l w-60-m w-100 flex flex-column justify-between self-center " style={{width:"60vw"}}>
               <div className="h-50 flex flex-column justify-between">
                 <div className="h-55-ns h-50 z-2" >
                   <Hand
@@ -850,7 +853,7 @@ class Poker extends React.Component {
                   />
                 </div>
                 <div className="h-45 flex flex-column justify-around items-center">
-                  <img src="../img/hunter_neon.svg" className="w-70-l w-70-xl w-100 neon z-2" />
+                  <img src={HunterNeon} className="w-70-l w-70-xl w-100 neon z-2" />
 
                   <h1 className=" z-2 h3 f5 f3-ns white b helvetica tracked ma0 tc flex flex-column justify-center">{gameMessage}</h1>
                 </div>

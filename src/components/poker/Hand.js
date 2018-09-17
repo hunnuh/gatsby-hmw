@@ -20,7 +20,7 @@ export class Hand extends React.Component {
 
 
 
-    cardlist.forEach( //handles card transforms
+    cardlist[0].forEach( //handles card transforms
       (card, index) => {
         if (card.classList.contains("held")){
           if (card.classList.contains("flipped")){

@@ -4,7 +4,7 @@ html {
 }
 body {
   margin: 0;
-  
+
 }
 
 #back {
@@ -146,4 +146,105 @@ body {
   background: -webkit-linear-gradient(top, #000 0%,#9d1c1f 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #000 0%,#9d1c1f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#9d1c1f',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+
+
+
+
+
+
+/*POKER*/
+
+.poker{
+		background-image: url("../assets/poker/felt.png");
+		background-color: #003300;
+		background-size: 531px 337px;
+		background-blend-mode: luminosity;
+}
+
+.no-blend {
+  background-image: none !important;
+  background-color: #003300 !important;
+}
+
+.no-blend::before{
+	position:absolute;
+	width:100%;
+	height:100%;
+	opacity:.6;
+	top:0;
+	bottom:0;
+	background-image: url("../assets/poker/felt.png");
+	content:"";
+	z-index: 0;
+}
+
+.poker::after{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	bottom:0;
+	background-image: url("../assets/poker/pokeroverlay.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: cover;
+	content:"";
+	z-index: 0;
+}
+
+.cardwidth{
+	max-width: 10rem;
+}
+
+.cardholder{
+	max-width: 10rem;
+}
+
+.card-shadow{
+	-webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card-slider{
+	-webkit-transition: all .3s;
+	transition: all .3s;
+
+}
+
+.card {
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+	top:0;
+
+}
+
+.card *{
+  margin: 0;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card .cardfront {
+	position:relative;
+ 	top:0;
+ 	left:0;
+}
+.card .cardback {
+  -webkit-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+  left:0;
+}
+
+.cardholder .flipped {
+  -webkit-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
 }
