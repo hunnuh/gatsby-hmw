@@ -7,9 +7,9 @@ import {Howl} from 'howler';
 import { Promise } from 'bluebird'
 
 
-import {HunterNeon} from '../assets/poker/hunter_neon.svg'
-import {Mute} from '../assets/poker/mute.svg'
-import {Unmute} from '../assets/poker/unmute.svg'
+import HunterNeon from '../assets/poker/hunter_neon.svg'
+import Mute from '../assets/poker/mute.svg'
+import Unmute from '../assets/poker/unmute.svg'
 
 
 Promise.config({
@@ -165,7 +165,7 @@ class Poker extends React.Component {
         suits:["S", "S", "S", "S", "S"],
         float:[],
         hand:{
-          desc:"",
+          desc:"Press DEAL to begin.",
           high:"",
           score:0,
           arr:[],
@@ -186,6 +186,7 @@ class Poker extends React.Component {
   }
 
   componentDidMount(){
+    console.log(HunterNeon)
     setTimeout(()=>this.activatePreload(), 500)
     if(typeof window.getComputedStyle(document.body).backgroundBlendMode == 'undefined') {
     document.getElementById('poker').className += " no-blend";
@@ -661,19 +662,19 @@ class Poker extends React.Component {
 
     let scoreboardContents = [
       <div className="flex flex-row justify-center">
-        <div className="ma1 pa1 pa2-ns flex flex-row justify-center bg-black-30 ba bw1 b--orange di shadow-3">
-          <span className=" f5-m f7 f3-ns ttu">YOU: &nbsp;</span>
-          <span className=" f5-m f7 f3-ns ttu">{"  " + score.player}</span>
+        <div className="ma1 pa1 pa2-ns flex flex-row justify-center items-center bg-black-30 ba bw1 b--orange shadow-3">
+          <span className="  f7 f5-ns ttu ma0 pa0 nowrap">YOU: &nbsp;</span>
+          <span className="  f7 f5-ns ttu">{"  " + score.player}</span>
         </div>
         <span className="o-50 mh2-ns mh0 flex flex-column justify-center">♣</span>
-        <div className="ma1 pa1 pa2-ns flex flex-row justify-center bg-black-30 ba bw1 b--orange di shadow-3">
-          <span className=" f5-m f7 f3-ns ttu">Hunter: &nbsp;</span>
-          <span className=" f5-m f7 f3-ns ttu">{"" + score.hunter}</span>
+        <div className="ma1 pa1 pa2-ns flex flex-row justify-center items-center bg-black-30 ba bw1 b--orange shadow-3">
+          <span className="  f7 f5-ns ttu ma0 pa0 nowrap">Hunter: &nbsp;</span>
+          <span className="  f7 f5-ns ttu">{"" + score.hunter}</span>
         </div>
-        <span className="o-50 mh2-ns mh0 flex flex-column justify-center">♠</span>
-        <div className="ma1 pa1 pa2-ns flex flex-row justify-center bg-black-30 ba bw1 b--orange di shadow-3">
-          <span className=" f5-m f7 f3-ns ttu">W/L: &nbsp;</span>
-          <span className=" f5-m f7 f3-ns ttu">
+        <span className="dn flex-ns o-50 mh2-ns mh0 flex-column justify-center">♠</span>
+        <div className="dn flex-ns ma1 pa1 pa2-ns flex-row justify-center items-center bg-black-30 ba bw1 b--orange shadow-3">
+          <span className="  f7 f5-ns ttu ma0 pa0 nowrap">W/L: &nbsp;</span>
+          <span className="  f7 f5-ns ttu">
             {"  " + (score.player/(score.hunter+score.player)*100).toFixed(1) + "%"}
           </span>
         </div>
@@ -742,14 +743,14 @@ class Poker extends React.Component {
     )
 
     let mobilesteps = mobilesteptext.map((step, index)=>
-      <div key={index}className="mb2 h-auto flex flex-row justify-start relative ">
+      <div key={index} className="mb2 h-auto flex flex-row justify-start relative ">
         <div className="h-100 ">
           <span
-          className="white-80 f6 textshadow ">{index + 1})
+          className="white-80 f7 textshadow ">{index + 1})
           </span>
         </div>
         <div className="h-100">
-          <p className={`mv0 f6 fw2 tl ml1 white-70 arrowpointer link tracked lh-copy textshadow `}>
+          <p className={`mv0 f7 fw2 tl ml1 white-70 arrowpointer link tracked  textshadow `}>
             {step}
           </p>
         </div>
@@ -758,8 +759,9 @@ class Poker extends React.Component {
 
 
     return(
-      <div id="poker" className=" h-100 min-h-100 w-100  flex flex-column justify-start poker poker-ns ving debug" style={{height:"100vh"}}>
-        <nav className={`w-100 h2 pv2 flex flex-row ${loadingViewOn ? "justify-end-ns" : "justify-between-ns"} justify-center z-4 relative`}>
+      <div id="poker" className="w-100 flex flex-column justify-start items-center poker poker-ns ving overflow-y-hidden " style={{height:"100vh"}}>
+        <nav
+          className={`w-100 h2 pv2 flex flex-row ${loadingViewOn ? "justify-end-ns" : "justify-between-ns"} justify-center z-4 relative`}>
           {!loadingViewOn &&
             <div className={`w1 h1 w2-ns h2-ns self-center mh3-ns mh1 o-70`} onClick={this.handleMute}>
               <img src={this.state.mute ? Mute : Unmute}/>
@@ -789,24 +791,25 @@ class Poker extends React.Component {
             >POKER</Link>
           </div>
         </nav>
+
         {loadingViewOn &&
           <div
-            className=" z-2 flex flex-column justify-center h-100 w-100"
+            className=" z-2 flex flex-column justify-center h-100 w-100 "
           >
             <div
-              className="self-center pa3 tc white helvetica tracked w8 mh2 flex flex-column justify-center ba bw1 br3 b--orange bg-black-40 shadow-3"
+              className="self-center pa3 tc white helvetica tracked mw7 mh2 flex flex-column justify-center ba bw1 br3 b--orange bg-black-40 shadow-3"
             >
               <img src={HunterNeon} className="w-100 self-center neon" />
-              <h1 className="white-40 f5 ttu tracked-mega w-100 tc self-center mb3 mt1 arrowpointer">Feeling Lucky?</h1>
+              <h1 className="white-40 f5 ttu tracked-mega w-100 tc self-center mb3 mt0 arrowpointer">Feeling Lucky?</h1>
               <h3 className="orange f6 fw1-ns fw8 w-60-ns w-100 tracked-mega tc self-center mb1 arrowpointer">♠ HOW TO PLAY ♠</h3>
               <div className="bg-white-10 mb3 ph3 pv2 br3 ba b--orange b--dotted bw1 dn-l">{mobilesteps}</div>
               <div className="bg-black-30 mb3 mh3 ph3 pv2 br3 dn db-l w6 shadow-3 ba bw1 b--black-40">{steps}</div>
               <h3 className="orange f6 fw1-ns fw8 w-60-ns w-100 tracked-mega tc self-center mb1 arrowpointer">♥ CLICK TO PLAY ♥</h3>
               {loading &&
                 <div
-                  className=" flex flex-column justify-center center h3-ns h2 w-two-thirds-ns w-100 mv3 self-center ba b--orange br3 bw1 bg-white-10 bg-white-hover grow pointer relative"
+                  className=" flex flex-column justify-center items-center center h3-ns h2 w-two-thirds-ns w-100 mv3 self-center ba b--orange br3 bw1 bg-white-10 bg-white-hover grow pointer relative"
                 >
-                  <p className="z-4 ">
+                  <p className="z-4 self-center mb0">
                     {this.state.loadingText}
                     {loading && " .... " + barPercentage}
                   </p>
@@ -819,12 +822,12 @@ class Poker extends React.Component {
                 </div>
               }
               {!loading &&
-                <div className="mh3 flex flex-row justify-around mb3 pa3 br3 bg-black-30 shadow-3 ba bw1 b--black-40">
+                <div className="mh3 flex flex-row justify-around mb3 pa3-ns br3 bg-black-30 shadow-3 ba bw1 b--black-40">
                   <div
-                    className="ph2 ph4-l ph3-m pv3-ns h3 mh2 flex flex-column justify-center w-100 ba b--orange br3 bw1 bg-white-10 bg-white-hover grow pointer relative"
+                    className="ph1 ph4-l ph3-m pv3-ns h3 mh2 flex flex-column justify-center w-100 ba b--orange br3 bw1 bg-white-10 bg-white-hover grow pointer relative"
                     onClick={()=> this.openGame(false)}
                   >
-                    <span className="z-4 ">
+                    <span className="z-4 f7">
                       SOUND
                     </span>
                   </div>
@@ -832,7 +835,7 @@ class Poker extends React.Component {
                     className="ph2 ph4-l ph3-m pv3-ns h3 mh2 flex flex-column justify-center w-100 ba b--orange br3 bw1 bg-white-10 bg-white-hover grow pointer relative lh-copy"
                     onClick={()=> this.openGame(true)}
                   >
-                    <span className="z-4 ">
+                    <span className="z-4 f7">
                       NO SOUND
                     </span>
                   </div>
@@ -843,26 +846,32 @@ class Poker extends React.Component {
         }
 
         {!loadingViewOn &&
-          <div className="w-100 flex flex-column justify-center" style={{height:"95vh"}}>
-            <div className=" h-100 h-60-xl w-40-xl w-50-l w-60-m w-100 flex flex-column justify-between self-center " style={{width:"60vw"}}>
+          <div className="w-100 flex flex-column justify-center h-100 pa2 mw7" >
+            <div className=" h-100 w-100 flex flex-column justify-between self-center " >
+
               <div className="h-50 flex flex-column justify-between">
-                <div className="h-55-ns h-50 z-2" >
+                <div className=" h-50 z-2" >
                   <Hand
                     hand={hunterhand}
                     enableClick={false}
                   />
                 </div>
-                <div className="h-45 flex flex-column justify-around items-center">
-                  <img src={HunterNeon} className="w-70-l w-70-xl w-100 neon z-2" />
-
-                  <h1 className=" z-2 h3 f5 f3-ns white b helvetica tracked ma0 tc flex flex-column justify-center">{gameMessage}</h1>
+                <div className=" flex flex-column justify-around items-center">
+                  <img src={HunterNeon} className=" neon mw6 z-2 mb" />
+                  <h1 className=" z-2 h2 f5 f3-ns white b helvetica tracked ma0 tc flex flex-column justify-center items-center">
+                    {gameMessage}
+                  </h1>
                 </div>
               </div>
+
+
               <div className="h-50  flex flex-column justify-between">
-                <div className="h-10 flex flex-column justify-center">
-                  <h3 className="z-2 tc orange helvetica f6 ma0 tracked-mega">{playerhand.hand.desc}</h3>
-                </div>
-                <div className="h-55-ns h-50 z-2" id ="hand-container">
+
+                  <h3 className="z-2 h1 mt1  tc orange helvetica f6-ns f7 ma0 tracked-mega " >
+                    {playerhand.hand.desc}
+                  </h3>
+
+                <div className=" z-2 h-50" id ="hand-container">
                   <Hand
                     hand={playerhand}
                     holdCard={this.holdCard}
@@ -870,14 +879,21 @@ class Poker extends React.Component {
                     echoSize={(param) => this.listentoResize(param)}
                   />
                 </div>
-                <div className="z-2 h-10 w-100 dn flex-ns flex-row justify-center">
+                <div className="z-2 w-100 dn flex-ns flex-row justify-center">
                   {holdbuttons}
                 </div>
-                <div className="h-25-ns h-35  pa3-ns pa1 flex flex-row justify-center">
-
+                <div className=" pv2-ns ph3-ns pa1 flex flex-row justify-center">
                   <div
-                    className={` self-center z-2 h3 w-90 h-90-ns h-70 ba bw1 bw2-ns br3 tc f3-ns f6 b helvetica flex flex-column justify-center tracked-mega ${ gameState != "dealing" ? " b--orange  orange bg-white-20 grow pointer bg-white-hover" :" b--gray gray arrowpointer"}`
-                    }
+                    className={`
+                      self-center z-2
+                      w-100 pv3 pv2-ns
+                      ba bw1 bw2-ns br3
+                      tc f3-ns f6 b helvetica tracked-mega
+                      flex flex-column justify-center
+                      ${ gameState != "dealing" ?
+                      " b--orange orange bg-white-20 grow pointer bg-white-hover" :
+                      " b--gray gray arrowpointer"}
+                      `}
                     onClick={() => {
                       soundbank.button.play();
                       drawButtonFunc()}}
@@ -886,6 +902,9 @@ class Poker extends React.Component {
                   </div>
                 </div>
               </div>
+
+
+
             </div>
           </div>
         }

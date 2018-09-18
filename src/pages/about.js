@@ -7,10 +7,6 @@ import { siteMetadata } from "../../gatsby-config";
 
 import Nav from "../components/Nav";
 import About from "../components/About";
-import BlogLinks from "../components/BlogLinks";
-import Skills from "../components/Skills";
-import Before from "../components/Before";
-import Favorite from "../components/Favorite";
 import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 

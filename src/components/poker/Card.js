@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Cardback} from '../../assets/poker/cardback.png'
+import Cardback from '../../assets/poker/cardback.png'
 
 
 export class Card extends React.Component {
@@ -27,7 +27,7 @@ export class Card extends React.Component {
               `card
                 ${flipped ? " flipped" : ""}
                 ${held ? " held " : " "}
-                ${floating ? " floating-small" : ""}
+                ${floating ? " floating" : ""}
               `
             }
           >

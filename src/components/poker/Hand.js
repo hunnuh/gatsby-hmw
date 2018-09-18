@@ -43,7 +43,7 @@ export class Hand extends React.Component {
   componentDidMount(){
     handcontainer = document.getElementById("hand-container");
     handcontainerheight = handcontainer.clientHeight;
-    let cardwidth = Math.floor(handcontainer.clientHeight * .5764)
+    let cardwidth = Math.floor(handcontainer.clientHeight * .66)
     this.setState({cardwidth:cardwidth})
     if(this.props.echoSize){
       this.props.echoSize(cardwidth);

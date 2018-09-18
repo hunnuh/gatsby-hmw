@@ -5,9 +5,9 @@ export class Holdbutton extends React.Component {
   render() {
     let {flipped, held, holdCard, buttonEnabled} = this.props;
     return(
-      <div className="h-100 ph2 cardwidth" style={{width: this.props.width + "px"}}>
+      <div className="h-100 ph2 cardwidth " style={{width: this.props.width + "px"}}>
         <div
-          className={`h-100 w-100 ba  br3 tc f5--l f7 helvetica flex flex-column justify-center b tracked bw1 select-orange
+          className={`h-100 w-100 ba pv2 br3 tc f5--l f7 helvetica flex flex-column justify-center b tracked bw1 select-orange
             ${
               held ?
               " b--white white bg-orange" :
