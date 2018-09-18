@@ -43,7 +43,7 @@ class FeaturedProgramming extends Component {
     let thumbs = this.props.content.map( (e, i) =>
       <div className=" pa3 relative">
         <img
-          className="mv0 shadow-3 ba b--white"
+          className="mv0 shadow-3 ba b--white-20"
           src={`portfolio/${e.relativePath}`}
           style={{maxHeight:"25rem"}}
         />
@@ -52,25 +52,16 @@ class FeaturedProgramming extends Component {
 
     return (
       <div className=" mt4-ns mt0 flex flex-column justify-center tc white ">
-        <h1 className="mb3 tracked-ns f3">Programming & UI Design</h1>
+        <h1 className="mb3 tracked-ns f3">PLAY HUNTER'S POKER</h1>
 
         <div className="flex flex-row-ns flex-column justify-center-ns justify-start items-center w-100 mb0  " style={{maxHeight:"28rem"}}>
-          <div className="h4 w4 dn db-ns rotate-180 h-auto " onClick={() => this.picBackward()}>
-            <img src={Arrow} className="grow pointer ma0"/>
-          </div>
+
           <div className="w-80-ns w-100 mw-100 ">
             {thumbs[num]}
           </div>
-          <div className="h4 w4 dn db-ns h-auto " onClick={() => this.picForward()}>
-            <img src={Arrow} className="grow pointer ma0"/>
-          </div>
+
           <div className="flex flex-row w-100 justify-around  db dn-ns">
-            <div className="h3 w3  rotate-180" onClick={() => this.picBackward()}>
-              <img src={Arrow} className="grow pointer"/>
-            </div>
-            <div className="h3 w3" onClick={() => this.picForward()}>
-              <img src={Arrow} className="grow pointer"/>
-            </div>
+
           </div>
         </div>
         <img src={Leafbreak} className="h2 mv0 center"/>

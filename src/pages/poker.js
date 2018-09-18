@@ -5,7 +5,7 @@ import {Holdbutton} from '../components/poker/Holdbutton.js'
 import checkHand from '../components/poker/handeval.js'
 import {Howl} from 'howler';
 import { Promise } from 'bluebird'
-
+import FontAwesome from "react-fontawesome";
 
 import HunterNeon from '../assets/poker/hunter_neon.svg'
 import Mute from '../assets/poker/mute.svg'
@@ -761,7 +761,7 @@ class Poker extends React.Component {
     return(
       <div id="poker" className="w-100 flex flex-column justify-start items-center poker poker-ns ving overflow-y-hidden " style={{height:"100vh"}}>
         <nav
-          className={`w-100 h2 pv2 flex flex-row ${loadingViewOn ? "justify-end-ns" : "justify-between-ns"} justify-center z-4 relative`}>
+          className={`w-100 h2 mt2 pv2 flex flex-row justify-center justify-center z-4 relative`}>
           {!loadingViewOn &&
             <div className={`w1 h1 w2-ns h2-ns self-center mh3-ns mh1 o-70`} onClick={this.handleMute}>
               <img src={this.state.mute ? Mute : Unmute}/>
@@ -771,24 +771,10 @@ class Poker extends React.Component {
 
             <Link to="/"
               className={
-              `link dim white-70 f7 f5-ns helvetica dib mh3-ns mh1 tracked`
+              `link dim white-70 f7 f5-ns helvetica dib mh1 tracked ba br2 pa2 `
               }
-            >HOME</Link>
-            <Link to="/portfolio"
-              className={
-              `link dim white-70 f7 f5-ns helvetica dib mh3-ns mh1 tracked`
-              }
-            >PORTFOLIO</Link>
-            <Link to="/about"
-              className={
-              `link dim white-70 f7 f5-ns helvetica dib mh3-ns mh1 tracked`
-              }
-            >ABOUT</Link>
-            <Link to="/poker"
-              className={
-              `link dim white-70 f7 f5-ns fw8 helvetica dib mh3-ns mh1 tracked`
-              }
-            >POKER</Link>
+            ><FontAwesome name="arrow-left" className=" ma0 "/>  HOME</Link>
+
           </div>
         </nav>
 
