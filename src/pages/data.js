@@ -11,19 +11,26 @@ import Photo from "../assets/data_image.jpg";
 
 const modalStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    padding : '0px 0px 0px 0px',
+    position: "relative",
+    display: "flex",
+    height: "100%",
+    left: "0",
+    right: "0",
+    top:"0",
+    bottom: "0",
+    margin: "auto, 0",
     border : "0px",
     background : "none",
     overflowY : "hidden",
       },
   overlay : {
-    background : "rgba(22, 28, 33, 0.9)"
+    background : "rgba(22, 28, 33, 0.9)",
+    position: "fixed",
+    width: "100%",
+    top: "0",
+    bottom: "0",
+    left: "50%",
+    transform: "translateX( -50%)",
   }
 };
 
@@ -83,7 +90,7 @@ class DataPage extends React.Component {
 
               <div className="flex flex-row-l flex-column lh-copy mb5 ph3">
 
-                <div className="w-70-l w-100  pr4">
+                <div className="w-70-l w-100  pr4-l">
                   <img src={Photo} className="w-100 mv0"/>
                   <div className="w-100 bb b--moon-gray mb3 ">
                     <p className="f7 pb1 pl2 mv0 gray">Every person, place, thing, a point of data.</p>
@@ -124,10 +131,12 @@ class DataPage extends React.Component {
             shouldCloseOnOverlayClick={true}
             style={modalStyles}
           >
-            <img
-              className="h-75 mv0 shadow-3 br3" src={this.state.modalPath}
-              onClick={this.handleCloseModal}
-            />
+            <div className="h-100 w-100 flex flex-column justify-center items-center" onClick={this.handleCloseModal}>
+              <img
+                className=" mv0 shadow-3 br3 self-center" src={this.state.modalPath}
+                onClick={this.handleCloseModal}
+              />
+            </div>
           </ReactModal>
 
         </div>

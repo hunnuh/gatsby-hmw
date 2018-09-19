@@ -10,7 +10,6 @@ class Masonry extends Component {
   }
 
   render(props){
-  console.log(this.props.content[0])
 
   let gifs = this.props.content
     .filter((e, i) => e.extension === "gif")
@@ -23,7 +22,7 @@ class Masonry extends Component {
 
     let optimized = this.props.content
     .filter((e, i) => e.extension !== "gif")
-    .map((e, i) => <div onClick={() => this.click(e.relativePath)}>
+    .map((e, i) => <div key={i + "Do"} onClick={() => this.click(e.relativePath)}>
       <Img
           key={i+"o"}
           className="mv3 db shadow-1 w-100 pointer dim "
@@ -50,8 +49,8 @@ class Masonry extends Component {
 
   }
 
-  let organizedMasonryLarge = columns.map((col, i) => <div key={i} className={`ph2 w-` + Math.floor(100/columns.length) + (i % 2 ? ` mt4` : ``)}>{col}</div>)
-  let organizedMasonryMed = columns.map((col, i) => <div key={i} className={`ph2 w-100`}>{col}</div>)
+  let organizedMasonryLarge = columns.map((col, i) => <div key={i+"L"} className={`ph2 w-` + Math.floor(100/columns.length) + (i % 2 ? ` mt4` : ``)}>{col}</div>)
+  let organizedMasonryMed = columns.map((col, i) => <div key={i+"M"} className={`ph2 w-100`}>{col}</div>)
 
 
     return (
