@@ -31,7 +31,7 @@ export class Card extends React.Component {
               `
             }
           >
-            <img src={`../../cards/${card}.png`} className="cardfront card-shadow"/>
+            <img src={`../poker/cards/${card}.png`} className="cardfront card-shadow"/>
             <img src={Cardback} className="cardback card-shadow"/>
           </div>
         </div>
