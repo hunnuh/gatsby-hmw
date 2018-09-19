@@ -24,7 +24,7 @@ export class Card extends React.Component {
           <div
 
             className={
-              `card
+              `w-100 card
                 ${flipped ? " flipped" : ""}
                 ${held ? " held " : " "}
                 ${floating ? " floating" : ""}
