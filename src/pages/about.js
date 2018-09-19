@@ -59,20 +59,20 @@ class AboutPage extends Component {
 
                 </div>
               </div>
-              <div  className=" w-100-ns w-80 flex flex-row-ns flex-column justify-around pb2 f7 b self-center mt3">
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
+              <div  className=" w-100 flex flex-row-ns flex-column justify-around pb2 f7-ns f6 b self-center mt3">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="envelope" className="black-70 mh1"/>
                   <a style={{color: "#9d1c1f"}} className="no-underline underline-hover pointer " target={"_blank"} href={"mailto:hunter.m.wells@gmail.com"}>| hunter.m.wells@gmail.com</a>
                 </div>
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="file" className="black-70 mh1"/>
                   <a className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} target={"_blank"} href={Resume}>| Résumé</a>
                 </div>
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="phone" className="black-70 mh1"/>
                   <a style={{color: "#9d1c1f"}} className="no-underline underline-hover pointer " onClick={() => this.giveNumber()}>| {this.state.numberText}</a>
                 </div>
-                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2 ph2 ph3-l br4 shadow-3 tc">
+                <div style={{color: "#9d1c1f", backgroundColor:"#EBFFFC"}} className="mv2 mv0-ns pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="linkedin" className="black-70 mh1"/>
                   <a className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} target={"_blank"} href={"https://www.linkedin.com/in/hmw"}>| linkedin.com/in/hmw</a>
                 </div>

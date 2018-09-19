@@ -61,13 +61,13 @@ class IndexPage extends Component {
             </div>
             <div className=" flex flex-column justify-center w-100 self-center z-4 bg-white ">
               <div className="mw8 w-100 self-center z-4 ph0">
-                <h3 className="fw8 f1-ns f2 black-60 lh-copy mv0 tc mv5"> Need strong skills? <br className="dn-l"/> <strong style={{color: "#9d1c1f"}}>...I got 'em.</strong></h3>
+                <h3 className="fw8 f1-ns f3 black-60 lh-copy mv0 tc mv5-ns mv4"> Need strong skills? <br className="dn-l"/> <strong style={{color: "#9d1c1f"}}>...I got 'em.</strong></h3>
                 <div className="flex flex-row-ns flex-column justify-center">
                   <div className="w-25-ns w-100 tc ">
-                    <h3 className="f3 f4-ns bb  mw5 pb2 ph2 center mb3 dib">
+                    <h3 className="f4 bb  mw5 pb2 ph2 center mb3 dib">
                       <FontAwesome  name="check" className=""/> Hard Skills
                     </h3>
-                    <ul className="b f6-ns f5 list pl0 ml0 black-70 mb5 mb3-ns">
+                    <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
                       <li>JavaScript programming</li>
                       <li>Advanced digital design</li>
                       <li>Data analysis and DB's</li>
@@ -76,10 +76,10 @@ class IndexPage extends Component {
                     </ul>
                   </div>
                   <div className="w-25-ns w-100 tc">
-                    <h3 className="f3 f4-ns bb  mw5 pb2 ph2 center mb3 dib">
+                    <h3 className="f4 bb  mw5 pb2 ph2 center mb3 dib">
                       <FontAwesome  name="check" className=""/> Soft Skills
                     </h3>
-                    <ul className="b f6-ns f5 list pl0 ml0 black-70 mb5 mb3-ns">
+                    <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
                       <li>Fierce problem solver</li>
                       <li>Accomplished speaker</li>
                       <li>Effective self-educator</li>
@@ -88,10 +88,10 @@ class IndexPage extends Component {
                     </ul>
                   </div>
                   <div className="w-25-ns w-100 tc">
-                    <h3 className="f3 f4-ns bb  mw5 pb2 ph2 center mb3 dib">
+                    <h3 className="f4 bb  mw5 pb2 ph2 center mb3 dib">
                       <FontAwesome  name="check" className=""/> Other Skills
                     </h3>
-                    <ul className="b f6-ns f5 list pl0 ml0 black-70 mb5 mb3-ns">
+                    <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
                       <li>Multi-instrumentalist</li>
                       <li>Drawing & Sketching</li>
                       <li>Computer Science</li>
@@ -140,7 +140,7 @@ class IndexPage extends Component {
                   <div className="ph5-ns pv4-ns  pa2 mw7 ba b--black shadow-2 white br3 binding_dark tc">
                     <div className="flex flex-row justify-center mv4-ns">
                       <div className="pa4-ns pa3 mw6 flex flex-column justify-center bg-white-10 ba b--white-40">
-                        <h4 className="f2 mb0 bb pv2 mb2 shadow-4 br2 ba b--black-90" style={{ backgroundColor: "#9d1c1f"}}>Hunter + Data</h4>
+                        <h4 className="f2-ns f4 mb0 bb pv2 mb2 shadow-4 br2 ba b--black-90" style={{ backgroundColor: "#9d1c1f"}}>Hunter + Data</h4>
                         <p className="f5 b lh-copy white-90 mv3  tracked " >Working with computers is a passion of mine.</p>
                         <p className="f6-ns f7 lh-copy white-90 mt0 measure tracked ">To share some information about my background, I wrote a short article discussing my experience and achievements in the world of data. </p>
                         <Link to={"/data/"} style={{backgroundColor: "#9d1c1f"}} className="f6 mw4 pv2 ph3 self-center shadow-4 ba b--black-90 br2 white b pointer mt2 underline-hover no-underline tracked">READ IT</Link>
