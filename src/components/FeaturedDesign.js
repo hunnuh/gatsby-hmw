@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Link, { withPrefix } from 'gatsby-link'
 import FontAwesome from "react-fontawesome";
 
-import Arrow from "../assets/arrow.svg";
 
 class FeaturedDesign extends Component {
   constructor () {

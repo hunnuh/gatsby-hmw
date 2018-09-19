@@ -75,6 +75,7 @@ class Nav extends Component{
               <NavLink on={page === "portfolio"} link="/portfolio/">Designing</NavLink>
               <NavLink on={page === "programming"} link="/programming/">Programming</NavLink>
               <NavLink on={page === "data"} link="/data/">Computing</NavLink>
+              <NavLink link="/poker/">Fun</NavLink>
               <NavLink on={page === "about"} link="/about/">About</NavLink>
             </div>
           </div>
@@ -120,6 +121,7 @@ class Nav extends Component{
             <MobileNavLink on={page === "portfolio"} link="/portfolio/">Designing</MobileNavLink>
             <MobileNavLink on={page === "programming"} link="/programming/">Programming</MobileNavLink>
             <MobileNavLink on={page === "data"} link="/data/">Computing</MobileNavLink>
+            <MobileNavLink link="/poker/">Fun</MobileNavLink>
             <MobileNavLink on={page === "about"} link="/about/">About</MobileNavLink>
           </div>
         </ReactModal>

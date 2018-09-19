@@ -50,14 +50,5 @@ class MasonryImg extends Component {
 }
 
 
-export const sharpQuery = graphql`
-  query MasonImgQuery {
-    masonImage: imageSharp(id: { eq: "/header/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes_tracedSVG
-      }
-    }
-  }
-`
 
 export default Masonry;

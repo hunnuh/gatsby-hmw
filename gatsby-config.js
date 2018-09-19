@@ -1,4 +1,5 @@
 module.exports = {
+  
   siteMetadata: {
     title: `Your Search Is Over.`,
     author: `Hunter Maverick Wells`,

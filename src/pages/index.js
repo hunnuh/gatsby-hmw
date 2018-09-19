@@ -9,10 +9,6 @@ import About from "../components/About";
 import FeaturedDesign from "../components/FeaturedDesign";
 import FeaturedProgramming from "../components/FeaturedProgramming";
 
-import BlogLinks from "../components/BlogLinks";
-import Skills from "../components/Skills";
-import Before from "../components/Before";
-import Favorite from "../components/Favorite";
 import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 import Nav from "../components/Nav";
