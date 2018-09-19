@@ -102,7 +102,7 @@ function createCards() {
 }
 
 let cardImagePaths = createCards().map(
-  (x) => "../../cards/"+x.str+".png"
+  (x) => "../poker/cards/"+x.str+".png"
 )
 
 class Poker extends React.Component {
