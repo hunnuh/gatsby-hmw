@@ -186,7 +186,6 @@ class Poker extends React.Component {
   }
 
   componentDidMount(){
-    console.log(HunterNeon)
     setTimeout(()=>this.activatePreload(), 500)
     if(typeof window.getComputedStyle(document.body).backgroundBlendMode == 'undefined') {
     document.getElementById('poker').className += " no-blend";
@@ -239,7 +238,7 @@ class Poker extends React.Component {
             resolve(img);
           };
           img.onerror = img.onabort = function() {
-            reject(src);
+            reject(err);
           };
           img.src = src;
       });
