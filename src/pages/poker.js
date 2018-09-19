@@ -231,16 +231,16 @@ class Poker extends React.Component {
     function loadImage(src, index) {
       return new Promise(function(resolve, reject) {
           var img = new Image();
+          img.src = src;
           img.onload = function() {
             count++;
-
             countup(count);
             resolve(img);
           };
           img.onerror = img.onabort = function() {
-            reject(err);
+            console.log("ERROR LOADING: " + src)
+            reject()
           };
-          img.src = src;
       });
     }
 
