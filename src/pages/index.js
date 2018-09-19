@@ -71,8 +71,8 @@ class IndexPage extends Component {
                       <li>JavaScript programming</li>
                       <li>Advanced digital design</li>
                       <li>Data analysis and DB's</li>
-                      <li>Spatial statistics</li>
-                      <li>Professional video</li>
+                      <li>Geospatial statistics</li>
+                      <li>Pro video production</li>
                     </ul>
                   </div>
                   <div className="w-25-ns w-100 tc">
@@ -80,7 +80,7 @@ class IndexPage extends Component {
                       <FontAwesome  name="check" className=""/> Soft Skills
                     </h3>
                     <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
-                      <li>Fierce problem solver</li>
+                      <li>Fierce trouble shooter</li>
                       <li>Accomplished speaker</li>
                       <li>Effective self-educator</li>
                       <li>Proven MVP quality</li>

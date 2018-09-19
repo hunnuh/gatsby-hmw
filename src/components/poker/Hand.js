@@ -43,12 +43,16 @@ export class Hand extends React.Component {
   componentDidMount(){
     handcontainer = document.getElementById("hand-container");
     handcontainerheight = handcontainer.clientHeight;
-    let cardwidth = Math.floor(handcontainer.clientHeight * .66)
+    let cardwidth = Math.floor(handcontainer.clientHeight * .64)
     this.setState({cardwidth:cardwidth})
     if(this.props.echoSize){
       this.props.echoSize(cardwidth);
     }
     window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleResize(e) {
@@ -59,7 +63,7 @@ export class Hand extends React.Component {
       resizeTimeout = setTimeout(() => {
         resizeTimeout = null;
         handcontainerheight = handcontainer.clientHeight;
-        let cardwidth = Math.floor(handcontainer.clientHeight * .5764)
+        let cardwidth = Math.floor(handcontainer.clientHeight * .64)
         this.setState({cardwidth: cardwidth});
         if(this.props.echoSize){
           this.props.echoSize(cardwidth);
