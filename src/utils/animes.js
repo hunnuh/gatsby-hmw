@@ -4,28 +4,9 @@ import anime from 'animejs'
 
 var Animes = function animeAPI(){
 
-  let browser = typeof window !== "undefined" ? window : null;
-
-  let reduct = 0.55
-  let width = browser ? browser.innerWidth : 0;
-  let xTrans = width*reduct;
-  let widthInterval;
-
-
-  function getWidth(){
-    if (width !== browser.innerWidth || width === 0){
-      width =  browser.innerWidth
-      xTrans = width*reduct
-      start();
-    }
-  }
-
 
   function start(){
-      if(widthInterval){
-        clearInterval(widthInterval)
-      }
-      else{
+
         var float = anime({
         targets: '#meditating-hunter',
         translateY: 15,
@@ -33,8 +14,8 @@ var Animes = function animeAPI(){
         direction: "alternate",
         easing: "easeInOutSine"
         });
-      }
-      widthInterval = setInterval(() => (getWidth()), 300);
+
+
 
 
 
@@ -108,7 +89,7 @@ var Animes = function animeAPI(){
     var loopAnimSmall = {
       translateX: [
         { value: 0, duration: 0, elasticity: 0,delay: 0, },
-        { value: xTrans, duration: 3000, elasticity: 0, delay: 0,  easing: "easeInOutQuad"},
+        { value: 240, duration: 3000, elasticity: 0, delay: 0,  easing: "easeInOutQuad"},
         { value: 0, duration: 3000, elasticity: 0,delay: 0,   easing: "easeInOutQuad"},
       ],
       translateY: [
@@ -134,7 +115,6 @@ var Animes = function animeAPI(){
       autoplay: false,
     }
 
-    loopAnimSmall.translateX[1].value = xTrans;
 
     var reacticonsmall = anime({
     targets: '#hunterslide .reacticonsmall', ...loopAnimSmall
@@ -174,7 +154,7 @@ var Animes = function animeAPI(){
 
   function kill(){
 
-    clearInterval(widthInterval)
+   console.log("kill")
 
   }
 

@@ -4,6 +4,8 @@ import Link from "gatsby-link";
 import FontAwesome from "react-fontawesome";
 import ReactModal from "react-modal";
 
+import Resume from "../assets/Hunter_M_Wells_resume.pdf";
+
 const modalStyles = {
   content : {
     background : "none",
@@ -30,7 +32,7 @@ const NavLink = ({link, children, on}) => (
 
 const MobileNavLink = ({link, children, on}) => (
 
-  <Link to={link} className={`${on ? "bg-red" : ""} f4 flex flex-column justify-center fw8 no-underline ph3 pv3 hover-bg-red white w-100 bt`}>{children}</Link>
+  <Link to={link} className={`${on ? "bg-red" : ""} f4 flex flex-column justify-center fw8 no-underline ph3 pv3 hover-bg-red white w-100 bb`}>{children}</Link>
 );
 
 
@@ -63,7 +65,7 @@ class Nav extends Component{
   render(props){
     let {page} = this.props
     return(
-      <div style={{background: "#9d1c1f"}} className=" flex flex-row justify-center bb bw1 b--black-50 ph4-ns ph2">
+      <div style={{background: "#9d1c1f"}} className=" flex flex-row justify-center bb bw1 b--black-50 ph4-ns ph2 ">
         <div className="flex flex-row justify-between items-center w-100 mw8 ">
           <div className="flex flex-row items-center ">
             <Link to={"/"}>
@@ -72,20 +74,24 @@ class Nav extends Component{
               </div>
             </Link>
             <div  className="h3 flex-l flex-row dn">
-              <NavLink on={page === "portfolio"} link="/portfolio/">Designing</NavLink>
-              <NavLink on={page === "programming"} link="/programming/">Programming</NavLink>
-              <NavLink on={page === "data"} link="/data/">Computing</NavLink>
-              <NavLink link="/poker/">Fun</NavLink>
+              <NavLink on={page === "programming"} link="/programming/">Projects</NavLink>
+              <NavLink on={page === "portfolio"} link="/portfolio/">Design</NavLink>
+              <NavLink on={page === "data"} link="/data/">Education</NavLink>
               <NavLink on={page === "about"} link="/about/">About</NavLink>
             </div>
           </div>
           <div className="dn db-l f3 pa3 ">
-            <div className="br-pill ba b--white bw1 info-icon relative">
-                <FontAwesome name="question" className="white mh2"/>
+            <a href="http://github.com/hunter-digital"><FontAwesome name="github" className="white-70 hover-white mh2"/></a>
+            <a href="http://www.linkedin.com/u/hmw"><FontAwesome name="linkedin" className="white-70 hover-white mh2"/></a>
+            <a target={"_blank"} href={Resume}><FontAwesome name="clipboard" className="white-70 hover-white mh2 "/></a>
+            <div className=" di info-icon relative mh0">
+                <FontAwesome name="info" className="white-70 hover-white mh2"/>
                 <div
                   style={{borderColor: "#9d1c1f", letterSpacing: ".05rem"}}
                   className="info-box f7 absolute w5 z-4 right--1 top-2 bg-white pa2 lh-copy br2 mt2 shadow-1 ba bw1 dn mr2">
-                    <p className="mb0 info-p">This site was developed with <a href="https://reactjs.org/" target="_blank">React,</a> generated in <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby,</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify.</a> Illustrations and CSS were designed by <Link to={"/about/"}>Hunter.</Link> </p>
+                    <p className="mb0 info-p">
+                      This site was developed with <a href="https://reactjs.org/" target="_blank">React,</a> generated in <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby,</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify.</a> Illustrations and CSS were designed by <Link to={"/about/"}>Hunter.</Link>
+                    </p>
                 </div>
             </div>
 
@@ -101,7 +107,7 @@ class Nav extends Component{
           shouldCloseOnOverlayClick={true}
           style={modalStyles}
         >
-          <div style={{background: "#9d1c1f"}} className="w-100 br4 pb3 ba bw1 b--black">
+          <div style={{background: "#9d1c1f"}} className="w-100 br4 ba bw1 b--black">
             <div className="w-100 flex flex-row justify-between pa3 bb b--white bg-black-20">
               <Link className=" h-100 w4" to={"/"}>
                 <img src={Logo} style={{maxHeight:"2rem"}} className=" pv0 mv0"/>
@@ -118,12 +124,17 @@ class Nav extends Component{
                 <FontAwesome onClick={this.handleCloseModal} name="close" className="white f1 fa-2x"/>
               </div>
             </div>
-            <MobileNavLink on={page === "portfolio"} link="/portfolio/">Designing</MobileNavLink>
-            <MobileNavLink on={page === "programming"} link="/programming/">Programming</MobileNavLink>
-            <MobileNavLink on={page === "data"} link="/data/">Computing</MobileNavLink>
-            <MobileNavLink link="/poker/">Fun</MobileNavLink>
+            <MobileNavLink on={page === "programming"} link="/programming/">Projects</MobileNavLink>
+            <MobileNavLink on={page === "portfolio"} link="/portfolio/">Design</MobileNavLink>
+            <MobileNavLink on={page === "data"} link="/data/">Education</MobileNavLink>
             <MobileNavLink on={page === "about"} link="/about/">About</MobileNavLink>
+            <div className="f2 pa3 w-100 flex flex-row justify-around">
+              <a href="http://github.com/hunter-digital"><FontAwesome name="github" className="white mh2"/></a>
+              <a href="http://www.linkedin.com/u/hmw"><FontAwesome name="linkedin" className="white mh2"/></a>
+              <a target={"_blank"} href={Resume}><FontAwesome name="clipboard" className="white mh2 "/></a>
+            </div>
           </div>
+
         </ReactModal>
       </div>
     )

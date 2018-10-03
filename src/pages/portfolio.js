@@ -10,7 +10,7 @@ import ReactModal from "react-modal";
 import ScrollToTop from "react-scroll-up";
 
 import Briefcase from "../assets/briefcase.svg";
-
+import Leaf from "../assets/leafbreak_white.svg";
 
 const modalStyles = {
   content : {
@@ -70,7 +70,7 @@ class PortfolioPage extends React.Component {
     console.log("tag")
     let top = document.querySelector(tag).getBoundingClientRect().top;
     if(typeof window !== undefined){
-      window.scrollTo({top, behavior:'smooth'})
+      setTimeout(window.scrollTo({top, behavior:'smooth'}), 100)
     }
   }
 
@@ -91,51 +91,43 @@ class PortfolioPage extends React.Component {
     return (
       <div>
         <Nav page="portfolio"/>
-        <div className="relative w-100 portfolioGradient">
+        <div id="back" style={{backgroundColor: "#19382B"}} className="relative w-100 ">
           <div className=" relative flex flex-column ">
 
             <div
-              style={{backgroundColor: "#0d202f", borderColor: "#0d202f"}}
-              className="w-100 white flex justify-center bb bw1 shadow-3 ph2"
-              id="ocean"
+              style={{color: "#FDFDFD"}}
+              className="w-100 mw8 br3 mt2 pa3 flex flex-column justify-center self-center tc"
               >
-              <div
-                style={{margin:"5rem 0rem 5rem 0rem", backgroundColor: "#0d202f"}}
-                className="center ba b--white mv5 relative br2 shadow-3 pa1 "
-              >
-                <h5
-                  style={{top:"-.8rem", left:".8rem", backgroundColor: "#0d202f"}}
-                  className="f7 tracked absolute top-0 ph2 pv1 br2 ba b--white"
-                >
-                  HUNTER SAYS:
-                </h5>
-                <p className="ma3 mw5 tracked tc lh-copy b" > "Scroll down forever to see <br className="dn db-ns"/> my best design work.<span className="dn di-ns"> Click to enlarge.</span>"</p>
-              </div>
+                <img className="mw6 self-center mv0" src={Leaf} />
+                <h1 className="mt3 f1-ns f2 self-center">A collection of my best designs. </h1>
+                <p className=" mw6 lh-copy self-center" >
+                  For me, creating a beautiful project is not optional. Scroll down to see the design skills I've developed during my career. Click to enlarge.
+                </p>
             </div>
 
-            <div className="w-70-l w-90 self-center tc pt0 ">
-              <div className=" w-100  flex flex-row-ns flex-column justify-start mv4 mw7-l center">
-                <span style={{color: "#0d202f"}} className=" b f7 w3 mb2 mb0-ns flex flex-column justify-center">Skip to:</span>
+            <div className="w-100 mw8 self-center tc pt0 ">
+              <div className=" w-100  flex flex-row-ns flex-column justify-start ph2 ph0-ns mw7-l center mb5 mb0-ns">
+                <span className="white b f6 w3 mb2 mb0-ns flex flex-column justify-center">Skip to:</span>
                 <div className=" flex flex-row-ns flex-wrap justify-around items-center w-100">
-                  <SubNavLink pass={"#po"}>POSTERS</SubNavLink>
                   <SubNavLink pass={"#we"}>WEB DESIGN</SubNavLink>
+                  <SubNavLink pass={"#po"}>POSTERS</SubNavLink>
                   <SubNavLink pass={"#pr"}>PRINT MEDIA</SubNavLink>
                   <SubNavLink pass={"#lo"}>LOGOS & BRANDS</SubNavLink>
                   <SubNavLink pass={"#ph"}>PHOTOS & RASTER</SubNavLink>
                   <SubNavLink pass={"#ot"}>OTHER</SubNavLink>
                 </div>
               </div>
-              <HH>POSTERS</HH>
-              <Masonry
-                openModal={this.handleOpenModal}
-                content={this.trimData("flyers")}
-                cols={4}
-              />
               <HH>WEB DESIGN</HH>
               <Masonry
                 openModal={this.handleOpenModal}
                 content={this.trimData("websites").reverse()}
                 cols={3}
+              />
+              <HH>POSTERS</HH>
+              <Masonry
+                openModal={this.handleOpenModal}
+                content={this.trimData("flyers")}
+                cols={4}
               />
               <HH>PRINT MEDIA</HH>
               <Masonry
@@ -167,16 +159,16 @@ class PortfolioPage extends React.Component {
                 className="w-100 white flex"
               >
                 <div
-                  style={{backgroundColor: "#0d202f"}}
+                  style={{backgroundColor: "#9d1c1f"}}
                   className="center ba b--white relative br2"
                 >
                   <h5
-                    style={{top:"-.6rem", left:".6rem", backgroundColor: "#0d202f"}}
+                    style={{top:"-.6rem", left:".6rem", backgroundColor: "#9d1c1f"}}
                     className=" f7 tracked absolute top-0 ph2 pt1 white br2"
                   >
                     HUNTER SAYS:
                   </h5>
-                  <p className="ma3 tracked tc b lh-copy"> "Okay, maybe not <em>forever.</em> ;) <br/>  Thanks for looking. <Link to={"/programming/"} className="white"> Click here</Link> to see <br/> my programming projects."</p>
+                  <p className="ma3 tracked tc b lh-copy"> "Thanks for checking out my design work. <br/> <Link to={"/programming/"} className="white"> Click here</Link> to see my programming projects."</p>
                 </div>
               </div>
             </div>
@@ -188,7 +180,7 @@ class PortfolioPage extends React.Component {
           {/*large*/}
           <ScrollToTop showUnder={960}>
             <div
-              style={{backgroundColor: "#0d202f"} }
+              style={{backgroundColor: "#9d1c1f"} }
               className = "flex flex-row justify-center items-center white w4 pv3 br3 shadow-3 b hover-bg-red ba"
             >
                 <FontAwesome  name="arrow-up" className="mr2"/> TO TOP
@@ -196,7 +188,7 @@ class PortfolioPage extends React.Component {
           </ScrollToTop>
           <ReactModal
             isOpen={this.state.showModal}
-            contentLabel="Minimal Modal Example"
+            contentLabel="Portfolio Modal"
             onRequestClose={this.handleCloseModal}
             shouldCloseOnOverlayClick={true}
             style={modalStyles}
@@ -216,12 +208,11 @@ class PortfolioPage extends React.Component {
 }
 
 const HH = ({children}) => (
-  <div className="tl-ns tc mt5-l mt3 mb0 bb bw1-ns b--white-90" >
+  <div className="tl-ns tc mt5-l mt3 mb0 bb bw1-ns b--white-90 mh3 mh0-ns" >
     <h1
-      className=" f1-ns f3 mt0 mb1 white-90"
+      className=" f2-ns f3 mt0 mb1 white-90"
       id={children.substring(0, 2).toLowerCase()}
-      style={{letterSpacing:"1rem",
-      textShadow: "2px 2.5px 0px #0d202f"}}
+      style={{letterSpacing:".80rem"}}
     >
       {children}
     </h1>
@@ -230,9 +221,8 @@ const HH = ({children}) => (
 
 const SubNavLink = (props) => (
   <span
-    style={{backgroundColor: "#0d202f"}}
     onClick={() => scrollToContent(props.pass)}
-    className="pa1 pa2-l white f7 br3 no-underline underline-hover mv1 nowrap pointer ba b--white shadow-1">
+    className="pa1 pa2-l white hover-bg-white hover-black f7 br3 no-underline mv1 nowrap pointer ba b--white shadow-1">
     {props.children}
   </span>
 );

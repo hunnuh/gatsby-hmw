@@ -10,7 +10,7 @@ body {
 }
 
 #back {
-    background-image:url("../assets/pbg.png");
+    background-image:url("../assets/pbtrans.png");
     background-size:cover;
     background-attachment:fixed;
 }
@@ -36,7 +36,7 @@ body {
 }
 
 .info-icon:hover {
-    display:block !important;
+    display:inline !important;
 }
 
 .info-p a{
@@ -96,16 +96,6 @@ body {
   color: #0d9969;
 }
 
-.hunterslide{
-  background-image:url("../assets/hunterslide.jpg")
-}
-
-
-.hunterslide1{
-  background-image:url("../assets/hunterslide2.png")
-}
-
-
 .palmpattern{
   background-image:url("../assets/palm-leaf.png")
 }
@@ -163,14 +153,14 @@ body {
 
 .poker{
 		background-image: url("../assets/poker/felt.png");
-		background-color: #003300;
+		background-color: #19382B;
 		background-size: 531px 337px;
 		background-blend-mode: luminosity;
 }
 
 .no-blend {
   background-image: none !important;
-  background-color: #003300 !important;
+  background-color: #19382B !important;
 }
 
 .no-blend::before{

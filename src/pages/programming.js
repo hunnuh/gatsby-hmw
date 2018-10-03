@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
-import ReactModal from "react-modal";
 import FontAwesome from "react-fontawesome";
 
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Programming from "../assets/programming.svg";
+import Atom from "../assets/atom.svg";
 import ProgramHighlighter from "../components/ProgramHighlighter";
 
 import Projects from "../data/projects";
 import { withPrefix } from 'gatsby-link'
+import ReactModal from "react-modal";
 
 
 const modalStyles = {
@@ -31,6 +31,7 @@ const modalStyles = {
   }
 };
 
+
 class ProgrammingPage extends React.Component {
   constructor () {
     super();
@@ -45,26 +46,25 @@ class ProgrammingPage extends React.Component {
   }
 
   handleOpenModal (path) {
-    this.setState({ modalPath: path, showModal: true });
-  }
+      this.setState({ modalPath: path, showModal: true });
+    }
 
-  handleCloseModal () {
-    this.setState({ showModal: false });
-  }
+    handleCloseModal () {
+      this.setState({ showModal: false });
+    }
+
+    componentDidMount(){
+      if (typeof(window) !== 'undefined') {
+        ReactModal.setAppElement('body')
+      }
+    }
 
   handleChangeProject(number){
     this.setState({projectNumber:number})
   }
 
-  componentDidMount(){
-    if (typeof(window) !== 'undefined') {
-      ReactModal.setAppElement('body')
-    }
-  }
-
   trimData(portfolioSection){
     let trimmedData = this.props.data.allFile.edges.reduce((acc, curr) => acc.concat(curr.node), []).filter(e => e.relativeDirectory === portfolioSection );
-
     return trimmedData;
   }
 
@@ -73,30 +73,41 @@ class ProgrammingPage extends React.Component {
     let {projectNumber} = this.state
 
     let Rows = Projects.map((proj, index)=>
-      <ProjectRow key={index} project={proj} id={`proj` + index} current={this.state.projectNumber} open={(path) => this.handleOpenModal(path)} clickButton={(number) => this.handleChangeProject(number)}/>)
+      <ProjectRow
+        key={index}
+        project={proj}
+        id={`proj` + index}
+        open={(path) => this.handleOpenModal(path)}/>)
 
     return (
-      <div style={{minHeight:"100vh"}} className="relative">
+      <div className="relative h-100" style={{backgroundColor:"#19382B", minHeight: "100vh"}} id="back">
         <Nav page={"programming"}/>
-
-        <div  className="relative w-100 h-100" style={{height:"calc(100vh - 72px)"}}>
-          <div className="relative flex flex-column items-center h-100 ">
-            {Rows[projectNumber]}
+        <div className="relative mw8 flex flex-column items-center center pv5-ns pv3 ph3">
+          <img className="white mw4 mv0" src={Atom}/>
+          <h1 className="tc white f3 f2-ns lh-copy-ns" >I'm a smart, creative frontend developer. <br/> Just what your team is looking for.</h1>
+          <p className="f5-ns f6 mw6 lh-copy tc white-80" >
+            My years of experience with React and JavaScript make me a worthy developer. I create practical, functional, and beautiful applications. Dont just take it from me; browse my programming projects below.
+          </p>
+          <div className="bb b--white mh3-m">
+            <h2 className="white self-start mt5 mb3"><FontAwesome name="code"/> Programming Projects:</h2>
+            {Rows}
           </div>
 
-          <ReactModal
-            isOpen={this.state.showModal}
-            contentLabel="Minimal Modal Example"
-            onRequestClose={this.handleCloseModal}
-            shouldCloseOnOverlayClick={true}
-            style={modalStyles}
-          >
-            <img
-              className="h-75 mv0 shadow-3 br3" src={this.state.modalPath}
-              onClick={this.handleCloseModal}
-            />
-          </ReactModal>
         </div>
+        <Footer/>
+
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="Programming Project"
+          onRequestClose={this.handleCloseModal}
+          shouldCloseOnOverlayClick={true}
+          style={modalStyles}
+        >
+          <img
+            className="h-75 mv0 shadow-3 br3" src={this.state.modalPath}
+            onClick={this.handleCloseModal}
+          />
+        </ReactModal>
       </div>
     );
   }
@@ -109,163 +120,64 @@ class ProjectRow extends React.Component {
     this.state = {
       codeView: true
     };
-    this.changeView = this.changeView.bind(this);
   }
 
-  changeView(){
-    this.setState({codeView: !this.state.codeView})
-  }
 
   render () {
-    let {codeView} = this.state;
-    let {project, current} = this.props;
+    let {project} = this.props;
 
     let paras = project.desc.p.map((p, index)=>
-      <p key={index} className=" mt0 mb1  measure lh-copy">{p}</p>
+      <p key={index} className=" mt0 mb2 f6 white-80 " style={{lineHeight:"1.25rem", textIndent:"1.3rem"}}>{p}</p>
     )
 
     let links = project.desc.tech.map((tech, index)=>
       <li
         key={index}
-        className=" f7 dib mv0 mh0 ml0 pointer mh1">
+        className=" f7 dib mv0 pointer mh1">
         <a
           target="_blank"
           href={tech.link}
-          className={`black-70 hover-white link b no-underline `}
+          className={`white link b no-underline hover-bg-white hover-black br3 pa1`}
         >
         ::  {tech.name}
         </a>
       </li>
     )
 
-    let projectButtons = Projects.map((proj, index)=>
-      <li
-        className={`h3 w-100 list flex flex-column justify-center bb ph4 fr
-          br3-l br--left-l br3 br--top mh0 mv2-l mv0 f5 b shadow-3
-          black-60 ${current == index ? "  bl bt bb b--white ": " pointer bl bt bb projectButton"}`}
-        key={index}
-        onClick={() => this.props.clickButton(index)}
-        style={
-          {
-          backgroundColor: `${current == index ? "#ebf8ff" : "#7989a3"}`,
-          borderColor: `${current == index ? "#7989a3" : "#ebf8ff"  }`
-          }
-        }
-      >
-        {proj.title.toUpperCase()}
-      </li>)
-
     return  (
-      <div style={{backgroundColor:"#e5d7bd"}} className=" flex flex-row justify-center w-100 h-100 " id="concrete" >
-
-        <div className="w-100 dn-ns flex flex-row justify-center items-center pa3">
-          <div className="bg-navy flex flex-column justify-center items-center pa3 ba br3"
-            style={
-            {backgroundColor: "#7989a3", borderColor: "#ebf8ff"}}>
-            <FontAwesome name="desktop" style={{backgroundColor: "#ebf8ff"}}
-              className="fa-5x mb2 mt4 ba br-pill pa4 ma0 "/>
-            <p className="f4 tc lh-copy ph3 mv2" style={{color: "#ebf8ff"}}>
-              Please visit on a larger device to inspect code.
-            </p>
-            <Link to={"/"} className="f7 tc lh-copy ph3 no-underline underline-hover" style={{color: "#ebf8ff"}}>
-              ⇽ Back home
-            </Link>
+      <div  className=" flex flex-row-ns flex-column justify-start-ns items-center w-100 pv3 bt b--white" >
+          <div className=" mw5 w-100 pa3 flex flex-column justify-center ">
+            <img className="db shadow-1 ba b--black-80 mv0 pointer grow"
+              onClick={() => this.props.open(project.src)}
+              src={project.src}/>
           </div>
-        </div>
-
-
-
-
-        <div className="w-100 pv3-l pt2 dn flex-ns flex-row-l flex-column mw9 ">
-          <div className="w-20-l w-100 ">
-            <div className="mh0 fr-l mb0 pt3-l pt0 pl2-l pl0 flex flex-row flex-column-l overflow-x-auto overflow-y-hidden">
-              {projectButtons}
+          <div className="w-100 pa3">
+            <h1 className="white f4 mt0 mb2 w-100" >{project.title} ({project.date})</h1>
+            <ul className="mt1 mb2 mh0 list pa0">{links}</ul>
+            <div className="pr4-l">
+              {paras}
             </div>
-          </div>
+            <div className="flex flex-row-ns flex-column mt3 tc tl-ns">
 
-          <div className="w-50-l w-100 h-100 flex flex-row-l flex-column justify-center pv4-l ba  br3-l br--left-l shadow-3 " style={{ backgroundColor: "#7989a3", color: "#ebf8ff", borderColor: "#0d202f"  }}>
+              {project.links.featured.enabled ?
 
-            {codeView &&
-              <div className="LARGE db dn-l h-100 w-100 pv4">
-                <div className="w-100 ph4 h-100 ">
-                  <div className="" style={{height:"auto"}}>
-                    <h1 className="white f2-l f4 mt0 mb2 pb2 w-100 bb programming-shadow" >{project.title} &ensp;
-                      <span className={"f5 underline-hover pointer"} onClick={() => this.changeView()}><br className="db dn-ns"/>  (Click for Info)</span>
-                    </h1>
-                    <p className="f7 mt0 tracked mb2" > : : Click the tabs below to see more.</p>
-                  </div>
-                  <div className="" style={{height:"88%"}}>
+              <a
+                href={project.links.featured.url}
+                target={"_blank"} style={{backgroundColor: "#BC772A"}}
+                className="white mr3-ns f7 pa2 br1 no-underline shadow-3 mb3 mb0-ns">
+                  <FontAwesome name="certificate" className="mr2 fa-lg"/>
+                  {project.links.featured.text}
+              </a>
 
-                    <ProgramHighlighter
-                      className="javascript"
-                      snippets={project.snippets}
-                      id={this.props.id}
-                    />
-                  </div>
-                </div>
-              </div>
+              : ""
+
             }
-
-
-              {codeView ||
-                <div className="db dn-l w-100 h-100 pv4 ph4 flex flex-column items-center br3-l br--right-l bb bt br shadow-3" style={{ background: "#8a9cb7", borderColor: "#0d202f" }}>
-                  <div className="mb0">
-                    <h1 className="white f3-m f5 mt0 mb2 pb2 w-100 bb programming-shadow">{project.title} ({project.date})
-                      <span className={"f5 underline-hover pointer"} onClick={() => this.changeView()}>&ensp; <br className="dn-ns db"/> (Click to see code) </span>
-                    </h1>
-                    <ul className="mt1 mb2 mh0 list pa0">{links}</ul>
-                    <img className="db shadow-1 mt4 center w-70 ba b--black-80 mv0 pointer" onClick={() => this.props.open(project.src)} src={project.src}/>
-                    <p className="f7 b tracked-mega black-30 mt2 mb4-m mb2 pl5">Click to enlarge.</p>
-                  </div>
-
-
-                  <div className="pa3 br2 overflow-y-scroll ba shadow-3 w-80-ns black " style={{ background: "#ebf8ff", borderColor: "#0d202f"}}>
-                    {paras}
-                  </div>
-                </div>
-              }
-
-
-            <div className=" dn db-l h-100 w-100 ">
-              <div className="w-100 ph4 h-100 ">
-                <div className="" style={{height:"auto"}}>
-                  <h1 className="white f2 mt0 mb2 pb2 w-100 bb programming-shadow" >{project.title}</h1>
-                  <p className="f7 mt0 tracked mb2" > : : Click the tabs below to see more snippets.</p>
-                </div>
-                <div className="" style={{height:"88%"}}>
-
-                  <ProgramHighlighter
-                    className="javascript"
-                    snippets={project.snippets}
-                    id={this.props.id}
-                  />
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-
-          <div
-
-            className="dn flex-l w-30-l flex-column-l flex-row items-start pr2-l bw1 "
-          >
-            <div className="w-100 h-100-l h-auto h4 pv4 ph4 flex flex-column items-start br3-l br--right-l bb bt br shadow-3" style={{ background: "#8a9cb7", borderColor: "#0d202f" }}>
-              <div className="mb0">
-                <h1 className="f5 mt0 mb0 white bb pb2 programming-shadow">{project.title} ({project.date})</h1>
-                <ul className="mt1 mb2 mh0 list pa0">{links}</ul>
-                <img className="db shadow-1 center w-100 ba b--black-80 mv0 pointer" onClick={() => this.props.open(project.src)} src={project.src}/>
-                <p className="f7 b tracked-mega black-30 mv2 ">Click to enlarge.</p>
-              </div>
-
-
-              <div className="pa3 br2 overflow-y-scroll ba shadow-3 f7" style={{ background: "#ebf8ff", borderColor: "#0d202f"}}>
-                {paras}
-              </div>
+              <a href={project.links.github} target={"_blank"} className="f7 white ba b--white bg-transparent pa2 br1 no-underline hover-bg-white hover-black">
+                <FontAwesome name="github" className="mr2 fa-lg"/>
+                View Repository
+              </a>
             </div>
           </div>
-        </div>
       </div>
 
     );

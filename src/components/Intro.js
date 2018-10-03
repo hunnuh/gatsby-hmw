@@ -11,7 +11,7 @@ class Intro extends Component{
   scrollToContent(){
     let top = document.querySelector("#content").getBoundingClientRect().top;
     if(typeof window !== undefined){
-      window.scrollTo({top, behavior:'smooth'})
+      setTimeout(window.scrollTo({top, behavior:'smooth'}), 100)
     }
   }
 

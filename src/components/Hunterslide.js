@@ -22,10 +22,7 @@ class Hunterslide extends Component {
     anime.start("slide");
   }
 
-  componentWillUnmount(){
 
-    anime.kill();
-  }
   render() {
     return (
       <div id="hunterslide" className=" relative overflow-x-visible">

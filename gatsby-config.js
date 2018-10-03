@@ -1,5 +1,5 @@
 module.exports = {
-  
+
   siteMetadata: {
     title: `Your Search Is Over.`,
     author: `Hunter Maverick Wells`,
@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects`
+        name: `img`,
+        path: `${__dirname}/content/img`
       }
     },
     {

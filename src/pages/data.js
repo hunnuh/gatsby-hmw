@@ -5,9 +5,10 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ReactModal from "react-modal";
+import FontAwesome from "react-fontawesome";
 
 import Photo from "../assets/data_image.jpg";
-
+import Tech from "../assets/technology.svg";
 
 const modalStyles = {
   content : {
@@ -41,7 +42,8 @@ class DataPage extends React.Component {
     super();
     this.state = {
       modalPath: "",
-      showModal: false
+      showModal: false,
+      showAlert: true,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -65,6 +67,7 @@ class DataPage extends React.Component {
 
   render () {
 
+    let {showAlert} = this.state
 
     let content = this.props.data.allFile.edges
         .reduce((acc, curr) => acc.concat(curr.node), [])
@@ -80,9 +83,25 @@ class DataPage extends React.Component {
       <div>
         <Nav page="data"/>
         <div  className="relative w-100 ">
-          <div style={{backgroundColor: "#fff"}} className=" relative flex flex-column  greypattern">
-            <div style={{backgroundColor:"#FDFDFD"}} className="mw8 self-center mv4 shadow-1 ph4-l">
-              <div className="ph3">
+          <div style={{backgroundColor: "#19382B"}} id="back" className=" relative flex flex-column items-center ph2-m">
+
+            {showAlert &&
+              <div style={{backgroundColor:"#FDFDFD"}} className="mw8 flex flex-row justify-start-l justify-center items-center mt4 shadow-1 ph4-l br3-ns w-100 pv3 relative ">
+              <FontAwesome onClick={() => this.setState({showAlert:false})} name="close" style={{top:".6rem", right:".8rem"}} className="absolute fa-lg moon-gray pointer"/>
+
+              <div className=" flex flex-row-ns flex-column justify-center items-center ph3 ph4-m ph0-l tc tl-ns">
+                <img className="pa0 ma0" src={Tech} style={{height:"5.5rem"}}/>
+                <div className="ml4-ns pr5-l">
+                  <h1 className="f1 f3 dark-gray pv0 mb2 mt0">Working with computers is a passion of mine.</h1>
+                  <h2 className="fw1 f5 mid-gray pv0 mv0" style={{lineHeight:"1.25rem"}}>To share some information about my education and background, I wrote this article discussing my achievements in the world of technology. For more about me, please <Link  style={{color: "#9d1c1f"}} to={"/about/"}>click here</Link>.</h2>
+                </div>
+              </div>
+
+            </div>
+          }
+
+            <div style={{backgroundColor:"#FDFDFD"}} className="mw8 self-center mv4 shadow-1 ph4-l br3-ns">
+              <div className="ph3 pv2">
                 <h1 className="f2-ns f3 mb2 mw7 dark-gray">Interacting with Computers, The World, and The Data Contained Therein</h1>
                 <h2 className="fw1 mb2 mt2 f5 mid-gray">My passion for data science, computers, and learning.</h2>
                 <p className="f6 mb3 gray">By Hunter M. Wells</p>
@@ -109,7 +128,7 @@ class DataPage extends React.Component {
                   <p>What's next? I want to be on a team that makes awesome web applications. My craving for problem solving and elbow grease has me searching for the right team to put my skills to work. </p>
                   <p> If you're reading this, it's likely because you think I have potential to succeed on your team. I can assure you that I'm the kind of guy that you're going to appreciate having around. Let's find out if we're as good of a fit as I think we are. Please don't hesitate to write or call - our next big project is waiting for us to build it.</p>
                   <p>--</p>
-                  <p className="mt2 pt3 i measure"> Thank you for taking the time to read this article about my passion for data. Click <Link to={"/programming/"}>here</Link> if you would like to see some of my programming projects, <Link to={"/portfolio/"}>here</Link> to see my design work, and <Link to={"/about/"}>here</Link> to contact me.</p>
+                  <p className="mt2 pt3 i"> Thank you for taking the time to read this article about my passion for data. Click <Link style={{color: "#9d1c1f"}} to={"/programming/"}>here</Link> if you would like to see some of my programming projects, <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>here</Link> to see my design work, and <Link style={{color: "#9d1c1f"}} to={"/about/"}>here</Link> to contact me.</p>
 
                 </div>
                 <div className="w-30-l w-100">

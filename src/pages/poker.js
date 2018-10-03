@@ -220,7 +220,7 @@ class Poker extends React.Component {
 
     if (this.state.loading){
       this.preloadAssets(cardImagePaths)
-        .then((img) => this.setState({loadingText:"LOADING", loading:false}), (err) => alert(err));
+        .then((img) => this.setState({loadingText:"LOADING", loading:false}), (err) => console.log(err));
     }
   }
 

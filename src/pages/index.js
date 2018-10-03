@@ -69,10 +69,10 @@ class IndexPage extends Component {
                     </h3>
                     <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
                       <li>JavaScript programming</li>
+                      <li>React UI development</li>
                       <li>Advanced digital design</li>
-                      <li>Data analysis and DB's</li>
-                      <li>Geospatial statistics</li>
-                      <li>Pro video production</li>
+                      <li>Statistics & algorithms</li>
+                      <li>Professional multimedia</li>
                     </ul>
                   </div>
                   <div className="w-25-ns w-100 tc">
@@ -80,7 +80,7 @@ class IndexPage extends Component {
                       <FontAwesome  name="check" className=""/> Soft Skills
                     </h3>
                     <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
-                      <li>Fierce trouble shooter</li>
+                      <li>Fierce troubleshooter</li>
                       <li>Accomplished speaker</li>
                       <li>Effective self-educator</li>
                       <li>Proven MVP quality</li>
@@ -94,7 +94,7 @@ class IndexPage extends Component {
                     <ul className="b f6 list pl0 ml0 black-70 mb4 mb3-ns">
                       <li>Multi-instrumentalist</li>
                       <li>Drawing & Sketching</li>
-                      <li>Computer Science</li>
+                      <li>PCs and Electronics</li>
                       <li>Chess & thinking games</li>
                       <li>Three-ball juggling</li>
                     </ul>
@@ -123,31 +123,14 @@ class IndexPage extends Component {
                 </div>
               </div>
             </div>
-            <div className=" flex flex-column justify-center w-100 self-center z-4 bb bw2 b--black" style={{backgroundColor: "#0d202f"}}>
-              <div className="mw8 pv5-ns w-100 self-center z-4 ">
-                <FeaturedDesign content={featuredDesign}/>
+            <div className=" flex flex-column justify-center w-100 self-center z-4 " style={{backgroundColor: "#9d1c1f"}}>
+              <div className="mw8 w-100 self-center z-4 ">
+                <FeaturedProgramming content={featuredProgramming}/>
               </div>
             </div>
-            <div className=" flex flex-column justify-center w-100 self-center z-4 redbackground bb bw2 b--black ">
-              <div className="mw8 pt7-ns pt6 ph4-ns ph2 w-100 self-center z-4 ">
-                <FeaturedProgramming content={featuredProgramming}/>
-                <div className="mt7-ns mb6-ns pv7 w-100 tc mb4">
-                  <img src={Quotemark} className="h3 w3 self-center"/>
-                  <p className="f2-ns f3 mw7 white center lh-copy">Hunter is creative, sharp, and a hard worker. <br className="db dn-m"/> He's a valuable teammate.</p>
-                  <span className="f7 white-50 center tracked">Dean Kolkey <br/> Founder @ NewsMaker </span>
-                </div>
-                <div className="pv7-ns pb6 w-100 flex flex-row justify-center">
-                  <div className="ph5-ns pv4-ns  pa2 mw7 ba b--black shadow-2 white br3 binding_dark tc">
-                    <div className="flex flex-row justify-center mv4-ns">
-                      <div className="pa4-ns pa3 mw6 flex flex-column justify-center bg-white-10 ba b--white-40">
-                        <h4 className="f2-ns f4 mb0 bb pv2 mb2 shadow-4 br2 ba b--black-90" style={{ backgroundColor: "#9d1c1f"}}>Hunter + Data</h4>
-                        <p className="f5 b lh-copy white-90 mv3  tracked " >Working with computers is a passion of mine.</p>
-                        <p className="f6-ns f7 lh-copy white-90 mt0 measure tracked ">To share some information about my background, I wrote a short article discussing my experience and achievements in the world of data. </p>
-                        <Link to={"/data/"} style={{backgroundColor: "#9d1c1f"}} className="f6 mw4 pv2 ph3 self-center shadow-4 ba b--black-90 br2 white b pointer mt2 underline-hover no-underline tracked">READ IT</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className=" flex flex-column justify-center w-100 self-center z-4" style={{backgroundColor: "#0d202f"}}>
+              <div className="mw8 pv5-ns w-100 self-center z-4 ">
+                <FeaturedDesign content={featuredDesign}/>
               </div>
             </div>
             <div className=" flex flex-column justify-center w-100 self-center z-4 pv7 tc palmpattern">
@@ -157,8 +140,13 @@ class IndexPage extends Component {
                     <img src={HeadshotSq} className="pa1 ba bw1 self-center z-4 br-pill shadow-3 bg-white b--near-black"/>
                   </div>
                   <h1 className="white mv0">Hunter M. Wells</h1>
-                  <p className="tracked f6 b white-90 mt2 mb3">DESIGNER | DEVELOPER</p>
-                  <p className="tracked f7 mb2 white-80 mb3" >hunter.m.wells@gmail.com</p>
+                  <p className="tracked f6 b white-90 mt2 mb3">FRONTEND DEVELOPER</p>
+                  <p className="tracked f7 mb2 white-80" >hunter.m.wells@gmail.com</p>
+                  <div className="f4 pa1 ">
+                    <a href="http://github.com/hunter-digital"><FontAwesome name="github" className="white-70 hover-white mh2"/></a>
+                    <a href="http://www.linkedin.com/u/hmw"><FontAwesome name="linkedin" className="white-70 hover-white mh2"/></a>
+                    <a target={"_blank"} href={Resume}><FontAwesome name="clipboard" className="white-70 hover-white mh2 "/></a>
+                  </div>
                   <div  className=" mt3 center dib">
                     <Link to={"/about/"} style={{color: "#9d1c1f"}} className="bg-white tracked br2 fw8 f6 pv2 ph3 shadow-3 no-underline underline-hover">SEE MORE</Link>
                   </div>
@@ -183,21 +171,6 @@ class IndexPage extends Component {
 
 export const rootQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            title
-            date
-            path
-            ProductHuntLink
-            BlogPost
-            Revenue
-          }
-        }
-      }
-    }
     allFile
       {
       edges {

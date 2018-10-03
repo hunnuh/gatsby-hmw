@@ -18,20 +18,35 @@ import ElephantBG from "../assets/elephant_bg.svg";
 
 import Link from "gatsby-link";
 
+
+const GoldLink = ({children, loc}) => (
+  <Link
+    to={loc}
+    style={{borderColor: "#BC772A"}}
+    className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton"
+    >
+    {children}
+  </Link>
+)
+
+
 const About = () => (
   <div className="">
     <div className="mt3 ph4 ph2-l flex flex-column justify-center ">
       <h4
         style={{color: "#DFF4E9"}}
-        className="fw8 f3 f2-ns tc lh-copy mt5 mt6-ns mt4-l mb0 "
-
+        className="fw8 f3 f2-ns tc lh-copy mt5 mt6-m mt1-l mb0 "
         >
           I make <strong style={{color: "#BC772A"}}>slick, beautiful interfaces</strong> for <br className="dn db-l"/><strong style={{color: "#BC772A"}}>modern web applications.</strong>
       </h4>
-      <div  style={{color: "#DFF4E9"}} className=" flex mt2 mb6 ph4-ns self-center flex-row-ns flex-column justify-between tc tl-l w-auto-ns f5-ns f6 z-2 w-100">
-        <Link to={"/portfolio/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Inspired Graphic Artist</Link>
-        <Link to={"/programming/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Savvy UI Programmer</Link>
-        <Link to={"/data/"} style={{borderColor: "#BC772A"}} className="mv2 mv0-ns pv2 ph3 mh2-ns ba br1 w-100 w-auto-ns white-90 no-underline subbutton">Qualified and Educated</Link>
+      <div
+        style={{color: "#DFF4E9"}}
+        className=" flex mt3 mb6 ph4-ns self-center flex-row-ns
+        flex-column justify-between tc tl-l w-auto-ns f5-ns f6 z-2 w-100"
+        >
+        <GoldLink loc={"/programming/"}>Savvy Web Developer</GoldLink>
+        <GoldLink loc={"/portfolio/"}>Inspired Graphic Artist</GoldLink>
+        <GoldLink loc={"/data/"}>Qualified & Educated</GoldLink>
       </div>
       <Cards />
     </div>
@@ -55,11 +70,11 @@ const Cards = () => (
           icon={Fish}
           name={"fish"}
           sub={"CREATIVITY & ARTISTRY"}
-          head={"Proven Design Talent"}
+          head={"Proven Digital Talent"}
           blurb={
-            "My digital design work has won several contests and awards. See what you think! Visit my portfolio and take a look. "
+            "My design skills have been sharpened from years of experience. Take a look, my portfolio is hosted here."
           }
-          linkText="Explore my design portfolio &nbsp;&nbsp; ⇾"
+          linkText="Explore my portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}
           bg={<div>
                 <img src={FishBG} style={{height:"50em", top:"-13em", right:"-10em"}} className="dn db-l dn-m absolute z-0 " />
@@ -70,16 +85,16 @@ const Cards = () => (
         <Card
           icon={Spider}
           sub={"PROGRAMMING & DEVELOPMENT"}
-          head={"High-Level Web Skills"}
+          head={"High-Level Web Developer"}
           rev={true}
           blurb={
-            "Building awesome web applications is why I get up in the morning. Every day I work towards being a finer craftsman."
+            "Building and coding web apps is why I get up in the morning. Every day I work towards being a better developer."
           }
           linkText="Inspect my programming projects &nbsp;&nbsp; ⇾"
           linkLoc={"/programming/"}
           bg={<div>
-                <img src={SpiderBG} style={{height:"52em", left:"-35em", top:"-20em", maxWidth:"100000px"}} className="dn db-l dn-m absolute z-0" />
-                <img src={SpiderBG} style={{height:"45em", left:"-29em", top:"-14em", maxWidth:"100000px"}} className="dn db-m dn-l absolute  z-0" />
+                <img src={SpiderBG} style={{height:"62em", left:"-35em", top:"-20em", maxWidth:"100000px"}} className="dn db-l dn-m absolute z-0" />
+                <img src={SpiderBG} style={{height:"45em", left:"-29em", top:"-8em", maxWidth:"100000px"}} className="dn db-m dn-l absolute  z-0" />
                 <img src={SpiderBG} style={{height:"31em", left:"-5em", top:"-5em"}} className="dn-ns absolute mw8 z-0" />
               </div>}
         />
