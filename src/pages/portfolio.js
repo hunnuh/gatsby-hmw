@@ -70,7 +70,7 @@ class PortfolioPage extends React.Component {
     console.log("tag")
     let top = document.querySelector(tag).getBoundingClientRect().top;
     if(typeof window !== undefined){
-      setTimeout(window.scrollTo({top, behavior:'smooth'}), 100)
+      setTimeout(window.scroll({top, behavior:'smooth'}), 100)
     }
   }
 
