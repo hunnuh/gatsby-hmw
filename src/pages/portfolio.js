@@ -106,7 +106,7 @@ class PortfolioPage extends React.Component {
             </div>
 
             <div className="w-100 mw8 self-center tc pt0 ">
-              <div className=" w-100  flex flex-row-ns flex-column justify-start ph2 ph0-ns mw7-l center mb5 mb0-ns">
+              <div className="dn w-100  flex-ns  flex-row-ns flex-column justify-start ph2 ph0-ns mw7-l center mb5 mb0-ns">
                 <span className="white b f6 w3 mb2 mb0-ns flex flex-column justify-center">Skip to:</span>
                 <div className=" flex flex-row-ns flex-wrap justify-around items-center w-100">
                   <SubNavLink pass={"#we"}>WEB DESIGN</SubNavLink>
