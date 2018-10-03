@@ -32,7 +32,7 @@ const Projects =[
   },
   links:{
     featured: {enabled: false, text:"No demo available"},
-    github: "https://github.com/hunter-digital/gatsby-hmw",
+    github: "https://github.com/senders-communications-group/labor-411",
   },
   date: "2018",
   },
@@ -48,7 +48,7 @@ const Projects =[
     },
     links:{
       featured: {enabled: false, text:"Prototype only"},
-      github: "https://github.com/hunter-digital/gatsby-hmw",
+      github: "https://github.com/hunter-digital/good-jobs",
     },
     date: "2018",
     },
@@ -71,7 +71,7 @@ const Projects =[
       },
       links:{
         featured: {enabled: true, text:"PLAY HUNTER'S POKER!", url:"https://www.hunterdigital.media/poker"},
-        github: "https://github.com/hunter-digital/gatsby-hmw",
+        github: "https://github.com/hunter-digital/gatsby-hmw/blob/master/src/pages/poker.js",
       },
       date: "2017",
     },
@@ -89,7 +89,7 @@ const Projects =[
       },
       links:{
         featured: {text:"Desktop application", url:"https://www.hunterdigital.media"},
-        github: "https://github.com/hunter-digital/gatsby-hmw",
+        github: "https://github.com/hunter-digital/newscaster-cleanup",
       },
       date: "2017",
     },
@@ -109,7 +109,7 @@ const Projects =[
       },
       links:{
         featured: {text:"No demo available", url:"https://www.hunterdigital.media"},
-        github: "https://github.com/hunter-digital/gatsby-hmw",
+        github: "https://github.com/hunter-digital/hmw-site-react",
       },
       date: "2017",
       },
@@ -127,7 +127,7 @@ const Projects =[
         },
         links:{
           featured: {enabled: true, text:"Click HERE to visit NewsMaker", url:"http://newsmakersystems.com"},
-          github: "https://github.com/hunter-digital/gatsby-hmw",
+          github: "http://newsmakersystems.com",
         },
         date: "2017",
       },
@@ -146,7 +146,7 @@ const Projects =[
         },
         links:{
           featured: {text:"Click HERE to visit site.", url:"https://www.hunterdigital.media"},
-          github: "https://github.com/hunter-digital/gatsby-hmw",
+          github: "https://github.com/hunter-digital/layers-to-sprite-sheet",
         },
         date: "2016",
       },
@@ -167,7 +167,7 @@ const Projects =[
       },
       links:{
         featured: {text:"Click HERE to visit site.", url:"https://www.hunterdigital.media"},
-        github: "https://github.com/hunter-digital/gatsby-hmw",
+        github: "https://github.com/hunter-digital/bardo",
       },
       date: "2016",
     },
