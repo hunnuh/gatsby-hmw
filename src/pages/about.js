@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
-import TypeOut from "react-typeout";
 import FontAwesome from "react-fontawesome";
 import Img from "gatsby-image"
 

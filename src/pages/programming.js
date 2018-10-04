@@ -6,7 +6,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Atom from "../assets/atom.svg";
-import ProgramHighlighter from "../components/ProgramHighlighter";
+
 
 import Projects from "../data/projects";
 import { withPrefix } from 'gatsby-link'
