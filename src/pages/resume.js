@@ -42,14 +42,15 @@ class ResumePage extends Component {
           >
 
             <div className="flex flex-column justify-center w-100 ph4-ns ph2" >
-              <div className="flex flex-column justify-center  w-100-l mw8" >
+              <div style={{minHeight:"30rem"}} className="flex flex-column justify-between  w-100-l mw8 pa3 bg-white-10 relative" >
+                <p style={{top:"15rem", left:"45%"}} className="white absolute z-0 ">Loading...</p>
                 <a
                   href={data.allFile.edges[0].node.publicURL}
                   target={"_blank"}
                   className="white-80 hover-white tc f5 tracked mb3"> Click to download PDF
                 </a>
                 <div className="mw8 flex flex-column justify-center ">
-                  <spdf.SimplePDF file={data.allFile.edges[0].node.publicURL}/>
+                   <spdf.SimplePDF file={data.allFile.edges[0].node.publicURL}/> 
                 </div>
                   <a
                     href={data.allFile.edges[0].node.publicURL}
