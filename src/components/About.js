@@ -44,9 +44,9 @@ const About = () => (
         className=" flex mt3 mb6 ph4-ns self-center flex-row-ns
         flex-column justify-between tc tl-l w-auto-ns f5-ns f6 z-2 w-100"
         >
-        <GoldLink loc={"/programming/"}>Savvy Web Developer</GoldLink>
-        <GoldLink loc={"/portfolio/"}>Inspired Graphic Artist</GoldLink>
-        <GoldLink loc={"/data/"}>Qualified & Educated</GoldLink>
+        <GoldLink loc={"/programming/"}>Smart Frontend Developer</GoldLink>
+        <GoldLink loc={"/portfolio/"}>Excellent Designer</GoldLink>
+        <GoldLink loc={"/data/"}>Educated JS Programmer</GoldLink>
       </div>
       <Cards />
     </div>
@@ -88,7 +88,7 @@ const Cards = () => (
           head={"High-Level Web Developer"}
           rev={true}
           blurb={
-            "Building and coding web apps is why I get up in the morning. Every day I work towards being a better developer."
+            "Building awesome web apps is why I get up in the morning. Take a look at the projects I've developed."
           }
           linkText="Inspect my programming projects &nbsp;&nbsp; ⇾"
           linkLoc={"/programming/"}
@@ -101,11 +101,11 @@ const Cards = () => (
         <Card
           icon={Monkey}
           sub={"INFO SYSTEMS & DATA SCIENCE"}
-          head={"Computer Data Expertise"}
+          head={"Expertise with Computers"}
           blurb={
             "From algorithms to databases; I have a passion for computers. For me, working with technology is a constant source of gratitude and amazement."
           }
-          linkText="Read my thoughts and qualifications &nbsp;&nbsp; ⇾"
+          linkText="Read about my background and education &nbsp;&nbsp; ⇾"
           linkLoc={"/data/"}
           bg={<div>
                 <img src={MonkeyBG} style={{height:"50em", top:"-14em", right:"-18em"}} className="dn db-l dn-m absolute z-0   " />
