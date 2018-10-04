@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 
 import FontAwesome from "react-fontawesome";
 
-import { Document, Page } from 'react-pdf/dist/entry.webpack';
+import spdf from "simple-react-pdf";
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -42,21 +42,15 @@ class ResumePage extends Component {
           >
 
             <div className="flex flex-column justify-center w-100 ph4-ns ph2" >
-              <div className="flex flex-column justify-center items w-100-l mw8" >
+              <div className="flex flex-column justify-center  w-100-l mw8" >
                 <a
                   href={data.allFile.edges[0].node.publicURL}
                   target={"_blank"}
                   className="white-80 hover-white tc f5 tracked mb3"> Click to download PDF
                 </a>
-                  <Document file={data.allFile.edges[0].node.publicURL} className="dn db-l self-center">
-                    <Page pageNumber={1} width={1024} />
-                  </Document>
-                  <Document file={data.allFile.edges[0].node.publicURL} className="dn db-m self-center">
-                    <Page pageNumber={1} width={600} />
-                  </Document>
-                  <Document file={data.allFile.edges[0].node.publicURL} className="db dn-ns self-center">
-                    <Page pageNumber={1} width={250} />
-                  </Document>
+                <div className="mw8 flex flex-column justify-center ">
+                  <spdf.SimplePDF file={data.allFile.edges[0].node.publicURL}/>
+                </div>
                   <a
                     href={data.allFile.edges[0].node.publicURL}
                     target={"_blank"}
