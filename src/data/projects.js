@@ -12,7 +12,7 @@ const Projects =[
     ]
   },
   links:{
-    featured: {enabled: true, text:"Click HERE to visit home", url:"https://www.hunterdigital.media"},
+    featured: {enabled: true, text:"VISIT HOMEPAGE", url:"https://www.hunterdigital.media"},
     github: "https://github.com/hunter-digital/gatsby-hmw",
   },
   date:"2018"
@@ -20,7 +20,7 @@ const Projects =[
 
   {
   src: "../programming/411.jpg",
-  title: "Labor411.org",
+  title: "Labor411.org Prototype",
   desc: {
     p:["A web app that allowed users to search a database of products and businesses that are considered union friendly. Prototype version uses AWS Dynamo Database as data storage and retrieval, and AWS Cognito as login engine. Was designed to be a lightning-fast static website that could still make dynamic API calls for searches and content.",
     ],
@@ -28,6 +28,7 @@ const Projects =[
       {name:"AWS", link:"https://aws.amazon.com/"},
       {name:"Gatsby", link:"https://www.gatsbyjs.org/"},
       {name:"Netlify CMS", link:"https://www.netlifycms.org/"},
+      {name:"GraphQL", link:"https://graphql.org/"}
     ]
   },
   links:{
@@ -126,7 +127,7 @@ const Projects =[
           ]
         },
         links:{
-          featured: {enabled: true, text:"Click HERE to visit NewsMaker", url:"http://newsmakersystems.com"},
+          featured: {enabled: true, text:"VISIT NEWSMAKER SYSTEMS", url:"http://newsmakersystems.com"},
           github: "http://newsmakersystems.com",
         },
         date: "2017",
@@ -166,7 +167,7 @@ const Projects =[
         ],
       },
       links:{
-        featured: {text:"Click HERE to visit site.", url:"https://www.hunterdigital.media"},
+        featured: {enabled: true, text:"PLAY BARDO THE SAVIOR", url:"http://www.huntermaverickwells.com/"},
         github: "https://github.com/hunter-digital/bardo",
       },
       date: "2016",

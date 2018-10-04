@@ -92,8 +92,8 @@ class DataPage extends React.Component {
               <div className=" flex flex-row-ns flex-column justify-center items-center ph3 ph4-m ph0-l tc tl-ns">
                 <img className="pa0 ma0" src={Tech} style={{height:"5.5rem"}}/>
                 <div className="ml4-ns pr5-l">
-                  <h1 className="f1 f3 dark-gray pv0 mb2 mt0">Working with computers is a passion of mine.</h1>
-                  <h2 className="fw1 f5 mid-gray pv0 mv0" style={{lineHeight:"1.25rem"}}>To share some information about my education and background, I wrote this article discussing my achievements in the world of technology. For more about me, please <Link  style={{color: "#9d1c1f"}} to={"/about/"}>click here</Link>.</h2>
+                  <h1 className="f1 f3 dark-gray pv0 mb2 mt0">Doing excellent work on the computer is my specialty.</h1>
+                  <h2 className="fw1 f5 mid-gray pv0 mv0 " style={{lineHeight:"1.25rem"}}>To share some information about my education and background, I wrote this article discussing my achievements in the world of technology. For more about me, or to get in touch, please <Link  style={{color: "#9d1c1f"}} to={"/about/"}>click here</Link>.</h2>
                 </div>
               </div>
 
@@ -102,9 +102,9 @@ class DataPage extends React.Component {
 
             <div style={{backgroundColor:"#FDFDFD"}} className="mw8 self-center mv4 shadow-1 ph4-l br3-ns">
               <div className="ph3 pv2">
-                <h1 className="f2-ns f3 mb2 mw7 dark-gray">Interacting with Computers, The World, and The Data Contained Therein</h1>
-                <h2 className="fw1 mb2 mt2 f5 mid-gray">My passion for data science, computers, and learning.</h2>
-                <p className="f6 mb3 gray">By Hunter M. Wells</p>
+                <h1 className="f2-ns f3 mb2 mw7 dark-gray">On Becoming an Advanced Digital Professional</h1>
+                <h2 className="fw1 mb2 mt2 f5 mid-gray">My path to digital nirvana via JavaScript, multimedia, and data science.</h2>
+                <p className="f6 mb3 gray">By Hunter M. Wells | October, 2018</p>
               </div>
 
               <div className="flex flex-row-l flex-column lh-copy mb5 ph3">
@@ -114,25 +114,36 @@ class DataPage extends React.Component {
                   <div className="w-100 bb b--moon-gray mb3 ">
                     <p className="f7 pb1 pl2 mv0 gray">Every person, place, thing, a point of data.</p>
                   </div>
-                  <p>Our world is vast, but we have ways of keeping track of it. I'm astounded by this simple fact as I work with my computer every day.</p>
-                  <p>Between hundreds of countries, thousands of cities, millions of buildings, and billions of people, the sheer quantity of <i>stuff</i> on this planet seems to be practically innumerable. Every thing, from corn cobs to brown bears, another point of data. To a computer, keeping track of it all is no big deal. </p>
-                  <p> When we shop on Amazon, or take an Uber, we utilize sets of data to interact with our world. We also become computer data ourselves. How amazing, that we can do this magic! We can build tools and answer questions based on the data that we gather about our world. It's this sense of wonder and opportunity that makes me so passionate about my career with technology. </p>
-                  <h3>Information Systems & Me</h3>
-                  <p>During undergraduate, I earned two bachelor's degrees. One of them was a bachelor's in Geo-Information Systems (GIS). As a geographer, maps are my favorite example of how data (presented visually) can help us understand and interact with our world. </p>
-                  <p>My GIS degree included information systems coursework that is applicable in many different fields of computer-based work. Algorithms, relational databases, statistical analysis, and web development are all included in the modern geographer's toolkit with the advent of pocket-sized GPS. </p>
-                  <p>For my senior thesis, I invented an analytical process which measures business clustering in regards to demographic distribution. This kind of analysis could serve as the basis of a consumer application, or be useful for a company&rsquo;s internal use.</p>
+                  <p>There's a whole lot of stuff out there to learn. Especially when it comes to computers.</p>
+                  <p>By now, I've found a strong niche in web app frontend development using JavaScript and related tools, but I wasn't always so focused. It seems to me that working with technology is a cumulative discipline, where your level of understanding is informed by all the skills you've developed and experiences you've had beforehand. The more time you've spent on a computer, the wiser your digital intuition becomes.</p>
+                  <p>It's been a lifelong goal of mine to become such an advanced digital professional, that my skillset will draw upon decades of learning and expertise, and will culminate into valuable wisdom that will make me an indispensable member of a team that makes amazing things. With my background, I'm well on my way, and I work towards becoming a better developer every day.</p>
+
+                  <h3>Developing Into a Professional</h3>
+                  <p>During my adolescence, I found a passion designing graphics and documents on my computer. This skill allowed me to work as a graphic designer for almost a decade, completing <Link style={{color: "#9d1c1f"}} to="/portfolio/">large-scale projects</Link> both in physical size and in distribution quantities. My success as a graphic designer was on the right track, but I felt there was a higher calling for me when it comes to creating on the computer.</p>
+                  <p>In college, I was able to "double major" and earn two bachelor's degrees concurrently. One was in Geo-Information Systems (GIS), a field that includes relational databases, algorithms, data science, data visualization, and statistics. My other degree was in Multimedia Production and included coursework which covered web development, JavaScript programming, video production, and animation. </p>
+                  <p>Colleagues have described me as a multidisciplinarian, but I see my skillset as a neatly woven patchwork which is well-suited for the development of web applications. My culminated experience allows me to be a team member that can communicate with a diverse set of specialists and consider the bigger picture as I'm focusing on my own responsibilities. Someday, this breadth will make me an excellent team leader. My university even <a target={"_blank"} style={{color: "#9d1c1f"}} href="https://www.csun.edu/mynorthridge/news/mapping-out-future">wrote an article about my potential</a>.</p>
+
+                  <h3>Data & Information Systems</h3>
+                  <p>As a geographer, maps are my favorite example of how data (presented visually) can help us understand and interact with our world. In web development, my GIS experience often comes into play, as many modern web applications use relational databases, statistical visualization, and geographically referenced data. </p>
+                  <p>For my GIS senior thesis, I invented an analytical process which measures business clustering in regards to demographic distribution. This kind of analysis could serve as the basis of a consumer application, or be useful for a company&rsquo;s internal use.</p>
                   <p>By using high-resolution data sourced from USGS/ESRI, I was able to measure business clustering at a local level. I also used the ArcGIS GUI for combining python algorithms into a repeatable process (pictured on the left). This project culminated into a 35-page paper which proudly received an &ldquo;A.&rdquo;</p>
+
+                  <h3>Digital Media</h3>
+                  <p>Over the years, I've completed several digital media projects. While working with digital media, I often integrate my other skills such as scripting and programming. My junior year, I won a $3,000 dollar scholarship for accomplished students in the field of interactive media. At CSUN's yearly Multimedia Showcase, I was the recipient of 1st place two years in a row, in addition to winning the Student's Choice award once. </p>
+                  <p>In the interactive games category, my game <a target={"_blank"} style={{color: "#9d1c1f"}} href="http://www.huntermaverickwells.com/">Bardo: The Savior</a> came out victorious. Bardo is an interactive point-and-click adventure game which includes hand-drawn art and animations, as well as several logic puzzles that must be completed to win. Bardo is programmed in JavaScript.</p>
+                  <p>In the animation category, my short cartoon <a target={"_blank"} style={{color: "#9d1c1f"}} href="https://www.youtube.com/watch?v=j9aAnE_dtZE">ANKH</a> won first place and the student's choice award. ANKH is a crude and silly cartoon about a fictional slave that yearns for freedom and is "treated poorly by management."</p>
+                  <p>For other multimedia projects I've worked on, you can check out my <Link style={{color: "#9d1c1f"}} to="/portfolio/">design portfolio</Link>, or my <a target={"_blank"} style={{color: "#9d1c1f"}} href="https://www.youtube.com/channel/UC539fUFHfOxBAUEeX_jJx7g/videos?sort=dd&view_as=subscriber&shelf_id=0&view=0">youtube channel.</a></p>
+
                   <h3>My Future With Technology</h3>
-                  <p>For the past 4 years, I&rsquo;ve focused on becoming a top-notch web developer. Designing and programming for the web is something I'm quite passionate about. I find it to be the perfect way to combine my technological skills and my design talent. By studying interface design, networking, JavaScript programming, and algorithmic problem-solving, I've found a niche which I can occupy proudly. </p>
-                  <p>In web development, my GIS experience often comes into play, as many modern web applications use relational databases, statistical visualization, and geographically referenced data. Becoming adept with JavaScript, React, remote APIs, and the entire web ecosystem has allowed me to compound my strengths and continue feeding the flames of my passion.</p>
-                  <p>What's next? I want to be on a team that makes awesome web applications. My craving for problem solving and elbow grease has me searching for the right team to put my skills to work. </p>
-                  <p> If you're reading this, it's likely because you think I have potential to succeed on your team. I can assure you that I'm the kind of guy that you're going to appreciate having around. Let's find out if we're as good of a fit as I think we are. Please don't hesitate to write or call - our next big project is waiting for us to build it.</p>
+                  <p>For years now, I&rsquo;ve focused on becoming a top-notch web developer. Frontend development is something I'm quite passionate about, and is the perfect way to combine my technological skills and my design talent. By studying interface design, networking, JavaScript programming, and algorithmic problem-solving, I've found a niche which I can occupy proudly. </p>
+                  <p>What's next? I want to be on a team that makes awesome web applications. My craving for problem solving and elbow grease has me searching for the right team to put my skills to work. My educational background, in addition to the hard work I've put into becoming a frontend developer and digital professional at large will allow me to make a positive contribution to your projects.</p>
+                  <p> If you're reading this, it's probably because you think I have potential to succeed on your team. I can assure you that I'm the kind of guy that you will benefit from having on your team. Let's find out if we're as good of a fit as I think we are. Please don't hesitate to write or call - our next big project is waiting for us to build it.</p>
                   <p>--</p>
-                  <p className="mt2 pt3 i"> Thank you for taking the time to read this article about my passion for data. Click <Link style={{color: "#9d1c1f"}} to={"/programming/"}>here</Link> if you would like to see some of my programming projects, <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>here</Link> to see my design work, and <Link style={{color: "#9d1c1f"}} to={"/about/"}>here</Link> to contact me.</p>
+                  <p className="mt2 pt3 i"> Thank you for taking the time to read this article about my background. Click <Link style={{color: "#9d1c1f"}} to={"/programming/"}>here</Link> if you would like to see some of my programming projects, <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>here</Link> to see my design work, and <Link style={{color: "#9d1c1f"}} to={"/about/"}>here</Link> to contact me.</p>
 
                 </div>
                 <div className="w-30-l w-100">
-                  <h5 className="mb2 mt0 pa2 white tc tracked" style={{backgroundColor: "#9d1c1f"}}>MAPS I MADE </h5>
+                  <h5 className="mb2 mt0 pa2 white tc tracked" style={{backgroundColor: "#9d1c1f"}}>MAPS & MORE </h5>
                   <div className="bg-light-gray pa3 flex flex-column justify-center items-center ">
                     {thumbs}
                   </div>
@@ -165,12 +176,16 @@ class DataPage extends React.Component {
 };
 
 let captionMap = {
-  "/portfolio/datamaps/mapprocess.png": "Demographic Analysis Procedure (My Thesis)",
-  "/portfolio/datamaps/sfv.png": "Businesses In the San Fernando Valley",
+  "/portfolio/datamaps/mapprocess.png": "Demographic Analysis Procedure (Senior Thesis Project)",
+  "/portfolio/datamaps/sfv.png": "Healthcare Businesses In the San Fernando Valley",
   "/portfolio/datamaps/southamerica.png": "Ancient Civilizations of South America",
   "/portfolio/datamaps/tarawa.jpg": "Battle of Tarawa, WWII",
   "/portfolio/datamaps/grackle.jpg": "Grackle Breeding Patterns",
-  "/portfolio/datamaps/reinier.jpg": "Mount Reinier, WA",
+  "/portfolio/datamaps/reinier.jpg": "Mount Reinier, WA - Shaded Relief Data",
+  "/portfolio/datamaps/ankh.png": "ANKH (short cartoon)",
+  "/portfolio/datamaps/oviatt.jpg": "CSUN, my Alma Mater",
+  "/portfolio/datamaps/bardo.png": "Bardo: The Savior",
+  "/portfolio/datamaps/nms.png": "NewsMaker Commercial",
 }
 
 

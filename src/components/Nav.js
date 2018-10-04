@@ -129,6 +129,7 @@ class Nav extends Component{
             <MobileNavLink on={page === "programming"} link="/programming/">Projects</MobileNavLink>
             <MobileNavLink on={page === "portfolio"} link="/portfolio/">Design</MobileNavLink>
             <MobileNavLink on={page === "data"} link="/data/">Education</MobileNavLink>
+            <MobileNavLink on={page === "resume"} link="/resume/">Résumé</MobileNavLink>
             <MobileNavLink on={page === "about"} link="/about/">About</MobileNavLink>
             <div className="f2 pa3 w-100 flex flex-row justify-around">
               <a href="http://github.com/hunter-digital" target={"_blank"}><FontAwesome name="github" className="white mh2"/></a>
