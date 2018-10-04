@@ -220,11 +220,11 @@ const HH = ({children}) => (
 );
 
 const SubNavLink = (props) => (
-  <span
-    onClick={() => scrollToContent(props.pass)}
+  <a
+    href={props.pass}
     className="pa1 pa2-l white hover-bg-white hover-black f7 br3 no-underline mv1 nowrap pointer ba b--white shadow-1">
     {props.children}
-  </span>
+  </a>
 );
 
 function scrollToContent(tag){

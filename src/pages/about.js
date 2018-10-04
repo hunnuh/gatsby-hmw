@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 
 import Headshot from "../assets/headshot.jpg";
-import Resume from "../assets/Hunter_M_Wells_resume.pdf";
+import Leaf from "../assets/leaf.svg";
 
 class AboutPage extends Component {
   constructor () {
@@ -58,10 +58,15 @@ class AboutPage extends Component {
                   <Img sizes={data.file.childImageSharp.sizes} className=" bg-white  mb0 "/>
                 </div>
                 <div className="w-70-l  pv0 ph4-l ph0 flex flex-column justify-center self-center " >
-                  <span className="b f2-ns f3 " style={{color: "#9d1c1f"}}><FontAwesome name="leaf"/> About Hunter:</span>
-                  <p className="lh-copy f5-ns f6 mb2 mt3 ">&emsp; As a frontend developer, I have the vision to consider the big picture and the dexterity to articulate the fine details. My technical abilities are apparent in my <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>programming skills</Link> and <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>design portfolio</Link>. I know how to communicate highly effectively with programmers, developers, and designers alike. </p>
-                  <p className="lh-copy f5-ns f6 mb2 ">&emsp; I'm all about problem solving, working together, and delivering excellence on a day to day basis. I have earned two bachelor's degrees, and accumulated years of experience with multimedia production and programming for the web. </p>
-                  <p className="lh-copy f5-ns f6 mb2 ">&emsp; My tendency to lead by example is fueled by my consistency, positivity, and work ethic. I'm driven to succeed, and am not willing to accept anything less than greatness. Most of all, I'm excited to find success on your team.</p>
+                  <span className="b f2-ns f3 flex flex-row bb pb2" style={{color: "#9d1c1f"}}>
+                    <img
+                      src={Leaf}
+                      style={{height:"2.5rem"}}
+                      className="mv0 mr2"/> About Hunter:
+                  </span>
+                  <p className="lh-copy f5-ns f6 mb2 mt2 measure-wide">&emsp; As a frontend developer, I have the vision to consider the big picture and the dexterity to articulate the fine details. My technical abilities are apparent in my <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>programming skills</Link> and <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>design portfolio</Link>. I know how to communicate highly effectively with programmers, developers, and designers alike. </p>
+                  <p className="lh-copy f5-ns f6 mb2 measure-wide">&emsp; I'm all about problem solving, working together, and delivering excellence on a day to day basis. I have earned two bachelor's degrees, and accumulated years of experience with programming for the web, multimedia, and design. </p>
+                  <p className="lh-copy f5-ns f6 mb2 measure-wide">&emsp; My tendency to lead by example is fueled by my consistency, positivity, and work ethic. I'm driven to succeed, and am not willing to accept anything less than greatness. Most of all, I'm excited to find success on your team.</p>
 
                 </div>
               </div>
@@ -72,14 +77,14 @@ class AboutPage extends Component {
                 </div>
                 <div style={{color: "#9d1c1f", backgroundColor:"#FDFDFD"}} className="mv2 mv0-l pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="clipboard" className="black-70 mh1"/>
-                  <a className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} target={"_blank"} href={Resume}>| Résumé (new tab)</a>
+                  <Link className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} to={"/resume/"}>| Résumé</Link>
                 </div>
                 <div style={{color: "#9d1c1f", backgroundColor:"#FDFDFD"}} className="mv2 mv0-l pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
                   <FontAwesome style={{color: "#9d1c1f"}} name="phone" className="black-70 mh1"/>
                   <a style={{color: "#9d1c1f"}} className="no-underline underline-hover pointer " onClick={() => this.giveNumber()}>| {this.state.numberText}</a>
                 </div>
                 <div style={{color: "#9d1c1f", backgroundColor:"#FDFDFD"}} className="mv2 mv0-l pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">
-                  <FontAwesome style={{color: "#9d1c1f"}} name="github" className="black-70 mh1"/>
+                  <FontAwesome style={{color: "#9d1c1f"}} name="github" className="fa-lg black-70 mh1"/>
                   <a className="no-underline underline-hover pointer " style={{color: "#9d1c1f"}} target={"_blank"} href={"https://github.com/hunter-digital/"}>| github.com/hunter-digital</a>
                 </div>
                 <div style={{color: "#9d1c1f", backgroundColor:"#FDFDFD"}} className="mv2 mv0-l pv2-ns pv3 ph2 ph3-l br4 shadow-3 tc">

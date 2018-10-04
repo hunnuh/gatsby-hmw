@@ -29,14 +29,14 @@ class Intro extends Component{
             to="/about/"
             style={{ borderColor: "#9d1c1f"}}
             className="w-100 w-auto-ns mainbutton ba br2 mt2 pv2 ph3 fw8 tracked dib white no-underline hover-bg-red">
-            Hire Hunter
+            About Hunter
           </Link>
-          <div
-            onClick={this.scrollToContent}
+          <Link
+            to="/resume/"
             style={{borderColor: "#fff"}}
-            className="w-100 w-auto-ns ba br2 mt2 pv2 ph3 fw8 tracked dib ml3-ns pointer hover-bg-white-80">
-            Convince me...
-          </div>
+            className="w-100 white no-underline w-auto-ns ba br2 mt2 pv2 ph3 fw8 tracked dib ml3-ns pointer hover-bg-white-80">
+            See Résumé...
+          </Link>
 
         </div>
         <div className="relative self-center db-ns dn" style={{width:"30rem"}} >

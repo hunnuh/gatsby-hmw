@@ -111,14 +111,13 @@ class IndexPage extends Component {
 
                   </div>
                   <div className="flex flex-column justify-center w-100 w-30-ns tc  ">
-                    <a
-                      href={Resume}
-                      target={"_blank"}
+                    <Link
+                      to={"/resume/"}
                       style={{backgroundColor: "#9d1c1f"}}
-                      className="white tracked br2 pointer fw8 f6 pv2 ph3 w-auto mw5-ns w-100 dib  no-underline underline-hover"
+                      className="white tracked br2 pointer fw8 f6 pv2 ph3 w-auto mw5-ns w-100 dib no-underline underline-hover"
                     >
-                      RÉSUMÉ (PDF)
-                    </a>
+                      RÉSUMÉ
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -133,25 +132,28 @@ class IndexPage extends Component {
                 <FeaturedDesign content={featuredDesign}/>
               </div>
             </div>
-            <div className=" flex flex-column justify-center w-100 self-center z-4 pv7 tc palmpattern">
-              <div className="w-100 mw6 ph2 ph5-ns pv3 center">
-                <div style={{backgroundColor: "#9d1c1f"}} className="bw1 br3 ba b--black-60 pa4-ns pa2 pb4 flex flex-column justify-center items-center shadow-3">
+            <div className=" flex flex-column justify-center items-center w-100 self-center z-4 pv7-ns pv3 tc palmpattern">
+
+                <div
+                  style={{backgroundColor: "#9d1c1f", width:"20rem"}}
+                  className=" bw1 br3-ns ba-ns b--black-60 pa4-ns pa2 pb4 flex flex-column justify-center items-center shadow-3"
+                >
                   <div className="w5 h5 mb0 pa4 flex flex-row items-center">
                     <img src={HeadshotSq} className="pa1 ba bw1 self-center z-4 br-pill shadow-3 bg-white b--near-black"/>
                   </div>
                   <h1 className="white mv0">Hunter M. Wells</h1>
-                  <p className="tracked f6 b white-90 mt2 mb3">FRONTEND DEVELOPER</p>
-                  <p className="tracked f7 mb2 white-80" >hunter.m.wells@gmail.com</p>
+                  <p className="tracked f6 b white-90 mt2 mb0">FRONTEND DEVELOPER</p>
+                  <p className="tracked f7 mv2 white-80" >hunter.m.wells@gmail.com</p>
                   <div className="f4 pa1 ">
                     <a href="http://github.com/hunter-digital"><FontAwesome name="github" className="white-70 hover-white mh2"/></a>
                     <a href="http://www.linkedin.com/u/hmw"><FontAwesome name="linkedin" className="white-70 hover-white mh2"/></a>
-                    <a target={"_blank"} href={Resume}><FontAwesome name="clipboard" className="white-70 hover-white mh2 "/></a>
+                    <Link to={"/resume/"}><FontAwesome name="clipboard" className="white-70 hover-white mh2 "/></Link>
                   </div>
                   <div  className=" mt3 center dib">
                     <Link to={"/about/"} style={{color: "#9d1c1f"}} className="bg-white tracked br2 fw8 f6 pv2 ph3 shadow-3 no-underline underline-hover">SEE MORE</Link>
                   </div>
                 </div>
-              </div>
+
             </div>
           </div>
           <div

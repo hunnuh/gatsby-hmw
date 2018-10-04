@@ -19,6 +19,7 @@
     "react-fontawesome": "^1.6.1",
     "react-highlight": "^0.12.0",
     "react-modal": "^3.4.2",
+    "react-pdf": "^3.0.5",
     "react-scroll-up": "^1.3.3",
     "react-typeout": "1.0.0",
     "tachyons": "^4.9.1",

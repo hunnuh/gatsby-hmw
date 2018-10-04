@@ -86,7 +86,7 @@ class ProgrammingPage extends React.Component {
           <img className="white mw4 mv0" src={Atom}/>
           <h1 className="tc white f3 f2-ns lh-copy-ns" >I'm a smart, creative frontend developer. <br/> Just what your team is looking for.</h1>
           <p className="f5-ns f6 mw6 lh-copy tc white-80" >
-            My years of experience with React and JavaScript make me a worthy developer. I create practical, functional, and beautiful applications. Dont just take it from me; browse my programming projects below.
+            My years of experience with React and JavaScript make me a worthy developer. I create practical, functional, and beautiful applications. Don't just take it from me; browse my programming projects below.
           </p>
           <div className="bb b--white mh3-m">
             <h2 className="white self-start mt5 mb3"><FontAwesome name="code"/> Programming Projects:</h2>
@@ -137,7 +137,7 @@ class ProjectRow extends React.Component {
         <a
           target="_blank"
           href={tech.link}
-          className={`white link b no-underline hover-bg-white hover-black br3 pa1`}
+          className={`white-40 link b no-underline hover-white`}
         >
         ::  {tech.name}
         </a>
@@ -145,16 +145,20 @@ class ProjectRow extends React.Component {
     )
 
     return  (
-      <div  className=" flex flex-row-ns flex-column justify-start-ns items-center w-100 pv3 bt b--white" >
+      <div  className=" flex flex-row-ns flex-column justify-start-ns items-center w-100 pv3 bt b--white " >
           <div className=" mw5 w-100 pa3 flex flex-column justify-center ">
             <img className="db shadow-1 ba b--black-80 mv0 pointer grow"
               onClick={() => this.props.open(project.src)}
               src={project.src}/>
           </div>
           <div className="w-100 pa3">
-            <h1 className="white f4 mt0 mb2 w-100" >{project.title} ({project.date})</h1>
-            <ul className="mt1 mb2 mh0 list pa0">{links}</ul>
-            <div className="pr4-l">
+            <h1 className="white f4 mt0 mb0 w-100 flex flex-row items-center" >{project.title}
+              <span className="ml2 f6 fw1 " style={{color: "#BC772A"}}>
+                // ({project.date})
+              </span>
+            </h1>
+            <ul className="mb1 mv2-l mh0 list pa0">{links}</ul>
+            <div className="pr4-l measure-wide">
               {paras}
             </div>
             <div className="flex flex-row-ns flex-column mt3 tc tl-ns">

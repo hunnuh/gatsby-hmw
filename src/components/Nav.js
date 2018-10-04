@@ -3,8 +3,9 @@ import Logo from "../assets/logo.svg";
 import Link from "gatsby-link";
 import FontAwesome from "react-fontawesome";
 import ReactModal from "react-modal";
-
 import Resume from "../assets/Hunter_M_Wells_resume.pdf";
+
+
 
 const modalStyles = {
   content : {
@@ -77,13 +78,14 @@ class Nav extends Component{
               <NavLink on={page === "programming"} link="/programming/">Projects</NavLink>
               <NavLink on={page === "portfolio"} link="/portfolio/">Design</NavLink>
               <NavLink on={page === "data"} link="/data/">Education</NavLink>
+              <NavLink on={page === "resume"} link="/resume/">Résumé</NavLink>
               <NavLink on={page === "about"} link="/about/">About</NavLink>
             </div>
           </div>
           <div className="dn db-l f3 pa3 ">
-            <a href="http://github.com/hunter-digital"><FontAwesome name="github" className="white-70 hover-white mh2"/></a>
-            <a href="http://www.linkedin.com/u/hmw"><FontAwesome name="linkedin" className="white-70 hover-white mh2"/></a>
-            <a target={"_blank"} href={Resume}><FontAwesome name="clipboard" className="white-70 hover-white mh2 "/></a>
+            <a href="http://github.com/hunter-digital" target={"_blank"}><FontAwesome name="github" className="white-70 hover-white mh2"/></a>
+            <a href="http://www.linkedin.com/in/hmw" target={"_blank"}><FontAwesome name="linkedin" className="white-70 hover-white mh2"/></a>
+            <Link to={"/resume/"}><FontAwesome name="clipboard" className="white-70 hover-white mh2 "/></Link>
             <div className=" di info-icon relative mh0">
                 <FontAwesome name="info" className="white-70 hover-white mh2"/>
                 <div
@@ -129,9 +131,9 @@ class Nav extends Component{
             <MobileNavLink on={page === "data"} link="/data/">Education</MobileNavLink>
             <MobileNavLink on={page === "about"} link="/about/">About</MobileNavLink>
             <div className="f2 pa3 w-100 flex flex-row justify-around">
-              <a href="http://github.com/hunter-digital"><FontAwesome name="github" className="white mh2"/></a>
-              <a href="http://www.linkedin.com/u/hmw"><FontAwesome name="linkedin" className="white mh2"/></a>
-              <a target={"_blank"} href={Resume}><FontAwesome name="clipboard" className="white mh2 "/></a>
+              <a href="http://github.com/hunter-digital" target={"_blank"}><FontAwesome name="github" className="white mh2"/></a>
+              <a href="http://www.linkedin.com/in/hmw" target={"_blank"}><FontAwesome name="linkedin" className="white mh2"/></a>
+              <Link to={"/resume/"}><FontAwesome name="clipboard" className="white mh2 "/></Link>
             </div>
           </div>
 
