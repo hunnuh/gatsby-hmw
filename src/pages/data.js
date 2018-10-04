@@ -144,7 +144,7 @@ class DataPage extends React.Component {
                 </div>
                 <div className="w-30-l w-100">
                   <h5 className="mb2 mt0 pa2 white tc tracked" style={{backgroundColor: "#9d1c1f"}}>MAPS & MORE </h5>
-                  <div className="bg-light-gray pa3 flex flex-column justify-center items-center ">
+                  <div className="bg-light-gray pa3 flex flex-column flex-row-m flex-wrap-ns justify-center items-center ">
                     {thumbs}
                   </div>
                 </div>
@@ -191,7 +191,7 @@ let captionMap = {
 
 
 const Thumb = (props) => (
-  <div className="flex flex-column mw6" onClick={() => props.openModal(props.thumb.props.src)}>
+  <div className="flex flex-column mw6 mw5-m mh3-m" onClick={() => props.openModal(props.thumb.props.src)}>
     {props.thumb}
     <p className="f7 pa2 mt0 mb2">{captionMap[props.thumb.props.src]}</p>
   </div>
