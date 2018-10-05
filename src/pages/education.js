@@ -191,7 +191,7 @@ let captionMap = {
 
 
 const Thumb = (props) => (
-  <div className="flex flex-column mw6 mw5-m mh3-m" onClick={() => props.openModal(props.thumb.props.src)}>
+  <div className="flex flex-column mw6 mw5-m mh3-m pointer" onClick={() => props.openModal(props.thumb.props.src)}>
     {props.thumb}
     <p className="f7 pa2 mt0 mb2">{captionMap[props.thumb.props.src]}</p>
   </div>
