@@ -66,22 +66,7 @@ const Cards = () => (
 
         className="flex flex-column flex-wrap w-100 self-center  pv4 ph4-ns"
       >
-        <Card
-          icon={Fish}
-          name={"fish"}
-          sub={"ELEGANT SOLUTIONS"}
-          head={"Proven Digital Talent"}
-          blurb={
-            "My design skills have been sharpened with years of experience developing creative visual solutions. "
-          }
-          linkText="Explore my portfolio &nbsp;&nbsp; ⇾"
-          linkLoc={"/portfolio/"}
-          bg={<div>
-                <img src={FishBG} style={{height:"50em", top:"-13em", right:"-10em"}} className="dn db-l dn-m absolute z-0 " />
-                <img src={FishBG} style={{height:"45em", top:"-9em", right:"-6em"}} className="dn db-m dn-l absolute z-0 mw8" />
-                <img src={FishBG} style={{height:"30em", top:"-9em", right:"-5em"}} className="dn-ns absolute z-0 mw8" />
-              </div>}
-        />
+
         <Card
           icon={Spider}
           sub={"PROGRAMMING & DEVELOPMENT"}
@@ -93,9 +78,25 @@ const Cards = () => (
           linkText="Inspect my programming projects &nbsp;&nbsp; ⇾"
           linkLoc={"/projects/"}
           bg={<div>
-                <img src={SpiderBG} style={{height:"62em", left:"-35em", top:"-20em", maxWidth:"100000px"}} className="dn db-l dn-m absolute z-0" />
-                <img src={SpiderBG} style={{height:"45em", left:"-29em", top:"-8em", maxWidth:"100000px"}} className="dn db-m dn-l absolute  z-0" />
-                <img src={SpiderBG} style={{height:"31em", left:"-5em", top:"-5em"}} className="dn-ns absolute mw8 z-0" />
+                <img src={SpiderBG} style={{height:"45em", left:"-22em", top:"-10em", maxWidth:"100000px"}} className="dn db-l dn-m absolute z-0" />
+                <img src={SpiderBG} style={{height:"45em", left:"-5.5em", top:"-10em", maxWidth:"100000px"}} className="dn db-m dn-l absolute  z-0" />
+                <img src={SpiderBG} style={{height:"31em", left:"-7.5em", top:"-7em"}} className="dn-ns absolute mw8 z-0" />
+              </div>}
+        />
+        <Card
+          icon={Fish}
+          name={"fish"}
+          sub={"CREATIVE SOLUTIONS"}
+          head={"Proven Digital Talent"}
+          blurb={
+            "My design skills have been sharpened with years of experience with creative visual solutions. Take a look! "
+          }
+          linkText="Explore my portfolio &nbsp;&nbsp; ⇾"
+          linkLoc={"/portfolio/"}
+          bg={<div>
+                <img src={FishBG} style={{height:"50em", top:"-13em", right:"-10em"}} className="dn db-l dn-m absolute z-0 " />
+                <img src={FishBG} style={{height:"45em", top:"-4em", right:"-6em"}} className="dn db-m dn-l absolute z-0 mw8" />
+                <img src={FishBG} style={{height:"30em", top:"-9em", right:"-5em"}} className="dn-ns absolute z-0 mw8" />
               </div>}
         />
         <Card
@@ -107,8 +108,9 @@ const Cards = () => (
           }
           linkText="Read about my background and education &nbsp;&nbsp; ⇾"
           linkLoc={"/education/"}
+          rev={true}
           bg={<div>
-                <img src={MonkeyBG} style={{height:"50em", top:"-14em", right:"-18em"}} className="dn db-l dn-m absolute z-0   " />
+                <img src={MonkeyBG} style={{height:"50em", top:"-14em", right:"14em"}} className="dn db-l dn-m absolute z-0   " />
                 <img src={MonkeyBG} style={{height:"50em", top:"-10em", right:"-18em"}} className="dn db-m dn-l absolute z-0  mw8 " />
                 <img src={MonkeyBG} style={{height:"45em", top:"-8em", right:"-18em"}} className="dn-ns absolute z-0  mw8 " />
               </div>}
@@ -117,7 +119,7 @@ const Cards = () => (
           icon={Elephant}
           sub={"QUALITY & COMMRADERE"}
           head={"Indomidable Ambition"}
-          rev={true}
+
           blurb={
             "During my lifetime, I strive to become a world-class professional. I want to be part of a hard-working team with smart people who share my passion."
           }
