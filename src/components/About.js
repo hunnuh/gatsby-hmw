@@ -44,9 +44,9 @@ const About = () => (
         className=" flex mt3 mb6 ph4-ns self-center flex-row-ns
         flex-column justify-between tc tl-l w-auto-ns f5-ns f6 z-2 w-100"
         >
-        <GoldLink loc={"/programming/"}>Smart Frontend Developer</GoldLink>
+        <GoldLink loc={"/projects/"}>Smart Frontend Developer</GoldLink>
         <GoldLink loc={"/portfolio/"}>Excellent Designer</GoldLink>
-        <GoldLink loc={"/data/"}>Educated JS Programmer</GoldLink>
+        <GoldLink loc={"/education/"}>Educated JS Programmer</GoldLink>
       </div>
       <Cards />
     </div>
@@ -69,10 +69,10 @@ const Cards = () => (
         <Card
           icon={Fish}
           name={"fish"}
-          sub={"CREATIVITY & ARTISTRY"}
+          sub={"ELEGANT SOLUTIONS"}
           head={"Proven Digital Talent"}
           blurb={
-            "My design skills have been sharpened from years of experience. Take a look, my portfolio is hosted here."
+            "My design skills have been sharpened with years of experience developing creative visual solutions. "
           }
           linkText="Explore my portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}
@@ -91,7 +91,7 @@ const Cards = () => (
             "Building awesome web apps is why I get up in the morning. Take a look at the projects I've developed."
           }
           linkText="Inspect my programming projects &nbsp;&nbsp; ⇾"
-          linkLoc={"/programming/"}
+          linkLoc={"/projects/"}
           bg={<div>
                 <img src={SpiderBG} style={{height:"62em", left:"-35em", top:"-20em", maxWidth:"100000px"}} className="dn db-l dn-m absolute z-0" />
                 <img src={SpiderBG} style={{height:"45em", left:"-29em", top:"-8em", maxWidth:"100000px"}} className="dn db-m dn-l absolute  z-0" />
@@ -106,7 +106,7 @@ const Cards = () => (
             "From algorithms to databases; I have a passion for computers. For me, working with technology is a constant source of gratitude and amazement."
           }
           linkText="Read about my background and education &nbsp;&nbsp; ⇾"
-          linkLoc={"/data/"}
+          linkLoc={"/education/"}
           bg={<div>
                 <img src={MonkeyBG} style={{height:"50em", top:"-14em", right:"-18em"}} className="dn db-l dn-m absolute z-0   " />
                 <img src={MonkeyBG} style={{height:"50em", top:"-10em", right:"-18em"}} className="dn db-m dn-l absolute z-0  mw8 " />

@@ -75,9 +75,9 @@ class Nav extends Component{
               </div>
             </Link>
             <div  className="h3 flex-l flex-row dn">
-              <NavLink on={page === "programming"} link="/programming/">Projects</NavLink>
-              <NavLink on={page === "portfolio"} link="/portfolio/">Design</NavLink>
-              <NavLink on={page === "data"} link="/data/">Education</NavLink>
+              <NavLink on={page === "programming"} link="/projects/">Projects</NavLink>
+              <NavLink on={page === "portfolio"} link="/portfolio/">Portfolio</NavLink>
+              <NavLink on={page === "education"} link="/education/">Education</NavLink>
               <NavLink on={page === "resume"} link="/resume/">Résumé</NavLink>
               <NavLink on={page === "about"} link="/about/">About</NavLink>
             </div>
@@ -126,9 +126,9 @@ class Nav extends Component{
                 <FontAwesome onClick={this.handleCloseModal} name="close" className="white f1 fa-2x"/>
               </div>
             </div>
-            <MobileNavLink on={page === "programming"} link="/programming/">Projects</MobileNavLink>
-            <MobileNavLink on={page === "portfolio"} link="/portfolio/">Design</MobileNavLink>
-            <MobileNavLink on={page === "data"} link="/data/">Education</MobileNavLink>
+            <MobileNavLink on={page === "programming"} link="/projects/">Projects</MobileNavLink>
+            <MobileNavLink on={page === "portfolio"} link="/portfolio/">Portfolio</MobileNavLink>
+            <MobileNavLink on={page === "data"} link="/education/">Education</MobileNavLink>
             <MobileNavLink on={page === "resume"} link="/resume/">Résumé</MobileNavLink>
             <MobileNavLink on={page === "about"} link="/about/">About</MobileNavLink>
             <div className="f2 pa3 w-100 flex flex-row justify-around">

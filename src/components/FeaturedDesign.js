@@ -86,7 +86,7 @@ class FeaturedDesign extends Component {
             </div>
             <div className="w-100 flex flex-column  ph0-l mt2">
               <Link to={"/portfolio/"} className="white-70 f5-ns f6 tracked mv1 underline-hover no-underline self-end-ns self-center"> See more of my design work. ⇾</Link>
-              <Link to={"/programming/"} className="white-40 f6-ns f7 tracked mv1 underline-hover no-underline self-end-ns self-center "> Explore my programming projects. ⇾</Link>
+              <Link to={"/projects/"} className="white-40 f6-ns f7 tracked mv1 underline-hover no-underline self-end-ns self-center "> Explore my programming projects. ⇾</Link>
               <Link to={"/about/"} className="white-40 f6-ns f7 tracked mv1 underline-hover no-underline self-end-ns self-center "> Learn more about Hunter. ⇾</Link>
             </div>
           </div>

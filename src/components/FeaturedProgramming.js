@@ -72,7 +72,7 @@ class FeaturedProgramming extends Component {
         </div>
         <h3 className=" tc mt4 mb1 tracked ph3 ph0-ns">Like what you see? Check out all my programming projects...</h3>
         <div  className=" mt2-ns h3 center dib ph3 w-100  flex flex-row-ns flex-column justify-center ">
-            <Link to={"/programming/"}
+            <Link to={"/projects/"}
               className="mh2 tc mt2 mt0-ns ba white tracked br2 fw8  h-auto-ns f6-ns w-100 w-auto-ns f7 pv3-ns pv2 ph3 no-underline underline-hover shadow-3 self-center">Explore projects</Link>
         </div>
       </div>

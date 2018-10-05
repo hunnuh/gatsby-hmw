@@ -36,7 +36,7 @@ const modalStyles = {
 };
 
 
-class DataPage extends React.Component {
+class EducationPage extends React.Component {
 
   constructor () {
     super();
@@ -81,7 +81,7 @@ class DataPage extends React.Component {
 
     return (
       <div>
-        <Nav page="data"/>
+        <Nav page="education"/>
         <div  className="relative w-100 ">
           <div style={{backgroundColor: "#19382B"}} id="back" className=" relative flex flex-column items-center ph2-m">
 
@@ -112,7 +112,7 @@ class DataPage extends React.Component {
                 <div className="w-70-l w-100  pr4-l">
                   <img src={Photo} className="w-100 mv0"/>
                   <div className="w-100 bb b--moon-gray mb3 ">
-                    <p className="f7 pb1 pl2 mv0 gray">Every person, place, thing, a point of data.</p>
+                    <p className="f7 pb1 pl2 mv0 gray">You're not a real professional unless you have at least two screens going.</p>
                   </div>
                   <p>There's a whole lot of stuff out there to learn. Especially when it comes to computers.</p>
                   <p>Although there's a vast amount to learn, and no one could ever learn it all, a modern digital professional needs to have a lot of tools in their mental toolbox. It's been a lifelong goal of mine to become an advanced digital professional whose toolbox is a subject of envy. It seems to me that working with technology is a cumulative discipline, where your level of understanding is informed by all the skills you've developed and experiences you've had beforehand. The more time you've spent on a computer, the wiser your digital intuition becomes.</p>
@@ -139,7 +139,7 @@ class DataPage extends React.Component {
                   <p>What's next? I want to be on a team that makes awesome web applications. My craving for problem solving and elbow grease has me searching for the right team to put my skills to work. My educational background, in addition to the hard work I've put into becoming a frontend developer and digital professional at large will allow me to make a positive contribution to your projects.</p>
                   <p> If you're reading this, it's probably because you think I have potential to succeed on your team. I can assure you that I'm the kind of guy that you will benefit from having on your team. Let's find out if we're as good of a fit as I think we are. Please don't hesitate to write or call - our next big project is waiting for us to build it.</p>
                   <p>--</p>
-                  <p className="mt2 pt3 i"> Thank you for taking the time to read this article about my background. Click <Link style={{color: "#9d1c1f"}} to={"/programming/"}>here</Link> if you would like to see some of my programming projects, <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>here</Link> to see my design work, and <Link style={{color: "#9d1c1f"}} to={"/about/"}>here</Link> to contact me.</p>
+                  <p className="mt2 pt3 i"> Thank you for taking the time to read this article about my background. Click <Link style={{color: "#9d1c1f"}} to={"/projects/"}>here</Link> if you would like to see some of my programming projects, <Link style={{color: "#9d1c1f"}} to={"/portfolio/"}>here</Link> to see my design work, and <Link style={{color: "#9d1c1f"}} to={"/about/"}>here</Link> to contact me.</p>
 
                 </div>
                 <div className="w-30-l w-100">
@@ -200,8 +200,8 @@ const Thumb = (props) => (
 
 
 
-export const dataQuery = graphql`
-  query dataQuery {
+export const educationQuery = graphql`
+  query EducationQuery {
     allFile (
       filter:{sourceInstanceName: {eq:"portfolio"}}
     )
@@ -218,4 +218,4 @@ export const dataQuery = graphql`
 `;
 
 
-export default DataPage;
+export default EducationPage;

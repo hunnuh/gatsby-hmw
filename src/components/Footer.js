@@ -17,14 +17,14 @@ const Footer = () => (
         <div className="flex flex-row">
           <FootLink link={"/"}>Home</FootLink>
           <span>|</span>
-          <FootLink link={"/programming/"}>Projects</FootLink>
+          <FootLink link={"/projects/"}>Projects</FootLink>
           <span>|</span>
           <FootLink link={"/portfolio/"}>Design</FootLink>
           <span>|</span>
         </div>
 
         <div className="flex flex-row">
-          <FootLink link={"/data/"}>Education</FootLink>
+          <FootLink link={"/education/"}>Education</FootLink>
           <span>|</span>
           <FootLink link={"/resume/"}>Résumé</FootLink>
           <span>|</span>

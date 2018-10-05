@@ -168,7 +168,7 @@ class PortfolioPage extends React.Component {
                   >
                     HUNTER SAYS:
                   </h5>
-                  <p className="ma3 tracked tc b lh-copy"> "Thanks for checking out my design work. <br/> <Link to={"/programming/"} className="white"> Click here</Link> to see my programming projects."</p>
+                  <p className="ma3 tracked tc b lh-copy"> "Thanks for checking out my design work. <br/> <Link to={"/projects/"} className="white"> Click here</Link> to see my programming projects."</p>
                 </div>
               </div>
             </div>
