@@ -89,7 +89,7 @@ const Cards = () => (
           sub={"CREATIVE SOLUTIONS"}
           head={"Proven Digital Talent"}
           blurb={
-            "My design skills have been sharpened with years of experience with creative visual solutions. Take a look! "
+            "My design skills have been sharpened from years of experience with creative visual solutions. Take a look! "
           }
           linkText="Explore my portfolio &nbsp;&nbsp; ⇾"
           linkLoc={"/portfolio/"}
