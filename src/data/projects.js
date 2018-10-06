@@ -167,7 +167,7 @@ const Projects =[
         ],
       },
       links:{
-        featured: {enabled: true, text:"PLAY BARDO THE SAVIOR", url:"http://www.huntermaverickwells.com/"},
+        featured: {enabled: true, text:"PLAY BARDO THE SAVIOR", url:"http://www.bardothesavior.com/"},
         github: "https://github.com/hunter-digital/bardo",
       },
       date: "2016",
