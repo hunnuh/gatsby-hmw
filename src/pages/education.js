@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
+import Img from "gatsby-image"
 
 import Nav from "../components/Nav";
 import Header from "../components/Header";
@@ -71,11 +72,15 @@ class EducationPage extends React.Component {
 
     let content = this.props.data.allFile.edges
         .reduce((acc, curr) => acc.concat(curr.node), [])
-        .filter(e => e.relativeDirectory === "datamaps" )
+        .filter(e => e.base !== "data_image.jpg" )
         .map((e, i) =>
         <img className="w-100 mb0 " src={`/portfolio/${e.relativePath}`}/>
 
       );
+
+    let feature = this.props.data.allFile.edges
+    .reduce((acc, curr) => acc.concat(curr.node), [])
+    .filter(e => e.base === "data_image.jpg" )[0].childImageSharp.sizes
 
     let thumbs = content.map((e, i) => <Thumb thumb={e} key={i} caption={e.src} openModal={(path) => this.handleOpenModal(path)}/>)
 
@@ -110,7 +115,7 @@ class EducationPage extends React.Component {
               <div className="flex flex-row-l flex-column lh-copy mb5 ph3">
 
                 <div className="w-70-l w-100  pr4-l">
-                  <img src={Photo} className="w-100 mv0"/>
+                  <Img sizes={feature} className="w-100 mv0 bg-mid-gray" />
                   <div className="w-100 bb b--moon-gray mb3 ">
                     <p className="f7 pb1 pl2 mv0 gray">You're not a real professional unless you have at least two screens going.</p>
                   </div>
@@ -156,7 +161,7 @@ class EducationPage extends React.Component {
           </div>
           <ReactModal
             isOpen={this.state.showModal}
-            contentLabel="Minimal Modal Example"
+            contentLabel="Education Modal"
             onRequestClose={this.handleCloseModal}
             shouldCloseOnOverlayClick={true}
             style={modalStyles}
@@ -202,18 +207,24 @@ const Thumb = (props) => (
 
 export const educationQuery = graphql`
   query EducationQuery {
-    allFile (
-      filter:{sourceInstanceName: {eq:"portfolio"}}
-    )
+    allFile (filter: {relativeDirectory: {eq: "education_page"}})
     {
       edges {
         node {
           relativeDirectory
           relativePath
           absolutePath
+          base
+          childImageSharp {
+            sizes(maxWidth: 720) {
+              ...GatsbyImageSharpSizes
+            }
+          }
         }
       }
+
     }
+
   }
 `;
 
