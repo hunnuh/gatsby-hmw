@@ -33,7 +33,7 @@ const Projects =[
   },
   links:{
     featured: {enabled: false, text:"No demo available"},
-    github: "https://github.com/senders-communications-group/labor-411",
+    github: "https://github.com/hunter-digital/",
   },
   date: "2018",
   },
