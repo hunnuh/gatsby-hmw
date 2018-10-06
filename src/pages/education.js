@@ -52,7 +52,6 @@ class EducationPage extends React.Component {
   }
 
   handleOpenModal (path) {
-
     this.setState({ modalPath: path, showModal: true });
   }
 
@@ -70,19 +69,15 @@ class EducationPage extends React.Component {
 
     let {showAlert} = this.state
 
-    let content = this.props.data.allFile.edges
+    let thumbs = this.props.data.allFile.edges
         .reduce((acc, curr) => acc.concat(curr.node), [])
         .filter(e => e.base !== "data_image.jpg" )
         .map((e, i) =>
-        <img className="w-100 mb0 " src={`/portfolio/${e.relativePath}`}/>
-
-      );
+        <Thumb thumb={e} key={i} sizes={e.sizes} caption={e.base} openModal={(path) => this.handleOpenModal(path)}/>);
 
     let feature = this.props.data.allFile.edges
     .reduce((acc, curr) => acc.concat(curr.node), [])
     .filter(e => e.base === "data_image.jpg" )[0].childImageSharp.sizes
-
-    let thumbs = content.map((e, i) => <Thumb thumb={e} key={i} caption={e.src} openModal={(path) => this.handleOpenModal(path)}/>)
 
     return (
       <div>
@@ -95,7 +90,7 @@ class EducationPage extends React.Component {
               <FontAwesome onClick={() => this.setState({showAlert:false})} name="close" style={{top:".6rem", right:".8rem"}} className="absolute fa-lg moon-gray pointer"/>
 
               <div className=" flex flex-row-ns flex-column justify-center items-center ph3 ph4-m ph0-l tc tl-ns">
-                <img className="pa0 ma0" src={Tech} style={{height:"5.5rem"}}/>
+               <img className="pa0 ma0" src={Tech} style={{height:"5.5rem"}}/>
                 <div className="ml4-ns pr5-l">
                   <h1 className="f1 f3 dark-gray pv0 mb2 mt0">Doing excellent work on the computer is my specialty.</h1>
                   <h2 className="fw1 f5 mid-gray pv0 mv0 " style={{lineHeight:"1.25rem"}}>To share some information about my education and background, I wrote this article discussing my achievements in the world of technology. For more about me, or to get in touch, please <Link  style={{color: "#9d1c1f"}} to={"/about/"}>click here</Link>.</h2>
@@ -117,7 +112,7 @@ class EducationPage extends React.Component {
                 <div className="w-70-l w-100  pr4-l">
                   <Img sizes={feature} className="w-100 mv0 bg-mid-gray" />
                   <div className="w-100 bb b--moon-gray mb3 ">
-                    <p className="f7 pb1 pl2 mv0 gray">You're not a real professional unless you have at least two screens going.</p>
+                    <p className="f7 pv1 pl2 mv0 gray">You're not a real professional unless you have at least two screens going.</p>
                   </div>
                   <p>There's a whole lot of stuff out there to learn. Especially when it comes to computers.</p>
                   <p>Although there's a vast amount to learn, and no one could ever learn it all, a modern digital professional needs to have a lot of tools in their mental toolbox. It's been a lifelong goal of mine to become an advanced digital professional whose toolbox is a subject of envy. It seems to me that working with technology is a cumulative discipline, where your level of understanding is informed by all the skills you've developed and experiences you've had beforehand. The more time you've spent on a computer, the wiser your digital intuition becomes.</p>
@@ -167,8 +162,9 @@ class EducationPage extends React.Component {
             style={modalStyles}
           >
             <div className="h-100 w-100 flex flex-column justify-center items-center" onClick={this.handleCloseModal}>
-              <img
-                className=" mv0 shadow-3 br3 self-center" src={this.state.modalPath}
+               <img
+                src={this.state.modalPath}
+                className=" mv0 shadow-3 br3 self-center"
                 onClick={this.handleCloseModal}
               />
             </div>
@@ -181,24 +177,24 @@ class EducationPage extends React.Component {
 };
 
 let captionMap = {
-  "/portfolio/datamaps/mapprocess.png": "Demographic Analysis Procedure (Senior Thesis Project)",
-  "/portfolio/datamaps/sfv.png": "Healthcare Businesses In the San Fernando Valley",
-  "/portfolio/datamaps/southamerica.png": "Ancient Civilizations of South America",
-  "/portfolio/datamaps/tarawa.jpg": "Battle of Tarawa, WWII",
-  "/portfolio/datamaps/grackle.jpg": "Grackle Breeding Patterns",
-  "/portfolio/datamaps/reinier.jpg": "Mount Reinier, WA - Shaded Relief Data",
-  "/portfolio/datamaps/ankh.png": "ANKH (short cartoon)",
-  "/portfolio/datamaps/oviatt.jpg": "CSUN, my Alma Mater",
-  "/portfolio/datamaps/bardo.png": "Bardo: The Savior",
-  "/portfolio/datamaps/nms.png": "NewsMaker Commercial",
+  "mapprocess.png": "Demographic Analysis Procedure (Senior Thesis Project)",
+  "sfv.png": "Healthcare Businesses In the San Fernando Valley",
+  "southamerica.png": "Ancient Civilizations of South America",
+  "tarawa.jpg": "Battle of Tarawa, WWII",
+  "grackle.jpg": "Grackle Breeding Patterns",
+  "reinier.jpg": "Mount Reinier, WA - Shaded Relief Data",
+  "ankh.png": "ANKH (short cartoon)",
+  "oviatt.jpg": "CSUN, my Alma Mater",
+  "bardo.png": "Bardo: The Savior",
+  "nms.png": "NewsMaker Animated Commercial",
 }
 
 
 
 const Thumb = (props) => (
-  <div className="flex flex-column mw6 mw5-m mh3-m pointer" onClick={() => props.openModal(props.thumb.props.src)}>
-    {props.thumb}
-    <p className="f7 pa2 mt0 mb2">{captionMap[props.thumb.props.src]}</p>
+  <div className="flex flex-column w-100 mw6 mw5-m mh3-m pointer" onClick={() => props.openModal(props.thumb.publicURL)}>
+    <Img sizes={props.thumb.childImageSharp.sizes} className="w-100"/>
+    <p className="f7 pa2 mt0 mb2">{captionMap[props.thumb.base]}</p>
   </div>
 );
 
@@ -215,6 +211,7 @@ export const educationQuery = graphql`
           relativePath
           absolutePath
           base
+          publicURL
           childImageSharp {
             sizes(maxWidth: 720) {
               ...GatsbyImageSharpSizes
